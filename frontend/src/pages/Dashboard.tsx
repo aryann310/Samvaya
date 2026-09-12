@@ -42,13 +42,13 @@ export default function Dashboard() {
       {/* Top Banner / Currency & Mode Switcher */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Financial Overview</h1>
-          <p className="text-xs text-gray-400 mt-0.5">Real-time balances, cash trajectories, and hyperlocal market signals.</p>
+          <h1 className="text-2xl font-bold text-foreground tracking-tight">Financial Overview</h1>
+          <p className="text-xs text-muted-foreground mt-0.5">Real-time balances, cash trajectories, and hyperlocal market signals.</p>
         </div>
         <div className="flex items-center gap-2">
           <button 
             onClick={() => setCurrencyMode(currencyMode === "USD" ? "INR" : "USD")}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200/80 rounded-xl text-xs font-semibold text-gray-700 shadow-xs hover:border-lime-500 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-card/70 backdrop-blur-md border border-glass-border rounded-xl text-xs font-semibold text-foreground/80 shadow-xs hover:border-lime-500 transition-colors"
           >
             <span>Currency:</span>
             <span className="text-lime-600 font-bold">{currencyMode}</span>
@@ -68,26 +68,26 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
             
             {/* Balance Overview Card (lg:col-span-8) */}
-            <div className="lg:col-span-8 bg-white rounded-3xl p-6 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div className="lg:col-span-8 bg-card/70 backdrop-blur-md rounded-3xl p-6 border border-glass-border shadow-glass-shadow flex flex-col justify-between">
               <div>
                 {/* Top header row */}
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-3xl font-black tracking-tight text-gray-900">
+                    <h2 className="text-3xl font-black tracking-tight text-foreground">
                       {formatAmount(12450)}
                     </h2>
-                    <p className="text-xs text-gray-400 font-medium mt-0.5">Balance overview</p>
+                    <p className="text-xs text-muted-foreground font-medium mt-0.5">Balance overview</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button className="flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 border border-gray-200/60 rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-100 transition-colors">
+                    <button className="flex items-center gap-1.5 px-2.5 py-1 bg-muted border border-glass-border rounded-lg text-xs font-medium text-muted-foreground hover:bg-muted/80 transition-colors">
                       <span>7d</span>
-                      <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                      <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />
                     </button>
-                    <div className="flex items-center bg-gray-50 p-0.5 rounded-lg border border-gray-200/60">
-                      <button className="p-1 rounded text-gray-700 bg-white shadow-xs">
+                    <div className="flex items-center bg-muted p-0.5 rounded-lg border border-glass-border">
+                      <button className="p-1 rounded text-foreground/80 bg-card/70 backdrop-blur-md shadow-xs">
                         <BarChart2 className="w-3.5 h-3.5" />
                       </button>
-                      <button className="p-1 rounded text-gray-400 hover:text-gray-700">
+                      <button className="p-1 rounded text-muted-foreground hover:text-foreground/80">
                         <TrendingUp className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -98,18 +98,18 @@ export default function Dashboard() {
                 <div className="flex items-center gap-5 mt-4 text-xs font-medium">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-xs bg-[#facc15]" />
-                    <span className="text-gray-400">Savings</span>
-                    <span className="text-gray-800 font-bold">{formatAmount(240)}</span>
+                    <span className="text-muted-foreground">Savings</span>
+                    <span className="text-foreground font-bold">{formatAmount(240)}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-xs bg-[#84cc16]" />
-                    <span className="text-gray-400">Income</span>
-                    <span className="text-gray-800 font-bold">{formatAmount(700)}</span>
+                    <span className="text-muted-foreground">Income</span>
+                    <span className="text-foreground font-bold">{formatAmount(700)}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-xs bg-[#fb923c]" />
-                    <span className="text-gray-400">Expenses</span>
-                    <span className="text-gray-800 font-bold">{formatAmount(460)}</span>
+                    <span className="text-muted-foreground">Expenses</span>
+                    <span className="text-foreground font-bold">{formatAmount(460)}</span>
                   </div>
                 </div>
               </div>
@@ -117,45 +117,45 @@ export default function Dashboard() {
               {/* Stacked Bar Chart Area */}
               <div className="mt-8 relative pt-12 pb-2">
                 {/* Active Day Floating Tooltip (Shown above Wednesday) */}
-                <div className="absolute top-0 left-[48%] -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-gray-100 shadow-[0_6px_20px_rgba(0,0,0,0.08)] z-10 w-44 text-xs animate-in fade-in zoom-in-95 duration-200">
-                  <div className="text-[11px] font-semibold text-gray-400 mb-1.5">Wednesday, 7 Jan 2025</div>
+                <div className="absolute top-0 left-[48%] -translate-x-1/2 bg-card/70 backdrop-blur-md/95 backdrop-blur-md rounded-2xl p-3 border border-glass-border shadow-[0_6px_20px_rgba(0,0,0,0.08)] z-10 w-44 text-xs animate-in fade-in zoom-in-95 duration-200">
+                  <div className="text-[11px] font-semibold text-muted-foreground mb-1.5">Wednesday, 7 Jan 2025</div>
                   <div className="space-y-1 font-medium">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-xs bg-[#facc15]" />
-                        <span className="text-gray-500">Savings</span>
+                        <span className="text-muted-foreground">Savings</span>
                       </div>
-                      <span className="font-bold text-gray-900">{formatAmount(240)}</span>
+                      <span className="font-bold text-foreground">{formatAmount(240)}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-xs bg-[#84cc16]" />
-                        <span className="text-gray-500">Income</span>
+                        <span className="text-muted-foreground">Income</span>
                       </div>
-                      <span className="font-bold text-gray-900">{formatAmount(700)}</span>
+                      <span className="font-bold text-foreground">{formatAmount(700)}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-xs bg-[#fb923c]" />
-                        <span className="text-gray-500">Expenses</span>
+                        <span className="text-muted-foreground">Expenses</span>
                       </div>
-                      <span className="font-bold text-gray-900">{formatAmount(460)}</span>
+                      <span className="font-bold text-foreground">{formatAmount(460)}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Y-Axis guide lines */}
                 <div className="absolute inset-x-0 bottom-8 flex flex-col justify-between h-40 pointer-events-none opacity-40">
-                  <div className="border-b border-dashed border-gray-200 w-full flex items-center justify-between text-[10px] text-gray-300">
+                  <div className="border-b border-dashed border-border w-full flex items-center justify-between text-[10px] text-muted-foreground/60">
                     <span>30</span>
                   </div>
-                  <div className="border-b border-dashed border-gray-200 w-full flex items-center justify-between text-[10px] text-gray-300">
+                  <div className="border-b border-dashed border-border w-full flex items-center justify-between text-[10px] text-muted-foreground/60">
                     <span>20</span>
                   </div>
-                  <div className="border-b border-dashed border-gray-200 w-full flex items-center justify-between text-[10px] text-gray-300">
+                  <div className="border-b border-dashed border-border w-full flex items-center justify-between text-[10px] text-muted-foreground/60">
                     <span>10</span>
                   </div>
-                  <div className="border-b border-gray-200 w-full flex items-center justify-between text-[10px] text-gray-300">
+                  <div className="border-b border-border w-full flex items-center justify-between text-[10px] text-muted-foreground/60">
                     <span>0</span>
                   </div>
                 </div>
@@ -171,7 +171,7 @@ export default function Dashboard() {
                         className="flex flex-col items-center gap-2 cursor-pointer group h-full justify-end"
                       >
                         {/* Column Track */}
-                        <div className="w-10 rounded-2xl bg-[#f4f5f8] overflow-hidden flex flex-col justify-end p-1 transition-all duration-300 group-hover:bg-gray-100">
+                        <div className="w-10 rounded-2xl bg-background overflow-hidden flex flex-col justify-end p-1 transition-all duration-300 group-hover:bg-muted/80">
                           {isSelected ? (
                             /* Highlighted Multi-Segment Bar for Wednesday */
                             <div className="w-full flex flex-col gap-0.5">
@@ -185,16 +185,16 @@ export default function Dashboard() {
                           ) : (
                             /* Muted Neutral Bars */
                             <div className="w-full flex flex-col gap-0.5 opacity-60 group-hover:opacity-100 transition-opacity">
-                              <div className="h-3 w-full rounded-md bg-gray-200" />
+                              <div className="h-3 w-full rounded-md bg-border" />
                               <div 
-                                className="w-full rounded-md bg-gray-300/80" 
+                                className="w-full rounded-md bg-border/80" 
                                 style={{ height: `${Math.min(100, Math.max(24, (item.income / 8)))}px` }}
                               />
                             </div>
                           )}
                         </div>
                         {/* Day Label */}
-                        <span className={`text-[11px] font-semibold transition-colors ${isSelected ? "text-gray-900 font-bold" : "text-gray-400 group-hover:text-gray-600"}`}>
+                        <span className={`text-[11px] font-semibold transition-colors ${isSelected ? "text-foreground font-bold" : "text-muted-foreground group-hover:text-muted-foreground"}`}>
                           {item.day}
                         </span>
                       </div>
@@ -207,9 +207,9 @@ export default function Dashboard() {
             {/* Quick Stat Stack (lg:col-span-4) */}
             <div className="lg:col-span-4 flex flex-col justify-between gap-3">
               {/* Card 1: Total income */}
-              <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex-1 flex flex-col justify-center">
-                <span className="text-xs text-gray-400 font-medium">Total income</span>
-                <div className="text-2xl font-black text-gray-900 mt-1">
+              <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow flex-1 flex flex-col justify-center">
+                <span className="text-xs text-muted-foreground font-medium">Total income</span>
+                <div className="text-2xl font-black text-foreground mt-1">
                   {formatAmount(15000)}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] font-semibold text-lime-600 mt-1">
@@ -219,9 +219,9 @@ export default function Dashboard() {
               </div>
 
               {/* Card 2: Total expenses */}
-              <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex-1 flex flex-col justify-center">
-                <span className="text-xs text-gray-400 font-medium">Total expenses</span>
-                <div className="text-2xl font-black text-gray-900 mt-1">
+              <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow flex-1 flex flex-col justify-center">
+                <span className="text-xs text-muted-foreground font-medium">Total expenses</span>
+                <div className="text-2xl font-black text-foreground mt-1">
                   {formatAmount(6700)}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] font-semibold text-[#fb923c] mt-1">
@@ -231,9 +231,9 @@ export default function Dashboard() {
               </div>
 
               {/* Card 3: Saved balance */}
-              <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex-1 flex flex-col justify-center">
-                <span className="text-xs text-gray-400 font-medium">Saved balance</span>
-                <div className="text-2xl font-black text-gray-900 mt-1">
+              <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow flex-1 flex flex-col justify-center">
+                <span className="text-xs text-muted-foreground font-medium">Saved balance</span>
+                <div className="text-2xl font-black text-foreground mt-1">
                   {formatAmount(8300)}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] font-semibold text-lime-600 mt-1">
@@ -249,41 +249,41 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             
             {/* Monthly spending limit Card */}
-            <div className="bg-white rounded-3xl p-6 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div className="bg-card/70 backdrop-blur-md rounded-3xl p-6 border border-glass-border shadow-glass-shadow flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-bold text-gray-900">Monthly spending limit</h3>
-                  <button className="text-gray-400 hover:text-gray-700 transition-colors">
+                  <h3 className="text-sm font-bold text-foreground">Monthly spending limit</h3>
+                  <button className="text-muted-foreground hover:text-foreground/80 transition-colors">
                     <Edit2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
-                <p className="text-[11px] text-gray-400 font-medium mt-0.5">Recipient accounts & working capital</p>
+                <p className="text-[11px] text-muted-foreground font-medium mt-0.5">Recipient accounts & working capital</p>
               </div>
 
               {/* Segmented Lime Progress Bar */}
               <div className="my-5">
-                <div className="h-6 w-full rounded-xl bg-[#f4f5f8] overflow-hidden flex items-center p-1">
+                <div className="h-6 w-full rounded-xl bg-background overflow-hidden flex items-center p-1">
                   <div className="h-full w-[86%] rounded-lg bg-[#84cc16] bg-diagonal-stripes flex items-center justify-end pr-2 transition-all duration-500 shadow-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-card/70 backdrop-blur-md animate-pulse" />
                   </div>
                 </div>
-                <div className="flex items-center justify-between text-xs font-semibold text-gray-900 mt-2">
+                <div className="flex items-center justify-between text-xs font-semibold text-foreground mt-2">
                   <span>{formatAmount(8600)}</span>
-                  <span className="text-gray-400 font-normal">{formatAmount(10000)}</span>
+                  <span className="text-muted-foreground font-normal">{formatAmount(10000)}</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Tips / AI Advisor Banner */}
-            <div className="bg-white rounded-3xl p-6 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex items-center justify-between overflow-hidden relative group cursor-pointer">
+            <div className="bg-card/70 backdrop-blur-md rounded-3xl p-6 border border-glass-border shadow-glass-shadow flex items-center justify-between overflow-hidden relative group cursor-pointer">
               <div className="flex-1 pr-4 z-10">
-                <h3 className="text-sm font-bold text-gray-900 leading-snug">
+                <h3 className="text-sm font-bold text-foreground leading-snug">
                   Optimize your budget with these quick tips
                 </h3>
-                <p className="text-[11px] text-gray-400 leading-relaxed mt-1">
+                <p className="text-[11px] text-muted-foreground leading-relaxed mt-1">
                   Start preparing for the 2025 tax season by saving 10–15% for MSME deductions.
                 </p>
-                <div className="mt-3 flex items-center gap-1 text-xs font-bold text-gray-900 group-hover:text-lime-600 transition-colors">
+                <div className="mt-3 flex items-center gap-1 text-xs font-bold text-foreground group-hover:text-lime-600 transition-colors">
                   <span>Read more</span>
                   <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
@@ -308,31 +308,31 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             
             {/* Card 1: Cost Analysis */}
-            <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-bold text-gray-900">Cost analysis</h3>
-                  <button className="flex items-center gap-1 text-[11px] text-gray-500 font-medium px-2 py-0.5 bg-gray-50 rounded-lg border border-gray-200/60">
+                  <h3 className="text-sm font-bold text-foreground">Cost analysis</h3>
+                  <button className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
                     <span>January</span>
-                    <ChevronDown className="w-3 h-3 text-gray-400" />
+                    <ChevronDown className="w-3 h-3 text-muted-foreground" />
                   </button>
                 </div>
-                <p className="text-[11px] text-gray-400">Spending overview</p>
-                <div className="text-2xl font-black text-gray-900 mt-2">
+                <p className="text-[11px] text-muted-foreground">Spending overview</p>
+                <div className="text-2xl font-black text-foreground mt-2">
                   {formatAmount(8450)}
                 </div>
               </div>
 
               {/* Segmented Horizontal Bar */}
               <div className="my-3">
-                <div className="h-3 w-full rounded-full bg-gray-100 overflow-hidden flex gap-0.5">
+                <div className="h-3 w-full rounded-full bg-muted/80 overflow-hidden flex gap-0.5">
                   <div className="w-[18%] bg-[#fb923c] rounded-l-full" />
                   <div className="w-[7%] bg-[#facc15]" />
                   <div className="w-[6%] bg-lime-400" />
                   <div className="w-[9%] bg-[#84cc16]" />
                   <div className="w-[10%] bg-emerald-500" />
                   <div className="w-[17%] bg-lime-600" />
-                  <div className="w-[33%] bg-gray-200 rounded-r-full" />
+                  <div className="w-[33%] bg-border rounded-r-full" />
                 </div>
               </div>
 
@@ -341,67 +341,67 @@ export default function Dashboard() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-[#fb923c]" />
-                    <span className="text-gray-500">Housing</span>
+                    <span className="text-muted-foreground">Housing</span>
                   </div>
-                  <span className="font-bold text-gray-800">18%</span>
+                  <span className="font-bold text-foreground">18%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-[#facc15]" />
-                    <span className="text-gray-500">Debt payments</span>
+                    <span className="text-muted-foreground">Debt payments</span>
                   </div>
-                  <span className="font-bold text-gray-800">7%</span>
+                  <span className="font-bold text-foreground">7%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-lime-400" />
-                    <span className="text-gray-500">Food</span>
+                    <span className="text-muted-foreground">Food</span>
                   </div>
-                  <span className="font-bold text-gray-800">6%</span>
+                  <span className="font-bold text-foreground">6%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-[#84cc16]" />
-                    <span className="text-gray-500">Transportation</span>
+                    <span className="text-muted-foreground">Transportation</span>
                   </div>
-                  <span className="font-bold text-gray-800">9%</span>
+                  <span className="font-bold text-foreground">9%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-emerald-500" />
-                    <span className="text-gray-500">Healthcare</span>
+                    <span className="text-muted-foreground">Healthcare</span>
                   </div>
-                  <span className="font-bold text-gray-800">10%</span>
+                  <span className="font-bold text-foreground">10%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-lime-600" />
-                    <span className="text-gray-500">Investments</span>
+                    <span className="text-muted-foreground">Investments</span>
                   </div>
-                  <span className="font-bold text-gray-800">17%</span>
+                  <span className="font-bold text-foreground">17%</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-xs bg-gray-300" />
-                    <span className="text-gray-500">Other</span>
+                    <span className="text-muted-foreground">Other</span>
                   </div>
-                  <span className="font-bold text-gray-800">33%</span>
+                  <span className="font-bold text-foreground">33%</span>
                 </div>
               </div>
             </div>
 
             {/* Card 2: Financial Health (Gauge) */}
-            <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-bold text-gray-900">Financial health</h3>
-                  <button className="flex items-center gap-1 text-[11px] text-gray-500 font-medium px-2 py-0.5 bg-gray-50 rounded-lg border border-gray-200/60">
+                  <h3 className="text-sm font-bold text-foreground">Financial health</h3>
+                  <button className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
                     <span>30d</span>
-                    <ChevronDown className="w-3 h-3 text-gray-400" />
+                    <ChevronDown className="w-3 h-3 text-muted-foreground" />
                   </button>
                 </div>
-                <p className="text-[11px] text-gray-400">Current status</p>
-                <div className="text-2xl font-black text-gray-900 mt-2">
+                <p className="text-[11px] text-muted-foreground">Current status</p>
+                <div className="text-2xl font-black text-foreground mt-2">
                   {formatAmount(15780)}
                 </div>
                 <div className="flex items-center gap-1 text-[11px] font-semibold text-lime-600 mt-0.5">
@@ -434,22 +434,22 @@ export default function Dashboard() {
                 </svg>
                 {/* Center Percentage */}
                 <div className="absolute bottom-0 text-center">
-                  <span className="text-2xl font-black text-gray-900">75%</span>
-                  <p className="text-[10px] text-gray-400 font-medium -mt-0.5">Of monthly income saved</p>
+                  <span className="text-2xl font-black text-foreground">75%</span>
+                  <p className="text-[10px] text-muted-foreground font-medium -mt-0.5">Of monthly income saved</p>
                 </div>
               </div>
 
-              <p className="text-[10px] text-gray-400 text-center leading-relaxed">
+              <p className="text-[10px] text-muted-foreground text-center leading-relaxed">
                 Based on aggregated transaction metrics over the past 30 days
               </p>
             </div>
 
             {/* Card 3: Goal Tracker */}
-            <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+            <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-bold text-gray-900">Goal tracker</h3>
-                  <button className="flex items-center gap-1 text-xs font-semibold text-gray-800 hover:text-black">
+                  <h3 className="text-sm font-bold text-foreground">Goal tracker</h3>
+                  <button className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-foreground">
                     <Plus className="w-3 h-3" />
                     <span>Add goals</span>
                   </button>
@@ -460,27 +460,27 @@ export default function Dashboard() {
               <div className="space-y-3.5 my-2">
                 {/* This year Section */}
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">This year</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">This year</span>
                   <div className="mt-1.5 flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 text-sm font-bold shadow-xs">
                       💰
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="font-bold text-gray-900">Reserve</span>
-                        <span className="text-gray-400 font-medium">{formatAmount(7000)} / {formatAmount(10000)}</span>
+                        <span className="font-bold text-foreground">Reserve</span>
+                        <span className="text-muted-foreground font-medium">{formatAmount(7000)} / {formatAmount(10000)}</span>
                       </div>
-                      <div className="h-1.5 w-full bg-gray-100 rounded-full mt-1.5 overflow-hidden">
+                      <div className="h-1.5 w-full bg-muted/80 rounded-full mt-1.5 overflow-hidden">
                         <div className="h-full bg-[#84cc16] rounded-full w-[70%]" />
                       </div>
-                      <span className="text-[10px] text-gray-400 mt-0.5 block">Left to save 4 months</span>
+                      <span className="text-[10px] text-muted-foreground mt-0.5 block">Left to save 4 months</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Long term Section */}
                 <div className="space-y-2.5 pt-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Long term</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Long term</span>
                   
                   {/* Travel */}
                   <div className="flex items-center gap-2.5">
@@ -489,30 +489,30 @@ export default function Dashboard() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="font-bold text-gray-900">Travel</span>
-                        <span className="text-gray-400 font-medium">{formatAmount(2500)} / {formatAmount(4000)}</span>
+                        <span className="font-bold text-foreground">Travel</span>
+                        <span className="text-muted-foreground font-medium">{formatAmount(2500)} / {formatAmount(4000)}</span>
                       </div>
-                      <div className="h-1.5 w-full bg-gray-100 rounded-full mt-1.5 overflow-hidden">
+                      <div className="h-1.5 w-full bg-muted/80 rounded-full mt-1.5 overflow-hidden">
                         <div className="h-full bg-[#fb923c] rounded-full w-[62%]" />
                       </div>
-                      <span className="text-[10px] text-gray-400 mt-0.5 block">Left to save 3 months</span>
+                      <span className="text-[10px] text-muted-foreground mt-0.5 block">Left to save 3 months</span>
                     </div>
                   </div>
 
                   {/* Car */}
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-gray-100 flex items-center justify-center text-gray-700 text-sm shadow-xs">
+                    <div className="w-8 h-8 rounded-xl bg-muted/80 flex items-center justify-center text-foreground/80 text-sm shadow-xs">
                       🚗
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="font-bold text-gray-900">Car</span>
-                        <span className="text-gray-400 font-medium">{formatAmount(1600)} / {formatAmount(20000)}</span>
+                        <span className="font-bold text-foreground">Car</span>
+                        <span className="text-muted-foreground font-medium">{formatAmount(1600)} / {formatAmount(20000)}</span>
                       </div>
-                      <div className="h-1.5 w-full bg-gray-100 rounded-full mt-1.5 overflow-hidden">
+                      <div className="h-1.5 w-full bg-muted/80 rounded-full mt-1.5 overflow-hidden">
                         <div className="h-full bg-[#fb923c] rounded-full w-[8%]" />
                       </div>
-                      <span className="text-[10px] text-gray-400 mt-0.5 block">Left to save 3 years 6 months</span>
+                      <span className="text-[10px] text-muted-foreground mt-0.5 block">Left to save 3 years 6 months</span>
                     </div>
                   </div>
 
@@ -523,13 +523,13 @@ export default function Dashboard() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="font-bold text-gray-900">Real estate</span>
-                        <span className="text-gray-400 font-medium">{formatAmount(8300)} / {formatAmount(70000)}</span>
+                        <span className="font-bold text-foreground">Real estate</span>
+                        <span className="text-muted-foreground font-medium">{formatAmount(8300)} / {formatAmount(70000)}</span>
                       </div>
-                      <div className="h-1.5 w-full bg-gray-100 rounded-full mt-1.5 overflow-hidden">
+                      <div className="h-1.5 w-full bg-muted/80 rounded-full mt-1.5 overflow-hidden">
                         <div className="h-full bg-[#84cc16] rounded-full w-[12%]" />
                       </div>
-                      <span className="text-[10px] text-gray-400 mt-0.5 block">Left to save 5 years 8 months</span>
+                      <span className="text-[10px] text-muted-foreground mt-0.5 block">Left to save 5 years 8 months</span>
                     </div>
                   </div>
                 </div>
@@ -546,22 +546,22 @@ export default function Dashboard() {
         <div className="xl:col-span-4 space-y-5">
           
           {/* My Card Widget */}
-          <div className="bg-white rounded-3xl p-6 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
+          <div className="bg-card/70 backdrop-blur-md rounded-3xl p-6 border border-glass-border shadow-glass-shadow">
             <div className="flex items-center justify-between mb-1">
-              <h3 className="text-base font-bold text-gray-900">My card</h3>
-              <button className="flex items-center gap-1 text-xs font-semibold text-gray-800 hover:text-black">
+              <h3 className="text-base font-bold text-foreground">My card</h3>
+              <button className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-foreground">
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add card</span>
               </button>
             </div>
-            <p className="text-[11px] text-gray-400 mb-4">Quick actions</p>
+            <p className="text-[11px] text-muted-foreground mb-4">Quick actions</p>
 
             {/* Debit Card Graphic with Secondary Card behind */}
             <div className="relative pt-2 pb-4">
               {/* Secondary Card (Behind) */}
-              <div className="absolute top-0 right-1 w-[88%] h-44 rounded-2xl bg-gray-100 border border-gray-200/80 p-4 transform translate-y-0 shadow-xs z-0 opacity-70 flex justify-between">
-                <span className="text-[10px] font-semibold text-gray-400 uppercase">Credit card</span>
-                <span className="text-[10px] font-mono text-gray-400">•••• 4210</span>
+              <div className="absolute top-0 right-1 w-[88%] h-44 rounded-2xl bg-muted/80 border border-glass-border p-4 transform translate-y-0 shadow-xs z-0 opacity-70 flex justify-between">
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase">Credit card</span>
+                <span className="text-[10px] font-mono text-muted-foreground">•••• 4210</span>
               </div>
 
               {/* Primary Lime-Green Card */}
@@ -593,44 +593,44 @@ export default function Dashboard() {
 
             {/* Quick Actions (Row of 5 square buttons) */}
             <div className="grid grid-cols-5 gap-2 mt-4">
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-gray-50 border border-gray-100/90 hover:bg-gray-100 text-gray-700 transition-colors">
-                <div className="w-7 h-7 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-2xs">
+              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+                <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <Plus className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] font-medium text-gray-600">Top up</span>
+                <span className="text-[10px] font-medium text-muted-foreground">Top up</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-gray-50 border border-gray-100/90 hover:bg-gray-100 text-gray-700 transition-colors">
-                <div className="w-7 h-7 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-2xs">
+              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+                <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <ArrowUp className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] font-medium text-gray-600">Send</span>
+                <span className="text-[10px] font-medium text-muted-foreground">Send</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-gray-50 border border-gray-100/90 hover:bg-gray-100 text-gray-700 transition-colors">
-                <div className="w-7 h-7 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-2xs">
+              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+                <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <ArrowDown className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] font-medium text-gray-600">Request</span>
+                <span className="text-[10px] font-medium text-muted-foreground">Request</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-gray-50 border border-gray-100/90 hover:bg-gray-100 text-gray-700 transition-colors">
-                <div className="w-7 h-7 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-2xs">
+              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+                <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <History className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] font-medium text-gray-600">History</span>
+                <span className="text-[10px] font-medium text-muted-foreground">History</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-gray-50 border border-gray-100/90 hover:bg-gray-100 text-gray-700 transition-colors">
-                <div className="w-7 h-7 rounded-xl bg-white border border-gray-200 flex items-center justify-center text-gray-800 shadow-2xs">
+              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+                <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <MoreHorizontal className="w-4 h-4" />
                 </div>
-                <span className="text-[10px] font-medium text-gray-600">More</span>
+                <span className="text-[10px] font-medium text-muted-foreground">More</span>
               </button>
             </div>
           </div>
 
           {/* Quick Payment (Avatars Row) */}
-          <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
+          <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-sm font-bold text-gray-900">Quick payment</h3>
-              <button className="text-gray-400 hover:text-gray-600">
+              <h3 className="text-sm font-bold text-foreground">Quick payment</h3>
+              <button className="text-muted-foreground hover:text-muted-foreground">
                 <MoreHorizontal className="w-4 h-4" />
               </button>
             </div>
@@ -648,7 +648,7 @@ export default function Dashboard() {
                   <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-transparent group-hover:border-lime-500 transition-all shadow-xs">
                     <img src={user.img} alt={user.name} className="w-full h-full object-cover" />
                   </div>
-                  <span className="text-[11px] font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
+                  <span className="text-[11px] font-medium text-muted-foreground group-hover:text-foreground transition-colors">
                     {user.name}
                   </span>
                 </div>
@@ -657,16 +657,16 @@ export default function Dashboard() {
           </div>
 
           {/* Transaction History */}
-          <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
+          <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-sm font-bold text-gray-900">Transaction history</h3>
-              <button className="flex items-center gap-1 text-[11px] text-gray-500 font-medium px-2 py-0.5 bg-gray-50 rounded-lg border border-gray-200/60">
+              <h3 className="text-sm font-bold text-foreground">Transaction history</h3>
+              <button className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
                 <span>7d</span>
-                <ChevronDown className="w-3 h-3 text-gray-400" />
+                <ChevronDown className="w-3 h-3 text-muted-foreground" />
               </button>
             </div>
 
-            <div className="flex items-center justify-between text-[11px] font-medium text-gray-400 py-2 border-b border-gray-100">
+            <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground py-2 border-b border-glass-border">
               <div className="flex items-center gap-1">
                 <ArrowUpDown className="w-3 h-3" />
                 <span>Name</span>
@@ -702,7 +702,7 @@ export default function Dashboard() {
                   isPositive: false, 
                   status: "Completed", 
                   icon: "📊", 
-                  bg: "bg-gray-100 text-gray-900" 
+                  bg: "bg-muted/80 text-foreground" 
                 },
                 { 
                   name: "Consulting services", 
@@ -751,18 +751,18 @@ export default function Dashboard() {
                       </div>
                     )}
                     <div>
-                      <h4 className="text-xs font-bold text-gray-900 group-hover:text-lime-600 transition-colors">
+                      <h4 className="text-xs font-bold text-foreground group-hover:text-lime-600 transition-colors">
                         {tx.name}
                       </h4>
-                      <p className="text-[10px] text-gray-400">{tx.date}</p>
+                      <p className="text-[10px] text-muted-foreground">{tx.date}</p>
                     </div>
                   </div>
 
                   <div className="text-right">
-                    <span className={`text-xs font-bold ${tx.isPositive ? "text-gray-900" : "text-gray-900"}`}>
+                    <span className={`text-xs font-bold ${tx.isPositive ? "text-foreground" : "text-foreground"}`}>
                       {tx.isPositive ? `+${formatAmount(tx.amount)}` : `-${formatAmount(tx.amount)}`}
                     </span>
-                    <p className={`text-[10px] font-semibold ${tx.status === "Declined" ? "text-rose-500" : "text-gray-400"}`}>
+                    <p className={`text-[10px] font-semibold ${tx.status === "Declined" ? "text-rose-500" : "text-muted-foreground"}`}>
                       {tx.status}
                     </p>
                   </div>

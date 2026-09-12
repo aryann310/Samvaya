@@ -5,12 +5,14 @@ import AIAdvisor from "./pages/AIAdvisor";
 import Finances from "./pages/Finances";
 import Hyperlocal from "./pages/Hyperlocal";
 import Team from "./pages/Team";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="team" element={<Team />} />
           <Route path="business" element={<div className="p-8"><h1 className="text-3xl font-bold">My Business</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
@@ -25,7 +27,8 @@ function App() {
           <Route path="settings" element={<div className="p-8"><h1 className="text-3xl font-bold">Settings</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
         </Route>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

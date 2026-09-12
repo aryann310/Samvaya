@@ -26,15 +26,15 @@ export default function Sidebar() {
   const isTransactionsActive = ["/finances", "/cashflow", "/reports"].includes(location.pathname);
 
   return (
-    <aside className="h-full w-64 flex flex-col bg-white border-r border-gray-100/80 shadow-[0_2px_12px_rgba(0,0,0,0.02)] select-none">
+    <aside className="h-full w-64 flex flex-col bg-card border-r border-glass-border shadow-glass-shadow select-none">
       {/* Brand Header */}
       <div className="px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gray-950 flex items-center justify-center text-white font-black text-sm tracking-tighter">
+          <div className="w-8 h-8 rounded-xl bg-foreground flex items-center justify-center text-background font-black text-sm tracking-tighter">
             AC
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tight text-gray-900">ACRU</span>
+            <span className="text-xl font-black tracking-tight text-foreground">ACRU</span>
             <span className="text-[10px] font-semibold tracking-wider text-lime-600 uppercase -mt-1">Samvaya</span>
           </div>
         </div>
@@ -49,15 +49,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <LayoutGrid className="w-5 h-5 text-gray-700" />
               <span>Dashboard</span>
@@ -72,15 +72,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <User className="w-5 h-5 text-gray-500" />
               <span>Accounts</span>
@@ -93,8 +93,8 @@ export default function Sidebar() {
           <button
             onClick={() => setTransactionsOpen(!transactionsOpen)}
             className={cn(
-              "w-full flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-              isTransactionsActive && "text-gray-900 font-semibold"
+              "w-full flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all text-muted-foreground hover:bg-muted/50 hover:text-foreground",
+              isTransactionsActive && "text-foreground font-semibold"
             )}
           >
             <div className="flex items-center gap-3">
@@ -105,25 +105,25 @@ export default function Sidebar() {
           </button>
 
           {transactionsOpen && (
-            <div className="ml-6 pl-4 border-l border-gray-200/80 my-1 space-y-1">
+            <div className="ml-6 pl-4 border-l border-border my-1 space-y-1">
               <NavLink
                 to="/finances"
                 className={({ isActive }) =>
                   cn(
                     "flex items-center justify-between py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-gray-950 font-semibold" : "text-gray-500 hover:text-gray-900"
+                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
                   )
                 }
               >
                 <span>History</span>
-                <span className="bg-gray-900 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">19</span>
+                <span className="bg-foreground text-background text-[10px] font-bold px-1.5 py-0.5 rounded-full">19</span>
               </NavLink>
               <NavLink
                 to="/cashflow"
                 className={({ isActive }) =>
                   cn(
                     "block py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-gray-950 font-semibold" : "text-gray-500 hover:text-gray-900"
+                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
                   )
                 }
               >
@@ -134,7 +134,7 @@ export default function Sidebar() {
                 className={({ isActive }) =>
                   cn(
                     "block py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-gray-950 font-semibold" : "text-gray-500 hover:text-gray-900"
+                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
                   )
                 }
               >
@@ -151,15 +151,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <Wallet className="w-5 h-5 text-gray-500" />
               <span>Cash flow</span>
@@ -174,15 +174,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <PiggyBank className="w-5 h-5 text-gray-500" />
               <span>Budget</span>
@@ -197,15 +197,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <TrendingUp className="w-5 h-5 text-gray-500" />
               <span>Investments</span>
@@ -220,15 +220,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <BookOpen className="w-5 h-5 text-gray-500" />
               <span>Learning center</span>
@@ -243,15 +243,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <MapPin className="w-5 h-5 text-gray-500" />
               <span>Local Market</span>
@@ -266,15 +266,15 @@ export default function Sidebar() {
             cn(
               "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <Users className="w-5 h-5 text-gray-500" />
               <span>Collaborators</span>
@@ -289,15 +289,15 @@ export default function Sidebar() {
             cn(
               "flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all relative",
               isActive 
-                ? "bg-gray-100/80 text-gray-900 font-semibold" 
-                : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                ? "bg-muted text-foreground font-semibold" 
+                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             )
           }
         >
           {({ isActive }) => (
             <>
               {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-gray-900 rounded-r-full" />
+                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <div className="flex items-center gap-3">
                 <Headphones className="w-5 h-5 text-gray-500" />
@@ -311,23 +311,23 @@ export default function Sidebar() {
 
       {/* Upgrade to Pro / AI Advisory Banner */}
       {showProCard && (
-        <div className="p-3 mx-3 mb-3 bg-white rounded-2xl border border-gray-100 shadow-[0_4px_16px_rgba(0,0,0,0.04)] relative">
+        <div className="p-3 mx-3 mb-3 bg-card rounded-2xl border border-glass-border shadow-glass-shadow relative">
           <button 
             onClick={() => setShowProCard(false)}
-            className="absolute top-2.5 right-2.5 text-gray-400 hover:text-gray-600 p-1"
+            className="absolute top-2.5 right-2.5 text-muted-foreground hover:text-foreground p-1"
           >
             <X className="w-3.5 h-3.5" />
           </button>
-          <div className="w-7 h-7 rounded-full bg-gray-900 flex items-center justify-center text-white mb-2">
+          <div className="w-7 h-7 rounded-full bg-foreground flex items-center justify-center text-background mb-2">
             <Zap className="w-3.5 h-3.5 text-lime-400 fill-lime-400" />
           </div>
-          <h4 className="text-sm font-bold text-gray-900">Upgrade to Pro!</h4>
-          <p className="text-[11px] text-gray-500 mt-0.5 leading-relaxed">
+          <h4 className="text-sm font-bold text-foreground">Upgrade to Pro!</h4>
+          <p className="text-[11px] text-muted-foreground mt-0.5 leading-relaxed">
             Full financial insights with analytics and graphs.
           </p>
           <NavLink
             to="/advisor"
-            className="mt-3 block w-full text-center py-2 bg-gray-900 hover:bg-black text-white text-xs font-semibold rounded-xl transition-colors shadow-sm"
+            className="mt-3 block w-full text-center py-2 bg-foreground hover:opacity-90 text-background text-xs font-semibold rounded-xl transition-colors shadow-sm"
           >
             Upgrade now
           </NavLink>
@@ -335,7 +335,7 @@ export default function Sidebar() {
       )}
 
       {/* Collapse sidebar footer */}
-      <div className="px-4 py-3 border-t border-gray-100 text-xs text-gray-400 hover:text-gray-700 flex items-center gap-2 cursor-pointer transition-colors">
+      <div className="px-4 py-3 border-t border-glass-border text-xs text-muted-foreground hover:text-foreground flex items-center gap-2 cursor-pointer transition-colors">
         <ChevronsLeft className="w-4 h-4" />
         <span>Collapse sidebar</span>
       </div>

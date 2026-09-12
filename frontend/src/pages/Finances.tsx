@@ -29,11 +29,11 @@ export default function Finances() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Finances & Budgeting</h1>
-          <p className="text-xs text-gray-400 mt-0.5">Cash flow management, profit margins, and operating expenses.</p>
+          <h1 className="text-2xl font-bold text-foreground tracking-tight">Finances & Budgeting</h1>
+          <p className="text-xs text-muted-foreground mt-0.5">Cash flow management, profit margins, and operating expenses.</p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200/80 rounded-xl text-xs font-semibold text-gray-700 shadow-xs hover:bg-gray-50 transition-colors">
+          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-card/70 backdrop-blur-md border border-glass-border rounded-xl text-xs font-semibold text-foreground/80 shadow-xs hover:bg-muted transition-colors">
             <Download className="w-3.5 h-3.5" />
             <span>Export Statement</span>
           </button>
@@ -42,9 +42,9 @@ export default function Finances() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
-          <span className="text-xs text-gray-400 font-medium">Total Revenue</span>
-          <div className="text-2xl font-black text-gray-900 mt-1">
+        <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
+          <span className="text-xs text-muted-foreground font-medium">Total Revenue</span>
+          <div className="text-2xl font-black text-foreground mt-1">
             {formatCurrency(data.revenue)}
           </div>
           <div className="flex items-center gap-1 text-[11px] font-semibold text-lime-600 mt-1">
@@ -53,9 +53,9 @@ export default function Finances() {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
-          <span className="text-xs text-gray-400 font-medium">Total Expenses</span>
-          <div className="text-2xl font-black text-gray-900 mt-1">
+        <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
+          <span className="text-xs text-muted-foreground font-medium">Total Expenses</span>
+          <div className="text-2xl font-black text-foreground mt-1">
             {formatCurrency(data.expenses)}
           </div>
           <div className="flex items-center gap-1 text-[11px] font-semibold text-[#fb923c] mt-1">
@@ -64,9 +64,9 @@ export default function Finances() {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
-          <span className="text-xs text-gray-400 font-medium">Net Profit Margin</span>
-          <div className="text-2xl font-black text-gray-900 mt-1">
+        <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
+          <span className="text-xs text-muted-foreground font-medium">Net Profit Margin</span>
+          <div className="text-2xl font-black text-foreground mt-1">
             {data.profitMargin}%
           </div>
           <div className="flex items-center gap-1 text-[11px] font-semibold text-lime-600 mt-1">
@@ -75,33 +75,33 @@ export default function Finances() {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl p-5 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
-          <span className="text-xs text-gray-400 font-medium">Outstanding Credit / Debt</span>
-          <div className="text-2xl font-black text-gray-900 mt-1">
+        <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
+          <span className="text-xs text-muted-foreground font-medium">Outstanding Credit / Debt</span>
+          <div className="text-2xl font-black text-foreground mt-1">
             {formatCurrency(data.debt)}
           </div>
-          <div className="text-[11px] text-gray-400 mt-1">
+          <div className="text-[11px] text-muted-foreground mt-1">
             Low debt-to-income ratio (0.18)
           </div>
         </div>
       </div>
 
       {/* Cash Flow Chart Card */}
-      <div className="bg-white rounded-3xl p-6 border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)]">
+      <div className="bg-card/70 backdrop-blur-md rounded-3xl p-6 border border-glass-border shadow-glass-shadow">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-base font-bold text-gray-900">Monthly Cash Inflow vs Outflow</h3>
-            <p className="text-xs text-gray-400 mt-0.5">Historical comparison of operating receipts against disbursement</p>
+            <h3 className="text-base font-bold text-foreground">Monthly Cash Inflow vs Outflow</h3>
+            <p className="text-xs text-muted-foreground mt-0.5">Historical comparison of operating receipts against disbursement</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-4 text-xs font-medium mr-2">
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-xs bg-[#84cc16]" />
-                <span className="text-gray-600">Money In</span>
+                <span className="text-muted-foreground">Money In</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-xs bg-[#fb923c]" />
-                <span className="text-gray-600">Money Out</span>
+                <span className="text-muted-foreground">Money Out</span>
               </div>
             </div>
           </div>

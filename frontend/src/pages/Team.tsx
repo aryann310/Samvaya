@@ -80,8 +80,8 @@ export default function Team() {
             <Users className="w-5 h-5" />
             <span>Team Samvaya</span>
           </div>
-          <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">Project Collaborators</h1>
-          <p className="text-gray-500 mt-1">
+          <h1 className="text-3xl font-extrabold text-foreground tracking-tight">Project Collaborators</h1>
+          <p className="text-muted-foreground mt-1">
             Official collaborators contributing to the AI-Driven Hyperlocal Business Advisory platform.
           </p>
         </div>
@@ -103,14 +103,14 @@ export default function Team() {
           const isPending = member.status.includes("Pending");
 
           return (
-            <Card key={member.handle} className="hover:shadow-md transition-shadow border-gray-100">
+            <Card key={member.handle} className="hover:shadow-md transition-shadow border-glass-border">
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
                     <img
                       src={`https://github.com/${member.handle}.png`}
                       alt={member.name}
-                      className="w-14 h-14 rounded-full border-2 border-primary/20 object-cover bg-gray-100"
+                      className="w-14 h-14 rounded-full border-2 border-primary/20 object-cover bg-muted/80"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
                           member.name
@@ -118,7 +118,7 @@ export default function Team() {
                       }}
                     />
                     <div>
-                      <CardTitle className="text-lg font-bold text-gray-900">{member.name}</CardTitle>
+                      <CardTitle className="text-lg font-bold text-foreground">{member.name}</CardTitle>
                       <a
                         href={member.github}
                         target="_blank"
@@ -133,7 +133,7 @@ export default function Team() {
                 </div>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="text-sm text-gray-600 font-medium">
+                <div className="text-sm text-muted-foreground font-medium">
                   {member.role}
                 </div>
                 <div className="pt-2 flex items-center gap-2">

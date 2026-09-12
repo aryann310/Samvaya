@@ -71,17 +71,17 @@ export default function AIAdvisor() {
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">AI Advisor & Copilot</h1>
+            <h1 className="text-2xl font-bold text-foreground tracking-tight">AI Advisor & Copilot</h1>
             <span className="flex items-center gap-1 bg-[#84cc16]/15 text-[#65a30d] text-[11px] font-bold px-2 py-0.5 rounded-full">
               <Sparkles className="w-3 h-3" /> Pro Active
             </span>
           </div>
-          <p className="text-xs text-gray-400 mt-0.5">Real-time local market evidence and financial structuring advisory.</p>
+          <p className="text-xs text-muted-foreground mt-0.5">Real-time local market evidence and financial structuring advisory.</p>
         </div>
       </div>
 
       {/* Main Chat Container */}
-      <div className="flex-1 bg-white rounded-3xl border border-gray-100/90 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col overflow-hidden">
+      <div className="flex-1 bg-card/70 backdrop-blur-md rounded-3xl border border-glass-border shadow-glass-shadow flex flex-col overflow-hidden">
         
         {/* Messages Scroll Area */}
         <div className="flex-1 overflow-y-auto p-6 space-y-5" ref={scrollRef}>
@@ -103,12 +103,12 @@ export default function AIAdvisor() {
                   <div className={`p-4 rounded-2xl text-xs leading-relaxed ${
                     msg.role === 'user' 
                       ? 'bg-gray-900 text-white rounded-tr-xs font-medium' 
-                      : 'bg-[#f4f5f8] text-gray-800 rounded-tl-xs font-medium'
+                      : 'bg-background text-foreground rounded-tl-xs font-medium'
                   }`}>
                     {msg.content}
                   </div>
                 ) : (
-                  <div className="bg-white border border-gray-100 rounded-2xl rounded-tl-xs overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] text-xs">
+                  <div className="bg-card/70 backdrop-blur-md border border-glass-border rounded-2xl rounded-tl-xs overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.04)] text-xs">
                     
                     {/* Recommendation Header */}
                     <div className="bg-[#84cc16]/10 p-4 border-b border-lime-100">
@@ -116,20 +116,20 @@ export default function AIAdvisor() {
                         <CheckCircle2 className="w-4 h-4 text-lime-700 shrink-0 mt-0.5" />
                         <div>
                           <p className="text-[10px] font-bold text-lime-800 uppercase tracking-wider mb-0.5">Recommendation</p>
-                          <p className="text-xs font-bold text-gray-900 leading-snug">{msg.data.recommendation}</p>
+                          <p className="text-xs font-bold text-foreground leading-snug">{msg.data.recommendation}</p>
                         </div>
                       </div>
                     </div>
                     
                     {/* Details */}
-                    <div className="p-4 space-y-3 bg-white">
+                    <div className="p-4 space-y-3 bg-card/70 backdrop-blur-md">
                       <div className="flex items-start gap-2.5">
                         <div className="w-5 h-5 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600 shrink-0 mt-0.5">
                           <AlertTriangle className="w-3.5 h-3.5" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Business Rationale</p>
-                          <p className="text-xs text-gray-700 mt-0.5 leading-relaxed">{msg.data.why}</p>
+                          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Business Rationale</p>
+                          <p className="text-xs text-foreground/80 mt-0.5 leading-relaxed">{msg.data.why}</p>
                         </div>
                       </div>
 
@@ -138,8 +138,8 @@ export default function AIAdvisor() {
                           <MapPin className="w-3.5 h-3.5" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Local Mandi Evidence</p>
-                          <p className="text-xs text-gray-700 mt-0.5 leading-relaxed">{msg.data.localEvidence}</p>
+                          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Local Mandi Evidence</p>
+                          <p className="text-xs text-foreground/80 mt-0.5 leading-relaxed">{msg.data.localEvidence}</p>
                         </div>
                       </div>
 
@@ -148,17 +148,17 @@ export default function AIAdvisor() {
                           <TrendingUp className="w-3.5 h-3.5" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Financial Projection</p>
+                          <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Financial Projection</p>
                           <p className="text-xs text-emerald-700 font-bold mt-0.5">{msg.data.financialImpact}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Action Step Footer */}
-                    <div className="bg-[#f4f5f8] p-3.5 border-t border-gray-100 flex items-center justify-between">
+                    <div className="bg-background p-3.5 border-t border-glass-border flex items-center justify-between">
                       <div>
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Recommended Next Step</p>
-                        <p className="text-xs font-semibold text-gray-900">{msg.data.nextStep}</p>
+                        <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Recommended Next Step</p>
+                        <p className="text-xs font-semibold text-foreground">{msg.data.nextStep}</p>
                       </div>
                       <button className="flex items-center gap-1 px-3 py-1.5 bg-gray-900 hover:bg-black text-white rounded-xl text-[11px] font-semibold transition-colors shadow-xs ml-3 shrink-0">
                         <span>Execute</span>
@@ -177,7 +177,7 @@ export default function AIAdvisor() {
               <div className="w-9 h-9 rounded-2xl bg-[#84cc16] flex items-center justify-center shrink-0 text-gray-950 font-bold shadow-xs">
                 <Bot className="w-4 h-4" />
               </div>
-              <div className="bg-[#f4f5f8] p-3.5 rounded-2xl rounded-tl-xs flex items-center gap-1.5">
+              <div className="bg-background p-3.5 rounded-2xl rounded-tl-xs flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-[#84cc16] animate-bounce" />
                 <div className="w-2 h-2 rounded-full bg-[#84cc16] animate-bounce [animation-delay:0.2s]" />
                 <div className="w-2 h-2 rounded-full bg-[#84cc16] animate-bounce [animation-delay:0.4s]" />
@@ -187,13 +187,13 @@ export default function AIAdvisor() {
         </div>
 
         {/* Quick Suggestion Chips */}
-        <div className="px-6 py-2 border-t border-gray-100 flex items-center gap-2 overflow-x-auto bg-[#fafafc]">
-          <span className="text-[11px] font-medium text-gray-400 shrink-0">Suggestions:</span>
+        <div className="px-6 py-2 border-t border-glass-border flex items-center gap-2 overflow-x-auto bg-[#fafafc]">
+          <span className="text-[11px] font-medium text-muted-foreground shrink-0">Suggestions:</span>
           {sampleQuestions.map((q, idx) => (
             <button
               key={idx}
               onClick={() => handleSend(q)}
-              className="text-[11px] font-medium text-gray-700 bg-white border border-gray-200/80 hover:border-lime-500 hover:text-gray-950 px-3 py-1 rounded-xl shrink-0 transition-colors shadow-2xs"
+              className="text-[11px] font-medium text-foreground/80 bg-card/70 backdrop-blur-md border border-glass-border hover:border-lime-500 hover:text-gray-950 px-3 py-1 rounded-xl shrink-0 transition-colors shadow-2xs"
             >
               {q}
             </button>
@@ -201,12 +201,12 @@ export default function AIAdvisor() {
         </div>
 
         {/* Chat Input Bar */}
-        <div className="p-4 border-t border-gray-100 bg-white">
+        <div className="p-4 border-t border-glass-border bg-card/70 backdrop-blur-md">
           <div className="flex items-center gap-2">
             <input
               type="text"
               placeholder="Ask about inventory, loans, mandi prices, or cash flow..."
-              className="flex-1 py-2.5 px-4 rounded-xl border border-gray-200 text-xs bg-[#f4f5f8] focus:bg-white focus:outline-none focus:ring-2 focus:ring-lime-500/30 focus:border-lime-500 transition-all placeholder:text-gray-400"
+              className="flex-1 py-2.5 px-4 rounded-xl border border-border text-xs bg-background focus:bg-card/70 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-lime-500/30 focus:border-lime-500 transition-all placeholder:text-muted-foreground"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
