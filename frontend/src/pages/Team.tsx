@@ -37,7 +37,7 @@ const DEFAULT_COLLABORATORS: Collaborator[] = [
     handle: "sneh557",
     github: "https://github.com/sneh557",
     role: "Team Member / Contributor",
-    status: "Collaborator (Pending Invite)"
+    status: "Collaborator"
   },
   {
     name: "Zeel Gadhavi",

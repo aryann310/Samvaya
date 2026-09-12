@@ -19,7 +19,7 @@ Meet the team building **Samvaya** for Hackathon 2026:
 | **Yash Patel** | [@yashpatel-11](https://github.com/yashpatel-11) | Project Lead & Full-Stack Developer | 👑 Repository Owner |
 | **Aryann** | [@aryann310](https://github.com/aryann310) | Core Contributor / Full-Stack | 🤝 Collaborator |
 | **Kajal** | [@kajal3308](https://github.com/kajal3308) | Team Member / Contributor | 🤝 Collaborator |
-| **Sneh** | [@sneh557](https://github.com/sneh557) | Team Member / Contributor | 🤝 Collaborator (Invite Sent) |
+| **Sneh** | [@sneh557](https://github.com/sneh557) | Team Member / Contributor | 🤝 Collaborator |
 | **Zeel Gadhavi** | [@zeelgadhavi26-web](https://github.com/zeelgadhavi26-web) | Team Member / Contributor | 🤝 Collaborator |
 | **Zeel K. Thakkar** | [@ZeelThakkar90](https://github.com/ZeelThakkar90) | Team Member / Contributor | 🤝 Collaborator |
 
