@@ -2,6 +2,7 @@ import os
 import re
 
 pages_dir = os.path.join("src", "pages")
+components_dir = os.path.join("src", "components")
 
 replacements = [
     (r"bg-white", "bg-card/70 backdrop-blur-md"),
@@ -47,3 +48,4 @@ def process_dir(directory):
 
 if __name__ == "__main__":
     process_dir(pages_dir)
+    process_dir(components_dir)

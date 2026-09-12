@@ -1,0 +1,15 @@
+{
+  "name": "samvaya",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Samvaya — AI-Driven Hyperlocal Business Advisory for Rural Micro-Entrepreneurs",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build"
+  },
+  "keywords": ["rural-fintech", "ai-advisory", "hyperlocal", "micro-entrepreneurs", "samvaya"],
+  "author": "Samvaya Team",
+  "license": "MIT"
+}

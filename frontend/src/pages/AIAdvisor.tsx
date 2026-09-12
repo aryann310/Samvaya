@@ -160,7 +160,7 @@ export default function AIAdvisor() {
                         <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Recommended Next Step</p>
                         <p className="text-xs font-semibold text-foreground">{msg.data.nextStep}</p>
                       </div>
-                      <button className="flex items-center gap-1 px-3 py-1.5 bg-gray-900 hover:bg-black text-white rounded-xl text-[11px] font-semibold transition-colors shadow-xs ml-3 shrink-0">
+                      <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 px-3 py-1.5 bg-gray-900 hover:bg-black text-white rounded-xl text-[11px] font-semibold transition-colors shadow-xs ml-3 shrink-0">
                         <span>Execute</span>
                         <ArrowRight className="w-3 h-3" />
                       </button>

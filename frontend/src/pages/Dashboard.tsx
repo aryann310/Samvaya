@@ -79,15 +79,15 @@ export default function Dashboard() {
                     <p className="text-xs text-muted-foreground font-medium mt-0.5">Balance overview</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button className="flex items-center gap-1.5 px-2.5 py-1 bg-muted border border-glass-border rounded-lg text-xs font-medium text-muted-foreground hover:bg-muted/80 transition-colors">
+                    <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1.5 px-2.5 py-1 bg-muted border border-glass-border rounded-lg text-xs font-medium text-muted-foreground hover:bg-muted/80 transition-colors">
                       <span>7d</span>
                       <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />
                     </button>
                     <div className="flex items-center bg-muted p-0.5 rounded-lg border border-glass-border">
-                      <button className="p-1 rounded text-foreground/80 bg-card/70 backdrop-blur-md shadow-xs">
+                      <button onClick={() => alert('Coming soon!')} className="p-1 rounded text-foreground/80 bg-card/70 backdrop-blur-md shadow-xs">
                         <BarChart2 className="w-3.5 h-3.5" />
                       </button>
-                      <button className="p-1 rounded text-muted-foreground hover:text-foreground/80">
+                      <button onClick={() => alert('Coming soon!')} className="p-1 rounded text-muted-foreground hover:text-foreground/80">
                         <TrendingUp className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -253,7 +253,7 @@ export default function Dashboard() {
               <div>
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-foreground">Monthly spending limit</h3>
-                  <button className="text-muted-foreground hover:text-foreground/80 transition-colors">
+                  <button onClick={() => alert('Coming soon!')} className="text-muted-foreground hover:text-foreground/80 transition-colors">
                     <Edit2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -312,7 +312,7 @@ export default function Dashboard() {
               <div>
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-foreground">Cost analysis</h3>
-                  <button className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
+                  <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
                     <span>January</span>
                     <ChevronDown className="w-3 h-3 text-muted-foreground" />
                   </button>
@@ -395,7 +395,7 @@ export default function Dashboard() {
               <div>
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-foreground">Financial health</h3>
-                  <button className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
+                  <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
                     <span>30d</span>
                     <ChevronDown className="w-3 h-3 text-muted-foreground" />
                   </button>
@@ -449,7 +449,7 @@ export default function Dashboard() {
               <div>
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-foreground">Goal tracker</h3>
-                  <button className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-foreground">
+                  <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-foreground">
                     <Plus className="w-3 h-3" />
                     <span>Add goals</span>
                   </button>
@@ -549,7 +549,7 @@ export default function Dashboard() {
           <div className="bg-card/70 backdrop-blur-md rounded-3xl p-6 border border-glass-border shadow-glass-shadow">
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-base font-bold text-foreground">My card</h3>
-              <button className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-foreground">
+              <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 text-xs font-semibold text-foreground hover:text-foreground">
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add card</span>
               </button>
@@ -593,31 +593,31 @@ export default function Dashboard() {
 
             {/* Quick Actions (Row of 5 square buttons) */}
             <div className="grid grid-cols-5 gap-2 mt-4">
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+              <button onClick={() => alert('Coming soon!')} className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
                 <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <Plus className="w-4 h-4" />
                 </div>
                 <span className="text-[10px] font-medium text-muted-foreground">Top up</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+              <button onClick={() => alert('Coming soon!')} className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
                 <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <ArrowUp className="w-4 h-4" />
                 </div>
                 <span className="text-[10px] font-medium text-muted-foreground">Send</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+              <button onClick={() => alert('Coming soon!')} className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
                 <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <ArrowDown className="w-4 h-4" />
                 </div>
                 <span className="text-[10px] font-medium text-muted-foreground">Request</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+              <button onClick={() => alert('Coming soon!')} className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
                 <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <History className="w-4 h-4" />
                 </div>
                 <span className="text-[10px] font-medium text-muted-foreground">History</span>
               </button>
-              <button className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
+              <button onClick={() => alert('Coming soon!')} className="flex flex-col items-center gap-1.5 p-2 rounded-2xl bg-muted border border-glass-border hover:bg-muted/80 text-foreground/80 transition-colors">
                 <div className="w-7 h-7 rounded-xl bg-card/70 backdrop-blur-md border border-border flex items-center justify-center text-foreground shadow-2xs">
                   <MoreHorizontal className="w-4 h-4" />
                 </div>
@@ -630,7 +630,7 @@ export default function Dashboard() {
           <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-sm font-bold text-foreground">Quick payment</h3>
-              <button className="text-muted-foreground hover:text-muted-foreground">
+              <button onClick={() => alert('Coming soon!')} className="text-muted-foreground hover:text-muted-foreground">
                 <MoreHorizontal className="w-4 h-4" />
               </button>
             </div>
@@ -660,7 +660,7 @@ export default function Dashboard() {
           <div className="bg-card/70 backdrop-blur-md rounded-3xl p-5 border border-glass-border shadow-glass-shadow">
             <div className="flex items-center justify-between mb-2">
               <h3 className="text-sm font-bold text-foreground">Transaction history</h3>
-              <button className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
+              <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 text-[11px] text-muted-foreground font-medium px-2 py-0.5 bg-muted rounded-lg border border-glass-border">
                 <span>7d</span>
                 <ChevronDown className="w-3 h-3 text-muted-foreground" />
               </button>

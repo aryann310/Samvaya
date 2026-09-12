@@ -1,0 +1,9 @@
+[
+  {
+    "month": "2024-06",
+    "inflows": { "total": 185000, "breakdown": [{ "source": "Store Sales", "amount": 180000 }, { "source": "Credit Recoveries", "amount": 5000 }] },
+    "outflows": { "total": 145000, "breakdown": [{ "category": "Stock Purchase", "amount": 94250 }, { "category": "Rent", "amount": 11600 }, { "category": "Utilities", "amount": 7250 }, { "category": "Salaries", "amount": 14500 }, { "category": "Transport", "amount": 10150 }, { "category": "Misc", "amount": 7250 }] },
+    "netFlow": 40000,
+    "closingBalance": 85000
+  }
+]

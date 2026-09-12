@@ -1,0 +1,4 @@
+[
+  { "id": "p1", "title": "Restock rice before Friday market", "description": "Basmati rice is low in stock.", "completed": false, "category": "inventory", "route": "/inventory" },
+  { "id": "p2", "title": "Collect ₹3,200 pending from Desai family", "description": "Outstanding credit for over 30 days.", "completed": false, "category": "finance", "route": "/cashflow" }
+]

@@ -35,7 +35,7 @@ export default function Hyperlocal() {
           <h1 className="text-2xl font-bold text-foreground tracking-tight">Hyperlocal Market Intelligence</h1>
           <p className="text-xs text-muted-foreground mt-0.5">Mandi spot rates, competitor density, and catchment trade signals.</p>
         </div>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 bg-card/70 backdrop-blur-md border border-glass-border rounded-xl text-xs font-semibold text-foreground/80 shadow-xs hover:border-lime-500 transition-colors">
+        <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1.5 px-3 py-1.5 bg-card/70 backdrop-blur-md border border-glass-border rounded-xl text-xs font-semibold text-foreground/80 shadow-xs hover:border-lime-500 transition-colors">
           <MapPin className="w-3.5 h-3.5 text-lime-600" />
           <span>Radius: 5 km</span>
         </button>
@@ -84,7 +84,7 @@ export default function Hyperlocal() {
             <h3 className="text-base font-bold text-foreground">Live APMC Mandi Rates</h3>
             <p className="text-xs text-muted-foreground mt-0.5">Updated every 4 hours from regional agriculture market boards</p>
           </div>
-          <button className="flex items-center gap-1 text-xs font-semibold text-foreground/80 bg-muted border border-glass-border px-3 py-1.5 rounded-xl">
+          <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1 text-xs font-semibold text-foreground/80 bg-muted border border-glass-border px-3 py-1.5 rounded-xl">
             <span>Filter District</span>
             <ChevronDown className="w-3.5 h-3.5" />
           </button>

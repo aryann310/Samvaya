@@ -1,0 +1,40 @@
+[
+  {
+    "id": "i4",
+    "businessId": "biz-001",
+    "name": "Sunflower Oil",
+    "category": "Groceries",
+    "quantity": 8,
+    "unit": "L",
+    "reorderLevel": 10,
+    "unitCost": 110,
+    "salePrice": 140,
+    "status": "low_stock",
+    "lastRestocked": "2024-08-25"
+  },
+  {
+    "id": "i5",
+    "businessId": "biz-001",
+    "name": "Sugar",
+    "category": "Groceries",
+    "quantity": 40,
+    "unit": "kg",
+    "reorderLevel": 25,
+    "unitCost": 35,
+    "salePrice": 45,
+    "status": "in_stock",
+    "lastRestocked": "2024-08-28"
+  },
+  {
+    "id": "d508e0ea-d320-4040-8449-732cad5d7003",
+    "businessId": "biz-001",
+    "name": "h",
+    "category": "h",
+    "quantity": 5,
+    "unit": "1",
+    "reorderLevel": 5,
+    "unitCost": 0,
+    "salePrice": 0,
+    "status": "low_stock"
+  }
+]

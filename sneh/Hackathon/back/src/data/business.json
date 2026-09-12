@@ -1,0 +1,33 @@
+{
+  "id": "biz-001",
+  "name": "Patel General Store",
+  "type": "Kirana Store",
+  "category": "Retail",
+  "location": {
+    "village": "Modhera",
+    "taluka": "Becharaji",
+    "district": "Mehsana",
+    "state": "Gujarat",
+    "pincode": "384212",
+    "lat": 23.5880,
+    "lng": 72.1316
+  },
+  "owner": {
+    "name": "Rameshbhai Patel",
+    "phone": "9876543210",
+    "email": "ramesh.patel@example.com",
+    "aadhaar": "123456789012",
+    "panCard": "ABCDE1234F"
+  },
+  "yearsActive": 8,
+  "registrationType": "Sole Proprietorship",
+  "gstRegistered": true,
+  "gstNumber": "24ABCDE1234F1Z5",
+  "monthlyRevenue": 180000,
+  "monthlyExpenses": 145000,
+  "employees": 2,
+  "description": "General kirana store serving Modhera village for 8 years.",
+  "documents": ["GST_Cert.pdf", "Aadhaar.pdf"],
+  "createdAt": "2016-01-10T00:00:00Z",
+  "updatedAt": "2024-09-01T00:00:00Z"
+}

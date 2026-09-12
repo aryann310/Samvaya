@@ -59,7 +59,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <LayoutGrid className="w-5 h-5 text-gray-700" />
+              <LayoutGrid className="w-5 h-5 text-foreground/80" />
               <span>Dashboard</span>
             </>
           )}
@@ -82,7 +82,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <User className="w-5 h-5 text-gray-500" />
+              <User className="w-5 h-5 text-muted-foreground" />
               <span>Accounts</span>
             </>
           )}
@@ -98,10 +98,10 @@ export default function Sidebar() {
             )}
           >
             <div className="flex items-center gap-3">
-              <ArrowLeftRight className="w-5 h-5 text-gray-500" />
+              <ArrowLeftRight className="w-5 h-5 text-muted-foreground" />
               <span>Transactions</span>
             </div>
-            <ChevronDown className={cn("w-4 h-4 text-gray-400 transition-transform", transactionsOpen && "rotate-180")} />
+            <ChevronDown className={cn("w-4 h-4 text-muted-foreground transition-transform", transactionsOpen && "rotate-180")} />
           </button>
 
           {transactionsOpen && (
@@ -161,7 +161,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <Wallet className="w-5 h-5 text-gray-500" />
+              <Wallet className="w-5 h-5 text-muted-foreground" />
               <span>Cash flow</span>
             </>
           )}
@@ -184,7 +184,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <PiggyBank className="w-5 h-5 text-gray-500" />
+              <PiggyBank className="w-5 h-5 text-muted-foreground" />
               <span>Budget</span>
             </>
           )}
@@ -207,7 +207,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <TrendingUp className="w-5 h-5 text-gray-500" />
+              <TrendingUp className="w-5 h-5 text-muted-foreground" />
               <span>Investments</span>
             </>
           )}
@@ -230,7 +230,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <BookOpen className="w-5 h-5 text-gray-500" />
+              <BookOpen className="w-5 h-5 text-muted-foreground" />
               <span>Learning center</span>
             </>
           )}
@@ -253,7 +253,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <MapPin className="w-5 h-5 text-gray-500" />
+              <MapPin className="w-5 h-5 text-muted-foreground" />
               <span>Local Market</span>
             </>
           )}
@@ -276,7 +276,7 @@ export default function Sidebar() {
               {isActive && (
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
-              <Users className="w-5 h-5 text-gray-500" />
+              <Users className="w-5 h-5 text-muted-foreground" />
               <span>Collaborators</span>
             </>
           )}
@@ -300,7 +300,7 @@ export default function Sidebar() {
                 <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
               )}
               <div className="flex items-center gap-3">
-                <Headphones className="w-5 h-5 text-gray-500" />
+                <Headphones className="w-5 h-5 text-muted-foreground" />
                 <span>Support & AI</span>
               </div>
               <span className="w-2 h-2 rounded-full bg-lime-500 animate-pulse" />

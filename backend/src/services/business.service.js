@@ -1,0 +1,14 @@
+import { DataStore } from './dataStore.js';
+export class BusinessService {
+    static getBusiness(id) {
+        if (DataStore.business.id === id || id === 'biz-001' || id === 'b1')
+            return DataStore.business;
+        return DataStore.business; // Fallback to demo business
+    }
+    static updateBusiness(id, updates) {
+        Object.assign(DataStore.business, updates);
+        DataStore.saveBusiness();
+        return DataStore.business;
+    }
+}
+//# sourceMappingURL=business.service.js.map

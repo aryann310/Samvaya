@@ -114,5 +114,8 @@ app.post('/api/advisor', (req, res) => {
     });
 });
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok', message: 'Backend is running' }));
+// Mount sneh project routes as an additive feature
+import snehRoutes from './routes/index.js';
+app.use('/api/v2', snehRoutes);
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 //# sourceMappingURL=index.js.map

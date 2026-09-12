@@ -1,0 +1,19 @@
+{
+  "demand": [
+    { "category": "Dairy", "trend": "increasing", "searchVolume": 85 },
+    { "category": "Organic Pulses", "trend": "increasing", "searchVolume": 60 }
+  ],
+  "pricing": [
+    { "item": "Toor Dal", "yourPrice": 150, "localAverage": 153 },
+    { "item": "Sunflower Oil", "yourPrice": 140, "localAverage": 138 }
+  ],
+  "places": [
+    { "name": "Modhera Sun Temple", "type": "Tourist Attraction", "distance": 1.0 },
+    { "name": "Primary School", "type": "Education", "distance": 0.4 },
+    { "name": "SBI Branch", "type": "Bank", "distance": 0.6 }
+  ],
+  "opportunities": [
+    "Start stocking tourist-friendly packaged snacks due to proximity to Sun Temple.",
+    "Add a dairy chiller as local dairy demand is rising."
+  ]
+}

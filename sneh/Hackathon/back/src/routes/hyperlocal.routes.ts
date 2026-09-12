@@ -1,0 +1,5 @@
+import { Router } from 'express';
+import * as ctrl from '../controllers/hyperlocal.controller';
+const router = Router();
+router.get('/:businessId', ctrl.getHyperlocal);
+export default router;

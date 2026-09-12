@@ -1,0 +1,22 @@
+[
+  {
+    "id": "in1",
+    "type": "revenue",
+    "recommendation": "Increase prices on staples by 3-5%",
+    "why": "Local average for Toor Dal is ₹153, you are at ₹150. Margins can be improved without losing competitiveness.",
+    "localEvidence": "Competitors Sharma and Mehta are charging ₹145-155.",
+    "financialImpact": "Est. ₹2,000 extra monthly profit",
+    "nextStep": { "label": "Update Pricing", "route": "/inventory" },
+    "priority": "high"
+  },
+  {
+    "id": "in2",
+    "type": "inventory",
+    "recommendation": "Stock extra cooking oil before Diwali",
+    "why": "Historical data shows a 40% spike in oil sales during October.",
+    "localEvidence": "General festive trend in Modhera.",
+    "financialImpact": "Est. ₹5,000 extra revenue",
+    "nextStep": { "label": "Order Stock", "route": "/inventory" },
+    "priority": "high"
+  }
+]
