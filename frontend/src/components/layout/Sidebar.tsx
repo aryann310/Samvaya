@@ -10,12 +10,14 @@ import {
   Landmark, 
   FileText,
   BarChart3,
-  Settings
+  Settings,
+  Users
 } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 const navItems = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
+  { name: "Collaborators", href: "/team", icon: Users },
   { name: "My Business", href: "/business", icon: Briefcase },
   { name: "AI Advisor", href: "/advisor", icon: MessageSquare },
   { name: "Hyperlocal Market", href: "/hyperlocal", icon: MapPin },

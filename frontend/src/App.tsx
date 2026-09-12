@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import AIAdvisor from "./pages/AIAdvisor";
 import Finances from "./pages/Finances";
 import Hyperlocal from "./pages/Hyperlocal";
+import Team from "./pages/Team";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path="team" element={<Team />} />
           <Route path="business" element={<div className="p-8"><h1 className="text-3xl font-bold">My Business</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
           <Route path="advisor" element={<AIAdvisor />} />
           <Route path="hyperlocal" element={<Hyperlocal />} />

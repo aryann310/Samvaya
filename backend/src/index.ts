@@ -60,10 +60,56 @@ const MOCK_SCHEMES = [
   { id: 2, name: "PMEGP", description: "Subsidy for setting up new micro-enterprises.", eligibility: "New businesses, 8th pass", matchScore: 80 }
 ];
 
+const MOCK_TEAM = [
+  {
+    name: "Yash Patel",
+    handle: "yashpatel-11",
+    github: "https://github.com/yashpatel-11",
+    role: "Project Lead / Full-Stack",
+    status: "Repository Owner"
+  },
+  {
+    name: "Aryann",
+    handle: "aryann310",
+    github: "https://github.com/aryann310",
+    role: "Core Contributor / Full-Stack",
+    status: "Collaborator"
+  },
+  {
+    name: "Kajal",
+    handle: "kajal3308",
+    github: "https://github.com/kajal3308",
+    role: "Team Member / Contributor",
+    status: "Collaborator"
+  },
+  {
+    name: "Sneh",
+    handle: "sneh557",
+    github: "https://github.com/sneh557",
+    role: "Team Member / Contributor",
+    status: "Collaborator (Pending Invite)"
+  },
+  {
+    name: "Zeel Gadhavi",
+    handle: "zeelgadhavi26-web",
+    github: "https://github.com/zeelgadhavi26-web",
+    role: "Team Member / Contributor",
+    status: "Collaborator"
+  },
+  {
+    name: "ZEEL K. THAKKAR",
+    handle: "ZeelThakkar90",
+    github: "https://github.com/ZeelThakkar90",
+    role: "Team Member / Contributor",
+    status: "Collaborator"
+  }
+];
+
 app.get('/api/dashboard', (req, res) => res.json(MOCK_DASHBOARD));
 app.get('/api/finances', (req, res) => res.json(MOCK_FINANCES));
 app.get('/api/hyperlocal', (req, res) => res.json(MOCK_HYPERLOCAL));
 app.get('/api/schemes', (req, res) => res.json(MOCK_SCHEMES));
+app.get('/api/team', (req, res) => res.json(MOCK_TEAM));
 
 app.post('/api/advisor', (req, res) => {
   const { message } = req.body;
