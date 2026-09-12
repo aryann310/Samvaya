@@ -1,31 +1,48 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Dashboard from "./pages/Dashboard";
 import AIAdvisor from "./pages/AIAdvisor";
 import Finances from "./pages/Finances";
 import Hyperlocal from "./pages/Hyperlocal";
 import Team from "./pages/Team";
+import Business from "./pages/Business";
+import CashFlow from "./pages/CashFlow";
+import Inventory from "./pages/Inventory";
+import Financing from "./pages/Financing";
+import Schemes from "./pages/Schemes";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
+import { BusinessProvider } from "./contexts/BusinessContext";
+
+// Active Module: AI Advisor & Decision Intelligence
+// Assigned Member: Member 2 (AI & Decision Intelligence)
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="team" element={<Team />} />
-          <Route path="business" element={<div className="p-8"><h1 className="text-3xl font-bold">My Business</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-          <Route path="advisor" element={<AIAdvisor />} />
-          <Route path="hyperlocal" element={<Hyperlocal />} />
-          <Route path="finances" element={<Finances />} />
-          <Route path="cashflow" element={<div className="p-8"><h1 className="text-3xl font-bold">Cash Flow</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-          <Route path="inventory" element={<div className="p-8"><h1 className="text-3xl font-bold">Inventory</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-          <Route path="financing" element={<div className="p-8"><h1 className="text-3xl font-bold">Financing</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-          <Route path="schemes" element={<div className="p-8"><h1 className="text-3xl font-bold">Government Schemes</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-          <Route path="reports" element={<div className="p-8"><h1 className="text-3xl font-bold">Reports</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-          <Route path="settings" element={<div className="p-8"><h1 className="text-3xl font-bold">Settings</h1><p className="mt-2 text-gray-500">Page under construction for demo.</p></div>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <BusinessProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Navigate to="/advisor" replace />} />
+              <Route path="advisor" element={<AIAdvisor />} />
+              <Route path="business" element={<Business />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="hyperlocal" element={<Hyperlocal />} />
+              <Route path="finances" element={<Finances />} />
+              <Route path="cashflow" element={<CashFlow />} />
+              <Route path="inventory" element={<Inventory />} />
+              <Route path="financing" element={<Financing />} />
+              <Route path="schemes" element={<Schemes />} />
+              <Route path="reports" element={<Reports />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="team" element={<Team />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </BusinessProvider>
+    </ThemeProvider>
   );
 }
 

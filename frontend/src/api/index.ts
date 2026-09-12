@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = '/api';
 
 export const getDashboardData = () => fetch(`${API_BASE}/dashboard`).then(res => res.json());
 export const getFinancesData = () => fetch(`${API_BASE}/finances`).then(res => res.json());

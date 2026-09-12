@@ -1,90 +1,66 @@
-# 🌟 Samvaya - AI-Driven Hyperlocal Business Advisory
+# 🤖 AI Advisor & Decision Intelligence
 
-> **An intelligent advisory platform empowering micro and local businesses with hyperlocal insights, automated cash flow forecasting, government scheme recommendations, and AI-driven growth strategies.**
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-404D59?logo=express&logoColor=white)](https://expressjs.com/)
-[![Vite](https://img.shields.io/badge/Vite-B73BFE?logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+> **Assigned To:** Member 2 (AI & Decision Intelligence)  
+> **Recommended Git Branch:** `feature/AIAdvisorandIntelligence`  
+> **Backend Port:** `5002` | **Frontend Port:** `5175`
 
 ---
 
-## 👥 Team & Collaborators
-
-Meet the team building **Samvaya** for Hackathon 2026:
-
-| Collaborator | GitHub Username | Role / Contribution | Status |
-| :--- | :--- | :--- | :--- |
-| **Yash Patel** | [@yashpatel-11](https://github.com/yashpatel-11) | Project Lead & Full-Stack Developer | 👑 Repository Owner |
-| **Aryann** | [@aryann310](https://github.com/aryann310) | Core Contributor / Full-Stack | 🤝 Collaborator |
-| **Kajal** | [@kajal3308](https://github.com/kajal3308) | Team Member / Contributor | 🤝 Collaborator |
-| **Sneh** | [@sneh557](https://github.com/sneh557) | Team Member / Contributor | 🤝 Collaborator (Invite Sent) |
-| **Zeel Gadhavi** | [@zeelgadhavi26-web](https://github.com/zeelgadhavi26-web) | Team Member / Contributor | 🤝 Collaborator |
-| **Zeel K. Thakkar** | [@ZeelThakkar90](https://github.com/ZeelThakkar90) | Team Member / Contributor | 🤝 Collaborator |
+## 📌 Module Overview
+This module is the **AI Intelligence Engine** of Samvaya. You own:
+- **Conversational AI Advisor**: Context-aware advisory chatbot tailored for micro-businesses.
+- **Structured Recommendation Cards**: Clear breakdown with 'Why', 'Local Evidence', 'Financial Impact', and 'Next Steps'.
+- **AI Insights Engine**: Real-time business diagnostic alerts and proactive growth tips.
+- **Multilingual Support & Prompting**: Extensible for Google Gemini or OpenAI API keys.
 
 ---
 
-## 🚀 Key Platform Features
+## ⚡ Quick Start Instructions
 
-- **📊 Comprehensive Business Dashboard**: Live Business Health Score, revenue, expenses, available cash tracking, and prioritized daily action items.
-- **🤖 AI Business Advisor**: Contextual, evidence-backed advice tailored to micro-enterprises with local impact analysis and action plans.
-- **📍 Hyperlocal Market Intelligence**: Analysis of nearby competitors, local demand fluctuations, pricing benchmarks, and area opportunities.
-- **💰 Financial Health & Cash Flow**: Cash in/out visual tracking, loan affordability calculators, and financing readiness scores.
-- **🏛️ Government Scheme Matching**: Automated matching against micro-business schemes (e.g., MUDRA Shishu, PMEGP).
-
----
-
-## 🏗️ Architecture & Tech Stack
-
-```text
-Samvaya/
-├── backend/                    # Node.js + Express + TypeScript
-│   ├── src/
-│   │   └── index.ts            # REST APIs (Dashboard, Advisor, Hyperlocal, Finances, Team)
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── frontend/                   # React 19 + TypeScript + Vite + TailwindCSS
-│   ├── src/
-│   │   ├── components/         # Layout, Sidebar, UI cards, Buttons
-│   │   ├── pages/              # Dashboard, AIAdvisor, Hyperlocal, Finances, Team
-│   │   └── App.tsx             # Client routing
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.ts
-└── .gitignore
-```
-
----
-
-## ⚡ Getting Started
-
-### 1. Clone the Repository
+### 1. Setup your Git Feature Branch
 ```bash
-git clone https://github.com/yashpatel-11/Samvaya.git
-cd Samvaya
+git checkout main
+git pull origin main
+git checkout -b feature/AIAdvisorandIntelligence
 ```
 
-### 2. Run Backend
+### 2. Start the Backend Server (Port 5002)
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-> Server runs at [http://localhost:5000](http://localhost:5000)
+Verify the backend is active at: [http://localhost:5002/health](http://localhost:5002/health)
 
-### 3. Run Frontend
+### 3. Start the Frontend Application (Port 5175)
+In a separate terminal:
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```
-> Frontend runs at [http://localhost:5173](http://localhost:5173)
+Open [http://localhost:5175](http://localhost:5175) in your browser.
 
 ---
 
-## 🤝 Contribution Guidelines
+## 🗂️ Scope & File Ownership
 
-1. **Branch Naming**: `feature/your-feature-name` or `fix/bug-name`
-2. **Pull Requests**: Open PRs targeting `main` and request reviews from team collaborators.
+### Frontend Pages Owned:
+- `frontend/src/pages/AIAdvisor.tsx`
+
+### Backend Routes & Endpoints Owned:
+- `/api/v2/ai` (Routes: `backend/src/routes/ai.routes.ts`, Controller: `backend/src/controllers/ai.controller.ts`, Service: `backend/src/services/ai.service.ts`)
+
+---
+
+## 🔄 Merging back to `main`
+When your features and improvements are tested and complete:
+1. Copy modified page files from `frontend/src/pages/` to the root project: `x:\Hackathon - Copy\frontend\src\pages\`
+2. Copy modified backend controllers/services from `backend/src/` to root: `x:\Hackathon - Copy\backend\src\`
+3. Commit and push:
+   ```bash
+   git add .
+   git commit -m "feat(ai): completed feature implementation"
+   git push -u origin feature/AIAdvisorandIntelligence
+   ```
+4. Open a Pull Request on GitHub targeting `main`.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "s1",
+    "name": "PM Mudra Yojana (PMMY)",
+    "ministry": "Ministry of Finance",
+    "description": "Loans up to 10 lakh to non-corporate, non-farm small/micro enterprises.",
+    "benefits": ["Collateral free loans", "Low interest rates"],
+    "eligibilityCriteria": [{ "criterion": "Micro enterprise", "met": true }, { "criterion": "Indian citizen", "met": true }],
+    "applicationSteps": ["Visit nearest bank", "Submit business plan", "Provide KYC"],
+    "officialLink": "https://www.mudra.org.in/",
+    "category": "Finance",
+    "maxBenefit": 1000000
+  },
+  {
+    "id": "s2",
+    "name": "PMEGP",
+    "ministry": "MSME",
+    "description": "Prime Minister's Employment Generation Programme.",
+    "benefits": ["Margin money subsidy"],
+    "eligibilityCriteria": [{ "criterion": "New project", "met": false }],
+    "applicationSteps": ["Apply online via KVIC portal"],
+    "officialLink": "https://www.kviconline.gov.in/",
+    "category": "Subsidy",
+    "maxBenefit": 2500000
+  }
+]
