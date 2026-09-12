@@ -1,0 +1,54 @@
+[
+  {
+    "keywords": ["loan", "borrow"],
+    "response": {
+      "en": {
+        "recommendation": "Consider Mudra Yojana - Kishor loan.",
+        "why": "Based on your 8 years of operation and GST registration, you easily qualify.",
+        "localEvidence": "SBI Modhera branch has processed 15 such loans recently.",
+        "financialImpact": "Access to ₹2,000,000 working capital.",
+        "nextStep": { "label": "View Loan Products", "route": "/financing" }
+      },
+      "hi": {
+        "recommendation": "मुद्रा योजना - किशोर ऋण पर विचार करें।",
+        "why": "आपके 8 साल के संचालन और जीएसटी पंजीकरण के आधार पर, आप आसानी से योग्य हैं।",
+        "localEvidence": "एसबीआई मोढेरा शाखा ने हाल ही में ऐसे 15 ऋणों को संसाधित किया है।",
+        "financialImpact": "₹2,000,000 कार्यशील पूंजी तक पहुंच।",
+        "nextStep": { "label": "ऋण उत्पाद देखें", "route": "/financing" }
+      },
+      "gu": {
+        "recommendation": "મુદ્રા યોજના - કિશોર લોનનો વિચાર કરો.",
+        "why": "તમારા 8 વર્ષના સંચાલન અને જીએસટી નોંધણીના આધારે, તમે સરળતાથી લાયક છો.",
+        "localEvidence": "એસબીઆઈ મોઢેરા શાખાએ તાજેતરમાં આવી 15 લોનની પ્રક્રિયા કરી છે.",
+        "financialImpact": "₹2,000,000 કાર્યકારી મૂડીની ઍક્સેસ.",
+        "nextStep": { "label": "લોન ઉત્પાદનો જુઓ", "route": "/financing" }
+      }
+    }
+  },
+  {
+    "keywords": ["default"],
+    "response": {
+      "en": {
+        "recommendation": "I can help you with inventory, financing, pricing, and business growth.",
+        "why": "I analyze your local market data to give personalized advice.",
+        "localEvidence": "Serving businesses in Modhera.",
+        "financialImpact": "General business optimization.",
+        "nextStep": { "label": "View Dashboard", "route": "/" }
+      },
+      "hi": {
+        "recommendation": "मैं इन्वेंट्री, वित्तपोषण, मूल्य निर्धारण और व्यवसाय वृद्धि में आपकी सहायता कर सकता हूं।",
+        "why": "मैं आपको व्यक्तिगत सलाह देने के लिए आपके स्थानीय बाज़ार डेटा का विश्लेषण करता हूँ।",
+        "localEvidence": "मोढेरा में व्यवसायों की सेवा करना।",
+        "financialImpact": "सामान्य व्यवसाय अनुकूलन।",
+        "nextStep": { "label": "डैशबोर्ड देखें", "route": "/" }
+      },
+      "gu": {
+        "recommendation": "હું તમને ઇન્વેન્ટરી, ધિરાણ, કિંમતો અને વ્યવસાયના વિકાસમાં મદદ કરી શકું છું.",
+        "why": "હું તમને વ્યક્તિગત સલાહ આપવા માટે તમારા સ્થાનિક બજારના ડેટાનું વિશ્લેષણ કરું છું.",
+        "localEvidence": "મોઢેરામાં વ્યવસાયોની સેવા કરવી.",
+        "financialImpact": "સામાન્ય વ્યવસાય ઑપ્ટિમાઇઝેશન.",
+        "nextStep": { "label": "ડેશબોર્ડ જુઓ", "route": "/" }
+      }
+    }
+  }
+]

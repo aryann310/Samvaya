@@ -1,0 +1,30 @@
+[
+  {
+    "month": "2023-07",
+    "revenue": { "total": 170000, "breakdown": [{ "category": "Groceries", "amount": 93500 }, { "category": "FMCG", "amount": 34000 }, { "category": "Dairy", "amount": 25500 }, { "category": "Other", "amount": 17000 }] },
+    "expenses": { "total": 140000, "breakdown": [{ "category": "Inventory", "amount": 91000 }, { "category": "Rent", "amount": 11200 }, { "category": "Utilities", "amount": 7000 }, { "category": "Transport", "amount": 9800 }, { "category": "Salary", "amount": 14000 }, { "category": "Other", "amount": 7000 }] },
+    "profit": 30000,
+    "profitMargin": 17.65
+  },
+  {
+    "month": "2023-10",
+    "revenue": { "total": 210000, "breakdown": [{ "category": "Groceries", "amount": 115500 }, { "category": "FMCG", "amount": 42000 }, { "category": "Dairy", "amount": 31500 }, { "category": "Other", "amount": 21000 }] },
+    "expenses": { "total": 160000, "breakdown": [{ "category": "Inventory", "amount": 104000 }, { "category": "Rent", "amount": 12800 }, { "category": "Utilities", "amount": 8000 }, { "category": "Transport", "amount": 11200 }, { "category": "Salary", "amount": 16000 }, { "category": "Other", "amount": 8000 }] },
+    "profit": 50000,
+    "profitMargin": 23.8
+  },
+  {
+    "month": "2024-01",
+    "revenue": { "total": 190000, "breakdown": [{ "category": "Groceries", "amount": 104500 }, { "category": "FMCG", "amount": 38000 }, { "category": "Dairy", "amount": 28500 }, { "category": "Other", "amount": 19000 }] },
+    "expenses": { "total": 150000, "breakdown": [{ "category": "Inventory", "amount": 97500 }, { "category": "Rent", "amount": 12000 }, { "category": "Utilities", "amount": 7500 }, { "category": "Transport", "amount": 10500 }, { "category": "Salary", "amount": 15000 }, { "category": "Other", "amount": 7500 }] },
+    "profit": 40000,
+    "profitMargin": 21.05
+  },
+  {
+    "month": "2024-06",
+    "revenue": { "total": 180000, "breakdown": [{ "category": "Groceries", "amount": 99000 }, { "category": "FMCG", "amount": 36000 }, { "category": "Dairy", "amount": 27000 }, { "category": "Other", "amount": 18000 }] },
+    "expenses": { "total": 145000, "breakdown": [{ "category": "Inventory", "amount": 94250 }, { "category": "Rent", "amount": 11600 }, { "category": "Utilities", "amount": 7250 }, { "category": "Transport", "amount": 10150 }, { "category": "Salary", "amount": 14500 }, { "category": "Other", "amount": 7250 }] },
+    "profit": 35000,
+    "profitMargin": 19.44
+  }
+]
