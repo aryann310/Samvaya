@@ -1,7 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import fs from 'fs';
+import https from 'https';
 import { enforceHttpsAndTls, hstsMiddleware, redactedLoggingMiddleware, redactedErrorHandler, sanitizedLogger, } from './middleware/security.middleware.js';
+import snehRoutes from './routes/index.js';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -121,28 +124,25 @@ app.post('/api/advisor', (req, res) => {
     });
 });
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok', message: 'Backend is running' }));
-// Mount sneh project routes as an additive feature
-import snehRoutes from './routes/index.js';
+// Mount routes under /api/v2
 app.use('/api/v2', snehRoutes);
 // Redacted Error Handler: Sanitizes error payloads and stack traces to never leak sensitive PII
 app.use(redactedErrorHandler);
-import fs from 'fs';
-import https from 'https';
 const sslKeyPath = process.env.SSL_KEY_PATH;
 const sslCertPath = process.env.SSL_CERT_PATH;
 if (sslKeyPath && sslCertPath && fs.existsSync(sslKeyPath) && fs.existsSync(sslCertPath)) {
     const httpsOptions = {
         key: fs.readFileSync(sslKeyPath),
         cert: fs.readFileSync(sslCertPath),
-        minVersion: 'TLSv1.2', // Enforce TLS 1.2+ minimum
+        minVersion: 'TLSv1.2',
     };
     https.createServer(httpsOptions, app).listen(PORT, () => {
-        sanitizedLogger.info(`Secure HTTPS Server (TLS 1.2+ enforced) running on port ${PORT}`);
+        sanitizedLogger.info(`🚀 Core Dashboard & Business Management Backend running with TLS 1.2+ at https://localhost:${PORT}`);
     });
 }
 else {
     app.listen(PORT, () => {
-        sanitizedLogger.info(`Server running on port ${PORT} (TLS enforcement active in production mode)`);
+        sanitizedLogger.info(`🚀 Core Dashboard & Business Management Backend running at http://localhost:${PORT}`);
     });
 }
 //# sourceMappingURL=index.js.map
