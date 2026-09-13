@@ -1,348 +1,125 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { useState } from "react";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { 
-  LayoutGrid, 
-  User, 
-  ArrowLeftRight, 
-  ChevronDown, 
+  LayoutDashboard, 
+  Bot, 
   Wallet, 
-  PiggyBank, 
-  TrendingUp, 
-  BookOpen, 
-  Headphones, 
-  Zap, 
-  X, 
-  ChevronsLeft,
-  MapPin,
+  LineChart, 
+  Package, 
+  MapPin, 
+  CreditCard, 
+  Briefcase, 
+  FileText, 
+  Building2, 
+  Settings,
   Users
-} from "lucide-react";
-import { cn } from "../../lib/utils";
+} from 'lucide-react';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
+import { useBusiness } from '../../contexts/BusinessContext';
 
 export default function Sidebar() {
-  const [showProCard, setShowProCard] = useState(true);
-  const [transactionsOpen, setTransactionsOpen] = useState(true);
-  const location = useLocation();
+  const { t } = useTranslation();
+  const { business } = useBusiness();
 
-  const isTransactionsActive = ["/finances", "/cashflow", "/reports"].includes(location.pathname);
+  const navItems = [
+    { name: t('nav.dashboard') || 'Dashboard', icon: LayoutDashboard, path: '/' },
+    { name: t('nav.advisor') || 'AI Advisor', icon: Bot, path: '/advisor' },
+    { name: t('nav.finances') || 'Finances', icon: Wallet, path: '/finances' },
+    { name: t('nav.cashflow') || 'Cash Flow', icon: LineChart, path: '/cashflow' },
+    { name: t('nav.inventory') || 'Inventory', icon: Package, path: '/inventory' },
+    { name: t('nav.hyperlocal') || 'Hyperlocal Market', icon: MapPin, path: '/hyperlocal' },
+    { name: t('nav.financing') || 'Financing', icon: CreditCard, path: '/financing' },
+    { name: t('nav.schemes') || 'Government Schemes', icon: Briefcase, path: '/schemes' },
+    { name: t('nav.reports') || 'Reports', icon: FileText, path: '/reports' },
+    { name: t('nav.business') || 'My Business', icon: Building2, path: '/business' },
+    { name: t('nav.settings') || 'Settings', icon: Settings, path: '/settings' },
+    { name: 'Collaborators', icon: Users, path: '/team' },
+  ];
 
   return (
-    <aside className="h-full w-64 flex flex-col bg-card border-r border-glass-border shadow-glass-shadow select-none">
+    <aside className="h-full w-64 bg-card border-r border-border/40 flex flex-col shadow-sm select-none relative overflow-hidden" aria-label="Sidebar Navigation">
       {/* Brand Header */}
-      <div className="px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-foreground flex items-center justify-center text-background font-black text-sm tracking-tighter">
-            AC
+      <div className="p-4 border-b border-border/40 flex items-center gap-3 relative z-10 bg-card/60">
+        <div className="p-1.5 rounded-xl bg-primary/10 border border-primary/20 shadow-xs flex-shrink-0">
+          <img 
+            src="/logo-icon.png" 
+            alt="Samvaya Logo" 
+            className="h-7 w-7 object-contain rounded-lg"
+            onError={(e) => {
+              // Graceful fallback to SVG/CSS icon if image not found
+              (e.target as HTMLElement).style.display = 'none';
+            }}
+          />
+        </div>
+        <div className="flex flex-col min-w-0">
+          <div className="flex items-center gap-1.5">
+            <span className="text-base font-black tracking-tight text-foreground leading-tight">
+              Samvaya
+            </span>
+            <span className="text-[9px] font-bold uppercase tracking-widest bg-primary/20 text-primary border border-primary/30 px-1.5 py-0.5 rounded shadow-xs">
+              AI
+            </span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tight text-foreground">ACRU</span>
-            <span className="text-[10px] font-semibold tracking-wider text-lime-600 uppercase -mt-1">Samvaya</span>
-          </div>
+          <span className="text-[11px] text-muted-foreground font-medium truncate">
+            {t('app.tagline') || 'Hyperlocal Business Advisory'}
+          </span>
         </div>
       </div>
 
       {/* Distribution Workspace Badge */}
-      <div className="mx-4 mb-3 px-3 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold flex items-center justify-between shadow-sm">
-        <span>Core Dashboard & Business</span>
-        <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-blue-500/20 font-bold">Platform Core</span>
+      <div className="mx-3 mt-3 mb-1 px-3 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold flex items-center justify-between shadow-xs">
+        <span className="truncate">Core Dashboard & Business</span>
+        <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-blue-500/20 font-bold flex-shrink-0">Platform</span>
       </div>
-      {/* Navigation List */}
-      <nav className="flex-1 px-3 space-y-1 overflow-y-auto text-sm">
-        {/* Dashboard */}
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <LayoutGrid className="w-5 h-5 text-foreground/80" />
-              <span>Dashboard</span>
-            </>
-          )}
-        </NavLink>
 
-        {/* Accounts / Business */}
-        <NavLink
-          to="/business"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <User className="w-5 h-5 text-muted-foreground" />
-              <span>Accounts</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Transactions with Sub-menu */}
-        <div>
-          <button
-            onClick={() => setTransactionsOpen(!transactionsOpen)}
-            className={cn(
-              "w-full flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all text-muted-foreground hover:bg-muted/50 hover:text-foreground",
-              isTransactionsActive && "text-foreground font-semibold"
-            )}
+      {/* Nav Links */}
+      <nav className="flex-1 overflow-y-auto px-3 py-2 space-y-0.5 relative z-10 text-sm">
+        {navItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            end={item.path === '/'}
+            className={({ isActive }) =>
+              `flex items-center gap-3 px-3 py-2 rounded-xl transition-all duration-200 group ${
+                isActive
+                  ? 'bg-primary/15 text-primary font-bold border border-primary/30 shadow-xs'
+                  : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground font-medium'
+              }`
+            }
           >
-            <div className="flex items-center gap-3">
-              <ArrowLeftRight className="w-5 h-5 text-muted-foreground" />
-              <span>Transactions</span>
-            </div>
-            <ChevronDown className={cn("w-4 h-4 text-muted-foreground transition-transform", transactionsOpen && "rotate-180")} />
-          </button>
-
-          {transactionsOpen && (
-            <div className="ml-6 pl-4 border-l border-border my-1 space-y-1">
-              <NavLink
-                to="/finances"
-                className={({ isActive }) =>
-                  cn(
-                    "flex items-center justify-between py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
-                  )
-                }
-              >
-                <span>History</span>
-                <span className="bg-foreground text-background text-[10px] font-bold px-1.5 py-0.5 rounded-full">19</span>
-              </NavLink>
-              <NavLink
-                to="/cashflow"
-                className={({ isActive }) =>
-                  cn(
-                    "block py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
-                  )
-                }
-              >
-                Integration
-              </NavLink>
-              <NavLink
-                to="/reports"
-                className={({ isActive }) =>
-                  cn(
-                    "block py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
-                  )
-                }
-              >
-                Reports
-              </NavLink>
-            </div>
-          )}
-        </div>
-
-        {/* Cash flow */}
-        <NavLink
-          to="/cashflow"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <Wallet className="w-5 h-5 text-muted-foreground" />
-              <span>Cash flow</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Budget */}
-        <NavLink
-          to="/finances"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <PiggyBank className="w-5 h-5 text-muted-foreground" />
-              <span>Budget</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Investments / Financing */}
-        <NavLink
-          to="/financing"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <TrendingUp className="w-5 h-5 text-muted-foreground" />
-              <span>Investments</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Learning Center / Schemes */}
-        <NavLink
-          to="/schemes"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <BookOpen className="w-5 h-5 text-muted-foreground" />
-              <span>Learning center</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Hyperlocal Market */}
-        <NavLink
-          to="/hyperlocal"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <MapPin className="w-5 h-5 text-muted-foreground" />
-              <span>Local Market</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Team */}
-        <NavLink
-          to="/team"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <Users className="w-5 h-5 text-muted-foreground" />
-              <span>Collaborators</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Support / AI Advisor */}
-        <NavLink
-          to="/advisor"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <div className="flex items-center gap-3">
-                <Headphones className="w-5 h-5 text-muted-foreground" />
-                <span>Support & AI</span>
-              </div>
-              <span className="w-2 h-2 rounded-full bg-lime-500 animate-pulse" />
-            </>
-          )}
-        </NavLink>
+            {({ isActive }) => (
+              <>
+                <item.icon className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110 ${isActive ? 'text-primary' : 'text-muted-foreground'}`} />
+                <span className="truncate">{item.name}</span>
+                {isActive && (
+                  <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_var(--color-primary)]" />
+                )}
+              </>
+            )}
+          </NavLink>
+        ))}
       </nav>
 
-      {/* Upgrade to Pro / AI Advisory Banner */}
-      {showProCard && (
-        <div className="p-3 mx-3 mb-3 bg-card rounded-2xl border border-glass-border shadow-glass-shadow relative">
-          <button 
-            onClick={() => setShowProCard(false)}
-            className="absolute top-2.5 right-2.5 text-muted-foreground hover:text-foreground p-1"
-          >
-            <X className="w-3.5 h-3.5" />
-          </button>
-          <div className="w-7 h-7 rounded-full bg-foreground flex items-center justify-center text-background mb-2">
-            <Zap className="w-3.5 h-3.5 text-lime-400 fill-lime-400" />
-          </div>
-          <h4 className="text-sm font-bold text-foreground">Upgrade to Pro!</h4>
-          <p className="text-[11px] text-muted-foreground mt-0.5 leading-relaxed">
-            Full financial insights with analytics and graphs.
-          </p>
-          <NavLink
-            to="/advisor"
-            className="mt-3 block w-full text-center py-2 bg-foreground hover:opacity-90 text-background text-xs font-semibold rounded-xl transition-colors shadow-sm"
-          >
-            Upgrade now
-          </NavLink>
+      {/* Footer Area */}
+      <div className="p-3 border-t border-border/40 mt-auto bg-card/80 space-y-2.5 relative z-10">
+        <div>
+          <LanguageSwitcher />
         </div>
-      )}
-
-      {/* Collapse sidebar footer */}
-      <div className="px-4 py-3 border-t border-glass-border text-xs text-muted-foreground hover:text-foreground flex items-center gap-2 cursor-pointer transition-colors">
-        <ChevronsLeft className="w-4 h-4" />
-        <span>Collapse sidebar</span>
+        <div className="flex items-center gap-2.5 pt-2 border-t border-border/30">
+          <div className="h-8 w-8 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary font-bold text-xs shadow-xs flex-shrink-0">
+            {business?.owner?.name ? business.owner.name.charAt(0) : 'R'}
+          </div>
+          <div className="overflow-hidden min-w-0 flex-1">
+            <p className="text-xs font-semibold text-foreground truncate">
+              {business?.name || 'Patel General Store'}
+            </p>
+            <p className="text-[11px] text-muted-foreground truncate flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              {business?.owner?.name || 'Rameshbhai Patel'}
+            </p>
+          </div>
+        </div>
       </div>
     </aside>
   );
