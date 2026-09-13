@@ -1,11 +1,18 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { enforceHttpsAndTls, hstsMiddleware, redactedLoggingMiddleware, redactedErrorHandler, sanitizedLogger, } from './middleware/security.middleware.js';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
+// Security Middleware: In-Transit TLS 1.2+ & Non-HTTPS rejection in production
+app.use(enforceHttpsAndTls);
+// Transport Security: HSTS (1 year + subdomains + preload)
+app.use(hstsMiddleware);
 app.use(cors());
 app.use(express.json());
+// Logging Middleware: Redacts PAN, Aadhaar, Phone, and Bank Account before any logging
+app.use(redactedLoggingMiddleware);
 const MOCK_DASHBOARD = {
     businessHealthScore: 85,
     revenue: 45000,
@@ -117,5 +124,25 @@ app.get('/health', (req, res) => res.status(200).json({ status: 'ok', message: '
 // Mount sneh project routes as an additive feature
 import snehRoutes from './routes/index.js';
 app.use('/api/v2', snehRoutes);
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+// Redacted Error Handler: Sanitizes error payloads and stack traces to never leak sensitive PII
+app.use(redactedErrorHandler);
+import fs from 'fs';
+import https from 'https';
+const sslKeyPath = process.env.SSL_KEY_PATH;
+const sslCertPath = process.env.SSL_CERT_PATH;
+if (sslKeyPath && sslCertPath && fs.existsSync(sslKeyPath) && fs.existsSync(sslCertPath)) {
+    const httpsOptions = {
+        key: fs.readFileSync(sslKeyPath),
+        cert: fs.readFileSync(sslCertPath),
+        minVersion: 'TLSv1.2', // Enforce TLS 1.2+ minimum
+    };
+    https.createServer(httpsOptions, app).listen(PORT, () => {
+        sanitizedLogger.info(`Secure HTTPS Server (TLS 1.2+ enforced) running on port ${PORT}`);
+    });
+}
+else {
+    app.listen(PORT, () => {
+        sanitizedLogger.info(`Server running on port ${PORT} (TLS enforcement active in production mode)`);
+    });
+}
 //# sourceMappingURL=index.js.map

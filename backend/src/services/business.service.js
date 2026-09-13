@@ -6,6 +6,19 @@ export class BusinessService {
         return DataStore.business; // Fallback to demo business
     }
     static updateBusiness(id, updates) {
+        if (updates.owner) {
+            DataStore.business.owner = {
+                ...DataStore.business.owner,
+                ...updates.owner,
+                ...(updates.owner.bankAccount && {
+                    bankAccount: {
+                        ...(DataStore.business.owner.bankAccount || {}),
+                        ...updates.owner.bankAccount,
+                    },
+                }),
+            };
+            delete updates.owner;
+        }
         Object.assign(DataStore.business, updates);
         DataStore.saveBusiness();
         return DataStore.business;

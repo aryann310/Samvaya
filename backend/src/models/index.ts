@@ -1,10 +1,24 @@
+export interface BankAccountDetails {
+  accountNumber: string;
+  ifscCode: string;
+  bankName?: string;
+  accountHolderName?: string;
+}
+
 export interface Business {
   id: string;
   name: string;
   type: string;
   category: string;
   location: { village: string; taluka: string; district: string; state: string; pincode: string; lat: number; lng: number };
-  owner: { name: string; phone: string; email: string; aadhaar: string; panCard: string };
+  owner: {
+    name: string;
+    phone: string;
+    email: string;
+    aadhaar: string;
+    panCard: string;
+    bankAccount?: BankAccountDetails;
+  };
   yearsActive: number;
   registrationType: string;
   gstRegistered: boolean;

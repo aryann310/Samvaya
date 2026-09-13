@@ -1,6 +1,6 @@
 export declare class ReportsService {
     static getReport(businessId: string, range?: string): {
-        businessName: any;
+        businessName: string;
         period: string;
         generatedAt: string;
         financialSummary: {

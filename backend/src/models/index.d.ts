@@ -1,3 +1,9 @@
+export interface BankAccountDetails {
+    accountNumber: string;
+    ifscCode: string;
+    bankName?: string;
+    accountHolderName?: string;
+}
 export interface Business {
     id: string;
     name: string;
@@ -18,6 +24,7 @@ export interface Business {
         email: string;
         aadhaar: string;
         panCard: string;
+        bankAccount?: BankAccountDetails;
     };
     yearsActive: number;
     registrationType: string;

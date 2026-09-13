@@ -9,15 +9,20 @@
     "district": "Mehsana",
     "state": "Gujarat",
     "pincode": "384212",
-    "lat": 23.5880,
+    "lat": 23.588,
     "lng": 72.1316
   },
   "owner": {
     "name": "Rameshbhai Patel",
-    "phone": "9876543210",
+    "phone": "enc:v1:9058fcba900e6cc4d8bf53d0:93f01a7f14ecc7529638837524d9b943:d8e0eee547c4c584221e",
     "email": "ramesh.patel@example.com",
-    "aadhaar": "123456789012",
-    "panCard": "ABCDE1234F"
+    "aadhaar": "enc:v1:925d7d56dbbf8cbadb67a8c7:593d11cbf8e2d7664045aeefe0d0a9c9:ee8dc045d6d49d7b8f0a9ecf",
+    "panCard": "enc:v1:9fb4caac06f5236c9ea0b264:9ac069e337602b027cb65fa3eaab4f9f:465ee049135e64a11265",
+    "bankAccount": {
+      "accountNumber": "enc:v1:c83ee4a98820b5e8006d8876:284b273279ba43947385c2e55de8f24d:080f54d663ec946921fc03c37a65",
+      "ifscCode": "enc:v1:c4976f1ff235a4eecd4cbafb:c14018d8ea9b8a16861f1289c13515f8:49e2654b5f947884a6dac3",
+      "bankName": "HDFC Bank"
+    }
   },
   "yearsActive": 8,
   "registrationType": "Sole Proprietorship",
@@ -27,7 +32,10 @@
   "monthlyExpenses": 145000,
   "employees": 2,
   "description": "General kirana store serving Modhera village for 8 years.",
-  "documents": ["GST_Cert.pdf", "Aadhaar.pdf"],
+  "documents": [
+    "GST_Cert.pdf",
+    "Aadhaar.pdf"
+  ],
   "createdAt": "2016-01-10T00:00:00Z",
   "updatedAt": "2024-09-01T00:00:00Z"
 }

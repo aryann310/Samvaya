@@ -1,5 +1,5 @@
 export declare const DataStore: {
-    business: any;
+    business: import("../models/index.js").Business;
     financials: any;
     inventory: any;
     cashflow: any;
@@ -12,6 +12,11 @@ export declare const DataStore: {
     advisorResponses: any;
     saveInventory(): void;
     savePriorities(): void;
+    /**
+     * Persists business entity to storage volume.
+     * Runs through BusinessDAL to encrypt sensitive fields (Aadhaar, PAN, phone, bank details) with AES-256-GCM.
+     */
     saveBusiness(): void;
+    saveBusinessAsync(): Promise<void>;
 };
 //# sourceMappingURL=dataStore.d.ts.map
