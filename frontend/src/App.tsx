@@ -15,6 +15,9 @@ import Settings from "./pages/Settings";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
 import { BusinessProvider } from "./contexts/BusinessContext";
 
+// Active Module: Core Dashboard & Business Management
+// Assigned Member: Member 1 (Project Lead / Core Platform)
+
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
@@ -23,9 +26,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Dashboard />} />
-              <Route path="team" element={<Team />} />
-              <Route path="business" element={<Business />} />
+              <Route path="dashboard" element={<Dashboard />} />
               <Route path="advisor" element={<AIAdvisor />} />
+              <Route path="business" element={<Business />} />
               <Route path="hyperlocal" element={<Hyperlocal />} />
               <Route path="finances" element={<Finances />} />
               <Route path="cashflow" element={<CashFlow />} />
@@ -34,6 +37,7 @@ function App() {
               <Route path="schemes" element={<Schemes />} />
               <Route path="reports" element={<Reports />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="team" element={<Team />} />
             </Route>
           </Routes>
         </BrowserRouter>

@@ -40,6 +40,11 @@ export default function Sidebar() {
         </div>
       </div>
 
+      {/* Distribution Workspace Badge */}
+      <div className="mx-4 mb-3 px-3 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold flex items-center justify-between shadow-sm">
+        <span>Core Dashboard & Business</span>
+        <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-blue-500/20 font-bold">Platform Core</span>
+      </div>
       {/* Navigation List */}
       <nav className="flex-1 px-3 space-y-1 overflow-y-auto text-sm">
         {/* Dashboard */}

@@ -1,12 +1,18 @@
-# 🌟 Samvaya - AI-Driven Hyperlocal Business Advisory
+# 📊 Core Dashboard & Business Management
 
-> **An intelligent advisory platform empowering micro and local businesses with hyperlocal insights, automated cash flow forecasting, government scheme recommendations, and AI-driven growth strategies.**
+> **Assigned To:** Member 1 (Project Lead / Core Platform)  
+> **Recommended Git Branch:** `members/aryann310`  
+> **Backend Port:** `5000` | **Frontend Port:** `5173`
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-404D59?logo=express&logoColor=white)](https://expressjs.com/)
-[![Vite](https://img.shields.io/badge/Vite-B73BFE?logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+---
+
+## 📌 Module Overview
+This module is the **Core Backbone** of Samvaya. Features:
+- **Business Dashboard**: Health score calculation, revenue/expense stats, operational priorities.
+- **Business Profile**: Business registration details, category, location, and owner KYC with AES-256-GCM field encryption.
+- **System Settings**: Localization and system configurations.
+- **Team Roster**: Hackathon team member showcase.
+- **Global Layout & Navigation**: Application shell, theme toggler, and shared sidebar.
 
 ---
 
@@ -25,66 +31,21 @@ Meet the team building **Samvaya** for Hackathon 2026:
 
 ---
 
-## 🚀 Key Platform Features
+## ⚡ Quick Start Instructions
 
-- **📊 Comprehensive Business Dashboard**: Live Business Health Score, revenue, expenses, available cash tracking, and prioritized daily action items.
-- **🤖 AI Business Advisor**: Contextual, evidence-backed advice tailored to micro-enterprises with local impact analysis and action plans.
-- **📍 Hyperlocal Market Intelligence**: Analysis of nearby competitors, local demand fluctuations, pricing benchmarks, and area opportunities.
-- **💰 Financial Health & Cash Flow**: Cash in/out visual tracking, loan affordability calculators, and financing readiness scores.
-- **🏛️ Government Scheme Matching**: Automated matching against micro-business schemes (e.g., MUDRA Shishu, PMEGP).
-
----
-
-## 🏗️ Architecture & Tech Stack
-
-```text
-Samvaya/
-├── backend/                    # Node.js + Express + TypeScript
-│   ├── src/
-│   │   └── index.ts            # REST APIs (Dashboard, Advisor, Hyperlocal, Finances, Team)
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── frontend/                   # React 19 + TypeScript + Vite + TailwindCSS
-│   ├── src/
-│   │   ├── components/         # Layout, Sidebar, UI cards, Buttons
-│   │   ├── pages/              # Dashboard, AIAdvisor, Hyperlocal, Finances, Team
-│   │   └── App.tsx             # Client routing
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.ts
-└── .gitignore
-```
-
----
-
-## ⚡ Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yashpatel-11/Samvaya.git
-cd Samvaya
-```
-
-### 2. Run Backend
+### 1. Start the Backend Server (Port 5000)
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-> Server runs at [http://localhost:5000](http://localhost:5000)
+Verify the backend is active at: [http://localhost:5000/health](http://localhost:5000/health)
 
-### 3. Run Frontend
+### 2. Start the Frontend Application (Port 5173)
+In a separate terminal:
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```
-> Frontend runs at [http://localhost:5173](http://localhost:5173)
-
----
-
-## 🤝 Contribution Guidelines
-
-1. **Branch Naming**: `feature/your-feature-name` or `fix/bug-name`
-2. **Pull Requests**: Open PRs targeting `main` and request reviews from team collaborators.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
