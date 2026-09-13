@@ -15,10 +15,13 @@ import { isMongoMode, getDatabaseMode } from './db/config.js';
 import { connectDatabase, checkDatabaseHealth } from './db/connection.js';
 import { createIndexes } from './db/indexes.js';
 
+import dashboardRoutes from './routes/dashboard.routes.js';
+import businessRoutes from './routes/business.routes.js';
+
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(express.json());

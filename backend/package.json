@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "samvaya-core-dashboard-and-business-backend",
   "version": "1.0.0",
   "description": "API for AI-Driven Hyperlocal Business Advisory",
   "type": "module",
