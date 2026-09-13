@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getFinancesData } from "../api";
+import { getFinances } from "../services/api";
+import { useBusiness } from "../contexts/BusinessContext";
 import { 
   ArrowUpRight, 
   ArrowDownRight, 
@@ -8,11 +9,12 @@ import {
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function Finances() {
+  const { businessId } = useBusiness();
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    getFinancesData().then(setData).catch(console.error);
-  }, []);
+    getFinances(businessId).then(setData).catch(console.error);
+  }, [businessId]);
 
   const formatCurrency = (amount: number) => `₹${amount.toLocaleString('en-IN')}`;
 
@@ -33,7 +35,7 @@ export default function Finances() {
           <p className="text-xs text-muted-foreground mt-0.5">Cash flow management, profit margins, and operating expenses.</p>
         </div>
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-card/70 backdrop-blur-md border border-glass-border rounded-xl text-xs font-semibold text-foreground/80 shadow-xs hover:bg-muted transition-colors">
+          <button onClick={() => alert('Coming soon!')} className="flex items-center gap-1.5 px-3 py-1.5 bg-card/70 backdrop-blur-md border border-glass-border rounded-xl text-xs font-semibold text-foreground/80 shadow-xs hover:bg-muted transition-colors">
             <Download className="w-3.5 h-3.5" />
             <span>Export Statement</span>
           </button>

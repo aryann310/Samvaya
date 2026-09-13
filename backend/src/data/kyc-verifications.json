@@ -1,0 +1,1578 @@
+[
+  {
+    "requestId": "req_1789258002928_0afav",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "7eb4b10763e2f59724d130422d46ff9aa926b307e31aa91bf75369635fd2f2ba",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7eb4b10763e2f59724d130422d46ff9aa926b307e31aa91bf75369635fd2f2ba&requestId=req_1789258002928_0afav",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:06:42.930Z",
+    "updatedAt": "2026-09-13T00:06:42.930Z"
+  },
+  {
+    "requestId": "req_1789258002933_qvy6r",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "852f47f0a6ea980ac31ba783ab516a42d92fe65ee68582c3144af6b555cec6fa",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=852f47f0a6ea980ac31ba783ab516a42d92fe65ee68582c3144af6b555cec6fa&requestId=req_1789258002933_qvy6r",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:06:42.933Z",
+    "updatedAt": "2026-09-13T00:06:42.934Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789258002936_qcjmb",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "03c900407b761b26fca1386e07386992ee7654965b0fa4f64f09919d6189b3de",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=03c900407b761b26fca1386e07386992ee7654965b0fa4f64f09919d6189b3de&requestId=req_1789258002936_qcjmb",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:06:42.936Z",
+    "updatedAt": "2026-09-13T00:06:42.937Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789258002939_xywyz",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "d2a1cdb9c7b5ca87d1c62ae25eb4b1d8:b55dd5c6bffb19c3a64bf77122fc46a2:9242c3ad775df1e7172c9f7e26703afa",
+    "verifiedDOBEncrypted": "06cd537d5f7ee414ae08d5a7077bd71f:b2b893c06290756e3595f31a48836fdb:0d96c700bee2eb3164c6",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "f9a795098c3ad2ed7fe9f2f06a1291482fe2b33a114c42310c7629f0e85d0499",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=f9a795098c3ad2ed7fe9f2f06a1291482fe2b33a114c42310c7629f0e85d0499&requestId=req_1789258002939_xywyz",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T00:06:42.939Z",
+    "updatedAt": "2026-09-13T00:06:42.941Z",
+    "consentTimestamp": "2026-09-13T00:06:42.940Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789258026569_9bsp1",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "241bcf74517588e6e32ced21fcf540b9e87bf29ec94f0fe9651b33e1d554a8ed",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=241bcf74517588e6e32ced21fcf540b9e87bf29ec94f0fe9651b33e1d554a8ed&requestId=req_1789258026569_9bsp1",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:07:06.570Z",
+    "updatedAt": "2026-09-13T00:07:06.570Z"
+  },
+  {
+    "requestId": "req_1789258026573_9q4py",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "cb6256890d7227934a43e2f8963b49efbf15a9ee28e7eb45834f227c118d01e5",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=cb6256890d7227934a43e2f8963b49efbf15a9ee28e7eb45834f227c118d01e5&requestId=req_1789258026573_9q4py",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:07:06.573Z",
+    "updatedAt": "2026-09-13T00:07:06.574Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789258026576_o9yjg",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "011982d0599582acaae1013535d3b2f0a8b0b05e216289270146a701ff5418fb",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=011982d0599582acaae1013535d3b2f0a8b0b05e216289270146a701ff5418fb&requestId=req_1789258026576_o9yjg",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:07:06.576Z",
+    "updatedAt": "2026-09-13T00:07:06.577Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789258026578_ndzd7",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "7df8306a69e1fcf7a930fe36c0c097e4:b4d8e005dcabdefdb6cd7d6233cecec8:ac4828a6533a2bc9b5f7f4d7d4e70b6e",
+    "verifiedDOBEncrypted": "7c0190914757d0bf020f16230ba63edd:d3b8bec5190353ed6fa6c7e2287eade4:c2695e4c9eb6785162ee",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "c6673764f87003c6357d7fce62ba9407cd85359ec737f5119b1d0b9de3ce064c",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=c6673764f87003c6357d7fce62ba9407cd85359ec737f5119b1d0b9de3ce064c&requestId=req_1789258026578_ndzd7",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T00:07:06.578Z",
+    "updatedAt": "2026-09-13T00:07:06.580Z",
+    "consentTimestamp": "2026-09-13T00:07:06.579Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789258483049_6m5fa",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "093008c4c1bf159dc3a8ab50ebd7b27f7edab5e31d83b3910fa836875e3e5894",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=093008c4c1bf159dc3a8ab50ebd7b27f7edab5e31d83b3910fa836875e3e5894&requestId=req_1789258483049_6m5fa",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:14:43.051Z",
+    "updatedAt": "2026-09-13T00:14:43.051Z"
+  },
+  {
+    "requestId": "req_1789258483055_ze5at",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "dfe49f04ecb8a7485713330db9061dca45cc9dd919d1c4ac30624fc0809a9713",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=dfe49f04ecb8a7485713330db9061dca45cc9dd919d1c4ac30624fc0809a9713&requestId=req_1789258483055_ze5at",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:14:43.055Z",
+    "updatedAt": "2026-09-13T00:14:43.058Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789258483060_hxcj6",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "7a6a9ef21b6e3c0e760f604169971536f6f4db8831d355e7b1af845e267c4099",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7a6a9ef21b6e3c0e760f604169971536f6f4db8831d355e7b1af845e267c4099&requestId=req_1789258483060_hxcj6",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:14:43.061Z",
+    "updatedAt": "2026-09-13T00:14:43.062Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789258483064_ndff4",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "4a55376cbb7b4f00b9e251761ecc1892:2a87e71bd7c651ca033abc6958c08599:076aadf5fe3e193649fe1a7c91a3bf70",
+    "verifiedDOBEncrypted": "cb07c5379c1ebbe5043420f86a7febda:2edeecfe3d94e286c865fe7cadb1e560:c56eddb1ee4358760b47",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "7d53001c0b4eed9e9adac25e31208e50b184505af1b0815704b18c82ee46ce5c",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7d53001c0b4eed9e9adac25e31208e50b184505af1b0815704b18c82ee46ce5c&requestId=req_1789258483064_ndff4",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T00:14:43.064Z",
+    "updatedAt": "2026-09-13T00:14:43.068Z",
+    "consentTimestamp": "2026-09-13T00:14:43.066Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789258773426_b45jh",
+    "userId": "usr-test-01",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "9a559beb2f3da68707b01809c2ed6d8a647955c5255211049bb358b0cbb4d7e4",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=9a559beb2f3da68707b01809c2ed6d8a647955c5255211049bb358b0cbb4d7e4&requestId=req_1789258773426_b45jh",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:19:33.428Z",
+    "updatedAt": "2026-09-13T00:19:33.428Z"
+  },
+  {
+    "requestId": "req_1789260430847_om5a6",
+    "userId": "usr-test-01",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "815c2a54d25ec5b415187cc55fb10700f19ce88db0fcc93ab918be85eb8db18e",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=815c2a54d25ec5b415187cc55fb10700f19ce88db0fcc93ab918be85eb8db18e&requestId=req_1789260430847_om5a6",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T00:47:10.848Z",
+    "updatedAt": "2026-09-13T00:47:10.848Z"
+  },
+  {
+    "requestId": "req_1789264607250_2xlxe",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "116cba813abbd52c5e97dbbc8048553aeb4726ce71241ed0ff6c317efcdd8217",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=116cba813abbd52c5e97dbbc8048553aeb4726ce71241ed0ff6c317efcdd8217&requestId=req_1789264607250_2xlxe",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:56:47.251Z",
+    "updatedAt": "2026-09-13T01:56:47.251Z"
+  },
+  {
+    "requestId": "req_1789264607255_b9a8b",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "9822de4907d7594502d0b9e302cd843a2b1f2746b45d556737736acf8531027f",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=9822de4907d7594502d0b9e302cd843a2b1f2746b45d556737736acf8531027f&requestId=req_1789264607255_b9a8b",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:56:47.255Z",
+    "updatedAt": "2026-09-13T01:56:47.257Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789264607259_kat2a",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "78cbc0716a8c9120e0086171292e1b05ee8bf57f0a8c6110398480d5133493fd",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=78cbc0716a8c9120e0086171292e1b05ee8bf57f0a8c6110398480d5133493fd&requestId=req_1789264607259_kat2a",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:56:47.259Z",
+    "updatedAt": "2026-09-13T01:56:47.260Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789264607261_55qfp",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "5ebbff3b526e38d053c46e30e59cb7d1:9e22bc3ddaddff0ce0122b39ee0b3998:32c473dbdda88aa558b8c2f0756acc44",
+    "verifiedDOBEncrypted": "8e3f346855f1b75a5ae2793f3f2c7c0a:20265a2c1162444f4fe3748e70211d8d:31c5b514b7f6bd14fb15",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "d06473371a04b36647e3d66dd700b9d9a47d80d9f525b38bf956f1b6115a4497",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=d06473371a04b36647e3d66dd700b9d9a47d80d9f525b38bf956f1b6115a4497&requestId=req_1789264607261_55qfp",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T01:56:47.261Z",
+    "updatedAt": "2026-09-13T01:56:47.263Z",
+    "consentTimestamp": "2026-09-13T01:56:47.262Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789264639810_cewg4",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "71b329dcf72c731637e618771d773862eeedcabb4231a4abb681aa5c43b23fc6",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=71b329dcf72c731637e618771d773862eeedcabb4231a4abb681aa5c43b23fc6&requestId=req_1789264639810_cewg4",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:57:19.812Z",
+    "updatedAt": "2026-09-13T01:57:19.812Z"
+  },
+  {
+    "requestId": "req_1789264639815_quia2",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "803bf133e6db33ffc9ad26592109721c538adb0bcb556fdcf745db46a9e3e914",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=803bf133e6db33ffc9ad26592109721c538adb0bcb556fdcf745db46a9e3e914&requestId=req_1789264639815_quia2",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:57:19.816Z",
+    "updatedAt": "2026-09-13T01:57:19.817Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789264639819_kguq1",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "148caa7a050b6df8841fa1f556b4626200f2a5161921b8ea1d9689f7301338bf",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=148caa7a050b6df8841fa1f556b4626200f2a5161921b8ea1d9689f7301338bf&requestId=req_1789264639819_kguq1",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:57:19.819Z",
+    "updatedAt": "2026-09-13T01:57:19.820Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789264639822_s0ne5",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "684306feacf56d75a187b455840a8556:57a1a1dc0b906d4b8bfc9ff0ca14e6be:19067902d07995380ac6d2d89fe3640b",
+    "verifiedDOBEncrypted": "a7ef92f30978d8226d13ec3be143ee24:f8f24748f00805352dcc43ef48da278f:63e614850e67068bc510",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "d16944f21d873d622b4eda2a919946ee9bc190afd94b8aa33968c92175a753a4",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=d16944f21d873d622b4eda2a919946ee9bc190afd94b8aa33968c92175a753a4&requestId=req_1789264639822_s0ne5",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T01:57:19.822Z",
+    "updatedAt": "2026-09-13T01:57:19.825Z",
+    "consentTimestamp": "2026-09-13T01:57:19.823Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789264714894_0xq0v",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "c40920397b22031ef91b637366aa3b9dab9c846d21d10efeeae6563c8dcff18d",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=c40920397b22031ef91b637366aa3b9dab9c846d21d10efeeae6563c8dcff18d&requestId=req_1789264714894_0xq0v",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:58:34.896Z",
+    "updatedAt": "2026-09-13T01:58:34.896Z"
+  },
+  {
+    "requestId": "req_1789264714898_ks3y8",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "40996ed0922bb40b2936be0a50fe83a7f787e73f43d53884a195ae045b5e84af",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=40996ed0922bb40b2936be0a50fe83a7f787e73f43d53884a195ae045b5e84af&requestId=req_1789264714898_ks3y8",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:58:34.898Z",
+    "updatedAt": "2026-09-13T01:58:34.900Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789264714912_qxxvw",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "cde4d39645635d8c6dea05a33e56994df4d70f14937650bd1833fc1a4df9d175",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=cde4d39645635d8c6dea05a33e56994df4d70f14937650bd1833fc1a4df9d175&requestId=req_1789264714912_qxxvw",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:58:34.912Z",
+    "updatedAt": "2026-09-13T01:58:34.915Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789264714917_80d83",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "dd5279b770bd1883d891c2be1d5817fe:02d75070578ab8083ae0048f88c2b1cc:ad419e34c410291fbe01f5cf32cdd05e",
+    "verifiedDOBEncrypted": "7fd30171dbe8bcfb81098c49d6893528:8c89467c5e358ead1bf75a6834dbd430:36384f4cde7b3c1db0a3",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "1feef8e02cefb3df9574233a16cb7adc0164ab798fedef3747779dfb6406b350",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=1feef8e02cefb3df9574233a16cb7adc0164ab798fedef3747779dfb6406b350&requestId=req_1789264714917_80d83",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T01:58:34.917Z",
+    "updatedAt": "2026-09-13T01:58:34.920Z",
+    "consentTimestamp": "2026-09-13T01:58:34.918Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789264750190_8volc",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "ce632422df3a6981e968597566304bc7f4307aacf3445abe1dab5fccb6cbfa0e",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=ce632422df3a6981e968597566304bc7f4307aacf3445abe1dab5fccb6cbfa0e&requestId=req_1789264750190_8volc",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:59:10.191Z",
+    "updatedAt": "2026-09-13T01:59:10.191Z"
+  },
+  {
+    "requestId": "req_1789264750194_2h8e0",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "8a6ca0c534738a9c04c070c983f8961e6ae90b3b57119095d4d720cea1cbb1a6",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=8a6ca0c534738a9c04c070c983f8961e6ae90b3b57119095d4d720cea1cbb1a6&requestId=req_1789264750194_2h8e0",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:59:10.194Z",
+    "updatedAt": "2026-09-13T01:59:10.196Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789264750198_3enj4",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "c223f5f70aabb6f681572cf336c1ab726917e25b67c718fa6bbcf9468050e213",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=c223f5f70aabb6f681572cf336c1ab726917e25b67c718fa6bbcf9468050e213&requestId=req_1789264750198_3enj4",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T01:59:10.198Z",
+    "updatedAt": "2026-09-13T01:59:10.199Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789264750201_s9baz",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "6be5a675fbb78063c38cf6992e43d4a1:13db651284bdf96b52ab7bcf05b3f092:f55730aa89a9c244dc600c0ed2d60506",
+    "verifiedDOBEncrypted": "519e97fcca71e5217bf368e1d9d2f9ea:c8810b1dc53c05f3661e4e6ad551c0d3:f1eb34e98db036ad476e",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "19eb75cfa97629f4d0156b31677a5dee4c145ca918d6fe940e6126f48027a6fb",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=19eb75cfa97629f4d0156b31677a5dee4c145ca918d6fe940e6126f48027a6fb&requestId=req_1789264750201_s9baz",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T01:59:10.202Z",
+    "updatedAt": "2026-09-13T01:59:10.204Z",
+    "consentTimestamp": "2026-09-13T01:59:10.203Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789264819829_i0sfl",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "8dbf4d5b15699c3af97c894feca47c189fb9d0be68a082468fe1d101ebbb8d65",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=8dbf4d5b15699c3af97c894feca47c189fb9d0be68a082468fe1d101ebbb8d65&requestId=req_1789264819829_i0sfl",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:00:19.832Z",
+    "updatedAt": "2026-09-13T02:00:19.832Z"
+  },
+  {
+    "requestId": "req_1789264819834_s410j",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "ac2bbb43537c8d04d6b992dd834da5210b3a8cc785e687bfd23fa1b48b85fa4b",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=ac2bbb43537c8d04d6b992dd834da5210b3a8cc785e687bfd23fa1b48b85fa4b&requestId=req_1789264819834_s410j",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:00:19.834Z",
+    "updatedAt": "2026-09-13T02:00:19.836Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789264819838_ow74h",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "818dba55ce9473a053be5b510f769b34913bd2e9cebec3564c793545eda72ebe",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=818dba55ce9473a053be5b510f769b34913bd2e9cebec3564c793545eda72ebe&requestId=req_1789264819838_ow74h",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:00:19.838Z",
+    "updatedAt": "2026-09-13T02:00:19.851Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789264819853_fyilg",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "fa8b2e6bc093f5bcdd73d3811eb9acc6:314bae5c0a1cce721da33c7656663e3b:c6961f57c98a635be0db8038cd66281e",
+    "verifiedDOBEncrypted": "614873ecba0761dea16641868b580cd8:b8340ae0b7c623feda6d240e78e237fd:39619b6272ef5a116961",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "3cd4fb577f8dedb9104ef2093efdd38ad1c40a78e348d86c4b80045bed55db90",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=3cd4fb577f8dedb9104ef2093efdd38ad1c40a78e348d86c4b80045bed55db90&requestId=req_1789264819853_fyilg",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:00:19.853Z",
+    "updatedAt": "2026-09-13T02:00:19.856Z",
+    "consentTimestamp": "2026-09-13T02:00:19.854Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789264995386_l5nnh",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "b999c44815571b1741fe69cde9d4f728b513391cb1c183e688a573cd3cd6fe29",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=b999c44815571b1741fe69cde9d4f728b513391cb1c183e688a573cd3cd6fe29&requestId=req_1789264995386_l5nnh",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:03:15.387Z",
+    "updatedAt": "2026-09-13T02:03:15.387Z"
+  },
+  {
+    "requestId": "req_1789264995391_ty9tb",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "2ed97d3be890f8e6f0c42f47d8d058ae35d497f0a5e7e1992d58c2bd3f33cf7d",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=2ed97d3be890f8e6f0c42f47d8d058ae35d497f0a5e7e1992d58c2bd3f33cf7d&requestId=req_1789264995391_ty9tb",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:03:15.391Z",
+    "updatedAt": "2026-09-13T02:03:15.393Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789264995396_gzysz",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "22362c9e66a7fef661a679a278b551f0735cab740275311c34376ea0c7a5bccd",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=22362c9e66a7fef661a679a278b551f0735cab740275311c34376ea0c7a5bccd&requestId=req_1789264995396_gzysz",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:03:15.397Z",
+    "updatedAt": "2026-09-13T02:03:15.398Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789264995400_714fw",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "fbc24b5da549d894441b4372d78435b4:9adf10901c8879e246e352e37e1a0a3d:348637b8f99bd73638e88da38c24a46e",
+    "verifiedDOBEncrypted": "13111ec980d74e9a3713535c1ec04d66:4b0db6992beba8b2564bc4ec5334a696:c85827fc14bc11003fd2",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "06af04221a1cf41a491b18d0e1b940345e8e70b74b667d2d01fd5a28e907af57",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=06af04221a1cf41a491b18d0e1b940345e8e70b74b667d2d01fd5a28e907af57&requestId=req_1789264995400_714fw",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:03:15.401Z",
+    "updatedAt": "2026-09-13T02:03:15.404Z",
+    "consentTimestamp": "2026-09-13T02:03:15.402Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789265064443_ktsuj",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "bf0b2f61171f51971968c586442bc39a5549d5d6c903b3260a39464ad788a2d5",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=bf0b2f61171f51971968c586442bc39a5549d5d6c903b3260a39464ad788a2d5&requestId=req_1789265064443_ktsuj",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:04:24.445Z",
+    "updatedAt": "2026-09-13T02:04:24.445Z"
+  },
+  {
+    "requestId": "req_1789265064448_2shfe",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "f2bc5985541b831121408e2727b69f6574d21e682788044229a9c61ea7751e60",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=f2bc5985541b831121408e2727b69f6574d21e682788044229a9c61ea7751e60&requestId=req_1789265064448_2shfe",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:04:24.448Z",
+    "updatedAt": "2026-09-13T02:04:24.449Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789265064452_n3gjl",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "43571012729be1922e79ea4e3b1060a3a9114728cb0b20d614f8d10dc65fe337",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=43571012729be1922e79ea4e3b1060a3a9114728cb0b20d614f8d10dc65fe337&requestId=req_1789265064452_n3gjl",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:04:24.452Z",
+    "updatedAt": "2026-09-13T02:04:24.453Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789265064454_t15n3",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "4f28cc6a103d0ec35e1af6738635ec02:2562cdd2aff2193afeede31f95f018b4:34e408f878cad53ad40a1fe821a23aa8",
+    "verifiedDOBEncrypted": "d9e90a5d0c0d525bb5936d9c3adfaed9:48ad630d94458cc3d001575ccc191f25:0624ce803ecd2c325ea7",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "2b48a4c4712ec17179d15072355fef6d9c89102e744cb37ada3393b74478e86e",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=2b48a4c4712ec17179d15072355fef6d9c89102e744cb37ada3393b74478e86e&requestId=req_1789265064454_t15n3",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:04:24.454Z",
+    "updatedAt": "2026-09-13T02:04:24.457Z",
+    "consentTimestamp": "2026-09-13T02:04:24.456Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789265133136_drsii",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "4789b350506dcdfd0fa746a85794ff6f792e14003c3e6db3a322f9eb9e2b6372",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=4789b350506dcdfd0fa746a85794ff6f792e14003c3e6db3a322f9eb9e2b6372&requestId=req_1789265133136_drsii",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:05:33.139Z",
+    "updatedAt": "2026-09-13T02:05:33.139Z"
+  },
+  {
+    "requestId": "req_1789265133143_g8mbb",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "7194968f47f06d5a68741adcb5ad4b0badb0936ef9ecdc12b75cc81266ef1ea7",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7194968f47f06d5a68741adcb5ad4b0badb0936ef9ecdc12b75cc81266ef1ea7&requestId=req_1789265133143_g8mbb",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:05:33.143Z",
+    "updatedAt": "2026-09-13T02:05:33.146Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789265133150_pyi32",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "8d5616bde7dd2d5d8a2f9b346f96e819bfff9959c1f4d4c3850556c0577a8b32",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=8d5616bde7dd2d5d8a2f9b346f96e819bfff9959c1f4d4c3850556c0577a8b32&requestId=req_1789265133150_pyi32",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:05:33.150Z",
+    "updatedAt": "2026-09-13T02:05:33.152Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789265133153_z0vl7",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "28537f8333ce498ead8cdf8d416ab0dc:33c4276d10e06e836c8aa118ffc8cef4:3d99438b8aeab8d46d58f28644d53db8",
+    "verifiedDOBEncrypted": "2b3c2b0ae2e01f2727909a59eb5c6434:f00279f844268fe02309b7a0dd3bed86:68ab638d1c0cc1efed37",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "919c9407d8aab814f044a3ca650e87ee3f69972189cb414ee2c5fc9b1d4e728e",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=919c9407d8aab814f044a3ca650e87ee3f69972189cb414ee2c5fc9b1d4e728e&requestId=req_1789265133153_z0vl7",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:05:33.153Z",
+    "updatedAt": "2026-09-13T02:05:33.158Z",
+    "consentTimestamp": "2026-09-13T02:05:33.155Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789267356385_orjnc",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "66b44bcf066cbda72104d28d0dc76be9a88746057a149e04c0f433820f516268",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=66b44bcf066cbda72104d28d0dc76be9a88746057a149e04c0f433820f516268&requestId=req_1789267356385_orjnc",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:42:36.387Z",
+    "updatedAt": "2026-09-13T02:42:36.387Z"
+  },
+  {
+    "requestId": "req_1789267356390_oejf0",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "19b12a568269cc0699df01e57ef15b935225c785bbd721e7a5d992887c9491ae",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=19b12a568269cc0699df01e57ef15b935225c785bbd721e7a5d992887c9491ae&requestId=req_1789267356390_oejf0",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:42:36.391Z",
+    "updatedAt": "2026-09-13T02:42:36.395Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789267356399_xc6wx",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "5f8af9838e98345600b6e54939d199dee787f7c07c8984608d4efeddd9dea476",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=5f8af9838e98345600b6e54939d199dee787f7c07c8984608d4efeddd9dea476&requestId=req_1789267356399_xc6wx",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:42:36.399Z",
+    "updatedAt": "2026-09-13T02:42:36.402Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789267356404_4itww",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "3904d6be8495457b2451533b4ad39a4e:2818c8e84cf397c2266810ccc21600af:383669abaab37de4a8ba3ac7be829623",
+    "verifiedDOBEncrypted": "0d4f95431f1a230c189950a80bcd4a3e:53a551edbe7692394af6e6bbc7512c19:63256d8136a9492b7536",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "2892ce92efbb822d8e5e4c2b897a3037cf8a809680f709f69b6f4172727adda5",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=2892ce92efbb822d8e5e4c2b897a3037cf8a809680f709f69b6f4172727adda5&requestId=req_1789267356404_4itww",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:42:36.405Z",
+    "updatedAt": "2026-09-13T02:42:36.409Z",
+    "consentTimestamp": "2026-09-13T02:42:36.407Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789267411384_h0ueu",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "2dd6434efbd1e040b0941b8aa6868bcb16bb84343e0c78c66e2d763592e74309",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=2dd6434efbd1e040b0941b8aa6868bcb16bb84343e0c78c66e2d763592e74309&requestId=req_1789267411384_h0ueu",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:43:31.392Z",
+    "updatedAt": "2026-09-13T02:43:31.392Z"
+  },
+  {
+    "requestId": "req_1789267411395_2davx",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "7e593d4265cdf2114c9b00d093c17c38499080795e3c4a6818830b2f3709aba0",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7e593d4265cdf2114c9b00d093c17c38499080795e3c4a6818830b2f3709aba0&requestId=req_1789267411395_2davx",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:43:31.395Z",
+    "updatedAt": "2026-09-13T02:43:31.397Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789267411400_fv1rx",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "7bfbc35c1da66d581051d16e10078aecb22c6f079ea69c169ccebefe696a1594",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7bfbc35c1da66d581051d16e10078aecb22c6f079ea69c169ccebefe696a1594&requestId=req_1789267411400_fv1rx",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:43:31.400Z",
+    "updatedAt": "2026-09-13T02:43:31.402Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789267411403_6j9rd",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "3990872db76fcb667f6993d834a6fd61:ae2d2139285c44a6e1fad3201a96c1db:c3d6664d0376a11be3e2c4280cd6a768",
+    "verifiedDOBEncrypted": "5158ae26b6696c2e4105274d3ad16937:a8c8363418a69895f2f75ec853ae81fd:cce1c39f95c496548f7d",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "57b57ab5ce16b0478d48a42fbac36e431356d517a3b2ba1a004497441d8aa755",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=57b57ab5ce16b0478d48a42fbac36e431356d517a3b2ba1a004497441d8aa755&requestId=req_1789267411403_6j9rd",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:43:31.403Z",
+    "updatedAt": "2026-09-13T02:43:31.408Z",
+    "consentTimestamp": "2026-09-13T02:43:31.406Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789268150854_e8dyg",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "066d6301cbb06ef284aa7581402e2684b0b3beb583eee2b24689219d9e630668",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=066d6301cbb06ef284aa7581402e2684b0b3beb583eee2b24689219d9e630668&requestId=req_1789268150854_e8dyg",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:55:50.856Z",
+    "updatedAt": "2026-09-13T02:55:50.856Z"
+  },
+  {
+    "requestId": "req_1789268150860_qrlpk",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "00a16165a165c167e0d1cbeb4782f78aa3b3d8387f55de605e5c4583fcc452d3",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=00a16165a165c167e0d1cbeb4782f78aa3b3d8387f55de605e5c4583fcc452d3&requestId=req_1789268150860_qrlpk",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:55:50.860Z",
+    "updatedAt": "2026-09-13T02:55:50.863Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789268150865_30rqc",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "243f169c237ee5c37ca44c4639906b746319b940ff99e1d684ee204361c3dc10",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=243f169c237ee5c37ca44c4639906b746319b940ff99e1d684ee204361c3dc10&requestId=req_1789268150865_30rqc",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:55:50.865Z",
+    "updatedAt": "2026-09-13T02:55:50.870Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789268150872_gr52e",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "24fd5a46accecf004f4bfbe8b6523596:d1bf1b6457b76961b1ea4ab438d7ed17:74d516c295938fc87abdc893cd4b6870",
+    "verifiedDOBEncrypted": "c4f72f94275e81f5ecba70d65aa1a582:f6b9d233254435ed714dbdd23243ed48:ed3e960aba01bada8ace",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "239b5cdadf82f6cc931869f2cf6fdaa435a0dfcd50eeb32a35d8fdfdc993d9f3",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=239b5cdadf82f6cc931869f2cf6fdaa435a0dfcd50eeb32a35d8fdfdc993d9f3&requestId=req_1789268150872_gr52e",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:55:50.873Z",
+    "updatedAt": "2026-09-13T02:55:50.879Z",
+    "consentTimestamp": "2026-09-13T02:55:50.877Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789268228445_93nls",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "b01c73d2f6ceb0df3cfa843c6cfec92901597c70871258676891a518a19123df",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=b01c73d2f6ceb0df3cfa843c6cfec92901597c70871258676891a518a19123df&requestId=req_1789268228445_93nls",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:57:08.446Z",
+    "updatedAt": "2026-09-13T02:57:08.446Z"
+  },
+  {
+    "requestId": "req_1789268228448_t8lmj",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "d69c302365b405093af86a4cc223ae606a65700549a862c90f04ed675d9e0000",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=d69c302365b405093af86a4cc223ae606a65700549a862c90f04ed675d9e0000&requestId=req_1789268228448_t8lmj",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:57:08.448Z",
+    "updatedAt": "2026-09-13T02:57:08.450Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789268228452_ttm7e",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "3b62dd104cfe07e92e04cc06636e385802491df06ecb43737cd58759bd9c9970",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=3b62dd104cfe07e92e04cc06636e385802491df06ecb43737cd58759bd9c9970&requestId=req_1789268228452_ttm7e",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T02:57:08.452Z",
+    "updatedAt": "2026-09-13T02:57:08.453Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789268228455_559hg",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "f8571cb4073d78a03334d71ca5c91817:2b0f68b8a29970d111f75332356bf723:a14bbd39d4964f2c7fd297b415991d2a",
+    "verifiedDOBEncrypted": "db4505d8144287f80e14a16b63dab4f8:fc3f46651f12e20faf126b3dad4cec58:db08b9f2940aee866cd5",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "85110673ef16960b773b74559c99ffa68c875c9827400ba1585e52993cc6c7bc",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=85110673ef16960b773b74559c99ffa68c875c9827400ba1585e52993cc6c7bc&requestId=req_1789268228455_559hg",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T02:57:08.455Z",
+    "updatedAt": "2026-09-13T02:57:08.458Z",
+    "consentTimestamp": "2026-09-13T02:57:08.457Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789268871029_e9bl0",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "a07f182295c014088d3b38896886b2521972eb19e9b14e6745ac74f39902d38e",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=a07f182295c014088d3b38896886b2521972eb19e9b14e6745ac74f39902d38e&requestId=req_1789268871029_e9bl0",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:07:51.030Z",
+    "updatedAt": "2026-09-13T03:07:51.030Z"
+  },
+  {
+    "requestId": "req_1789268871033_suvg9",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "4130a577b0f7a76a260f84db354f77480cef2f735b3dac1f2f60f39c3a82c30b",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=4130a577b0f7a76a260f84db354f77480cef2f735b3dac1f2f60f39c3a82c30b&requestId=req_1789268871033_suvg9",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:07:51.033Z",
+    "updatedAt": "2026-09-13T03:07:51.035Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789268871036_471nq",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "b85f5834418ca647b2bc6586b0856d143f282e6a20f1a259de58c5b0bdfb2eae",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=b85f5834418ca647b2bc6586b0856d143f282e6a20f1a259de58c5b0bdfb2eae&requestId=req_1789268871036_471nq",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:07:51.036Z",
+    "updatedAt": "2026-09-13T03:07:51.038Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789268871040_se0g7",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "a166840a9ce319a1b5244ba11c62c21e:69be6e4c969d2f72e99dac60c4f01216:9ca6cb88795e22fd74fe247ddbbda9c8",
+    "verifiedDOBEncrypted": "bc507255e5d64b81ff4c925362e87f41:a0deeddd1c705cab76b1287445f438d4:488f6e055d403a2efb04",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "59b839d61f8860e65fec216bd4360cdacdc920006f38968ad4d8e9965c708767",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=59b839d61f8860e65fec216bd4360cdacdc920006f38968ad4d8e9965c708767&requestId=req_1789268871040_se0g7",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T03:07:51.040Z",
+    "updatedAt": "2026-09-13T03:07:51.042Z",
+    "consentTimestamp": "2026-09-13T03:07:51.041Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789269028715_dd5nf",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "2efd5f64f4ec514589e84e386c2af78275515f187db390980929735c420ce142",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=2efd5f64f4ec514589e84e386c2af78275515f187db390980929735c420ce142&requestId=req_1789269028715_dd5nf",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:10:28.716Z",
+    "updatedAt": "2026-09-13T03:10:28.716Z"
+  },
+  {
+    "requestId": "req_1789269028777_bni2s",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "f29b374a17f01cbc6de002ff27ab35a94497bbf61b7f5eaa0700d1b73a0f0c24",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=f29b374a17f01cbc6de002ff27ab35a94497bbf61b7f5eaa0700d1b73a0f0c24&requestId=req_1789269028777_bni2s",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:10:28.777Z",
+    "updatedAt": "2026-09-13T03:10:28.780Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789269028784_h4nyd",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "fcc2209b5521686f72f47ec0b51a51fbe7cdaffc434766446bdf895e2a6c2e84",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=fcc2209b5521686f72f47ec0b51a51fbe7cdaffc434766446bdf895e2a6c2e84&requestId=req_1789269028784_h4nyd",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:10:28.784Z",
+    "updatedAt": "2026-09-13T03:10:28.786Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789269028790_3oysy",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "a5ddbf1f146d348e86bbe0fa93a540d4:c7e42defd7db124938a40e11a41e0808:d15d7d73384080b81dc0f7e38b5a6458",
+    "verifiedDOBEncrypted": "21a8ba9ef66937230bdcc6b2f8932eab:34bee7cf666553eb338fd6315e17bd6e:5f4638a5e9ad4dd165da",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "4fee808f1f5cb2ea5c4d8e7c842e8ca97a0ea2ec9699903485d7e457c165c843",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=4fee808f1f5cb2ea5c4d8e7c842e8ca97a0ea2ec9699903485d7e457c165c843&requestId=req_1789269028790_3oysy",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T03:10:28.790Z",
+    "updatedAt": "2026-09-13T03:10:28.796Z",
+    "consentTimestamp": "2026-09-13T03:10:28.793Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789269757106_31xl9",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "2b460e42f07a6d0db2b3b97db41a1053eaebbf275c9b893e308a543ee5e41be4",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=2b460e42f07a6d0db2b3b97db41a1053eaebbf275c9b893e308a543ee5e41be4&requestId=req_1789269757106_31xl9",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:22:37.107Z",
+    "updatedAt": "2026-09-13T03:22:37.107Z"
+  },
+  {
+    "requestId": "req_1789269757112_22kxl",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "754e76d2dc9db4c08a48f3abbf3f5254bfd1074ed4bba64a64f8fa3964bb3a99",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=754e76d2dc9db4c08a48f3abbf3f5254bfd1074ed4bba64a64f8fa3964bb3a99&requestId=req_1789269757112_22kxl",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:22:37.112Z",
+    "updatedAt": "2026-09-13T03:22:37.114Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789269757117_b600s",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "f2304550c6a5c2dcb82b4dde3af5384fa264d9c035a88036df0da0229f43b40b",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=f2304550c6a5c2dcb82b4dde3af5384fa264d9c035a88036df0da0229f43b40b&requestId=req_1789269757117_b600s",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:22:37.117Z",
+    "updatedAt": "2026-09-13T03:22:37.119Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789269757120_0r6i3",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "ab50e988c892560a8994774f5ea3e258:1a34d920fa9bd70fb3aa749f1a81391b:54585981406624bc80e823c5dba82081",
+    "verifiedDOBEncrypted": "f09c43143edf586d947572097eca0117:c4c40d141ece8b6528eb9fea54ad9ccb:580d6451ce4297512679",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "82a915150d75ee7d0f6ef414bf42a358ba783e192741159a7dde538621b74576",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=82a915150d75ee7d0f6ef414bf42a358ba783e192741159a7dde538621b74576&requestId=req_1789269757120_0r6i3",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T03:22:37.120Z",
+    "updatedAt": "2026-09-13T03:22:37.125Z",
+    "consentTimestamp": "2026-09-13T03:22:37.123Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789271382423_wf3ea",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "de49256abf8aad0b3035807138e5011e9aa101e7df6f90359cb754e5e5dfa38a",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=de49256abf8aad0b3035807138e5011e9aa101e7df6f90359cb754e5e5dfa38a&requestId=req_1789271382423_wf3ea",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:49:42.430Z",
+    "updatedAt": "2026-09-13T03:49:42.430Z"
+  },
+  {
+    "requestId": "req_1789271382436_60fyx",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "8ef27c60b5c213918a564ee64f7b3e902af5cfb7cad27a544b8f1933ce969b27",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=8ef27c60b5c213918a564ee64f7b3e902af5cfb7cad27a544b8f1933ce969b27&requestId=req_1789271382436_60fyx",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:49:42.436Z",
+    "updatedAt": "2026-09-13T03:49:42.438Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789271382443_ksj0m",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "c323a1f369b506f119f303c086f172217c6cb3a310d065c3c633617b40bc7994",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=c323a1f369b506f119f303c086f172217c6cb3a310d065c3c633617b40bc7994&requestId=req_1789271382443_ksj0m",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:49:42.443Z",
+    "updatedAt": "2026-09-13T03:49:42.444Z",
+    "errorMessage": "Consent was declined by user"
+  },
+  {
+    "requestId": "req_1789271382449_xi625",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "f9661376e9b2de05e2ed80c6e232b310:84ceb7259e26ae205bcf4f8f04195a12:1772bfa083ecb7b0f9c1158442b88413",
+    "verifiedDOBEncrypted": "dfb7cab853c122da39bb4444c43ed78a:c8bb7c161ca2214cc33bf5d91e4b90c5:99d7d2a37c0aaa03ed5b",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "0284d667f4399fd1f68d3309d3c81a0f36efb231bc199a77c312c6433cd55cdd",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=0284d667f4399fd1f68d3309d3c81a0f36efb231bc199a77c312c6433cd55cdd&requestId=req_1789271382449_xi625",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T03:49:42.450Z",
+    "updatedAt": "2026-09-13T03:49:42.457Z",
+    "consentTimestamp": "2026-09-13T03:49:42.452Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  },
+  {
+    "requestId": "req_1789271889843_vq7x6",
+    "userId": "test-user-001",
+    "documentType": "PAN",
+    "verificationStatus": "initiated",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "7f796500aed18a38ae23288d89f7f245f4eb08eb02a2bb72bd6f86829af1116d",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=7f796500aed18a38ae23288d89f7f245f4eb08eb02a2bb72bd6f86829af1116d&requestId=req_1789271889843_vq7x6",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:58:09.843Z",
+    "updatedAt": "2026-09-13T03:58:09.843Z"
+  },
+  {
+    "requestId": "req_1789271889846_chjpe",
+    "userId": "test-user-002",
+    "documentType": "PAN",
+    "verificationStatus": "failed",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "837600c49e041570d827e008b99bf5e36d1e2370e3890a459439f6513c0c1ebd",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=837600c49e041570d827e008b99bf5e36d1e2370e3890a459439f6513c0c1ebd&requestId=req_1789271889846_chjpe",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:58:09.847Z",
+    "updatedAt": "2026-09-13T03:58:09.848Z",
+    "errorMessage": "CSRF validation failed: State token mismatch"
+  },
+  {
+    "requestId": "req_1789271889850_nw3k1",
+    "userId": "test-user-003",
+    "documentType": "PAN",
+    "verificationStatus": "denied",
+    "verifiedNameEncrypted": "",
+    "verifiedDOBEncrypted": "",
+    "digitalSignatureValid": false,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "mobile",
+    "stateToken": "8ba2770031088aa3f9798ba84aff2e5853c2621b854f6d89ddf91dc351121b96",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=8ba2770031088aa3f9798ba84aff2e5853c2621b854f6d89ddf91dc351121b96&requestId=req_1789271889850_nw3k1",
+    "tokenRevoked": false,
+    "createdAt": "2026-09-13T03:58:09.850Z",
+    "updatedAt": "2026-09-13T03:58:09.852Z",
+    "errorMessage": "user_declined"
+  },
+  {
+    "requestId": "req_1789271889854_tly8c",
+    "userId": "test-user-004",
+    "documentType": "PAN",
+    "verificationStatus": "authenticated",
+    "verifiedNameEncrypted": "ba2bf4cdcd78c0a3c0cb2e365fd8ed26:58d73ee65cba7714deeec298a88b11d9:8a65d4dc8d68b18f9db2c7650d14aa56",
+    "verifiedDOBEncrypted": "c93385e9debd5c6d6118f090ceb506a4:0036dd8ae8b8d1b4e69f44acb97a8d97:b126cf81a9ae84f3af8a",
+    "digitalSignatureValid": true,
+    "consentScope": [
+      "PAN"
+    ],
+    "platform": "web",
+    "stateToken": "8a873a816abd4586e796acb594287d42cb2e0cce2a3a401aa3d424d79ec57218",
+    "redirectUrl": "http://localhost:5000/api/v2/digilocker/callback?state=8a873a816abd4586e796acb594287d42cb2e0cce2a3a401aa3d424d79ec57218&requestId=req_1789271889854_tly8c",
+    "tokenRevoked": true,
+    "createdAt": "2026-09-13T03:58:09.854Z",
+    "updatedAt": "2026-09-13T03:58:09.859Z",
+    "consentTimestamp": "2026-09-13T03:58:09.856Z",
+    "panNumberMasked": "XXXXXX234F",
+    "aadhaarNumberMasked": "9012"
+  }
+]

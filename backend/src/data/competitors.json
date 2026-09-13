@@ -1,0 +1,5 @@
+[
+  { "id": "c1", "name": "Sharma Provision Store", "distance": 0.3, "type": "Kirana", "estimatedRevenue": 150000, "pricingInfo": [{ "item": "Toor Dal", "price": 145 }] },
+  { "id": "c2", "name": "Mehta General Store", "distance": 0.8, "type": "Kirana", "estimatedRevenue": 120000, "pricingInfo": [{ "item": "Toor Dal", "price": 155 }] },
+  { "id": "c3", "name": "Village Mini Market", "distance": 1.2, "type": "Supermarket", "estimatedRevenue": 300000, "pricingInfo": [{ "item": "Toor Dal", "price": 160 }] }
+]

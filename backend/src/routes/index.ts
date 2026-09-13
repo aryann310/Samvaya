@@ -1,0 +1,30 @@
+import { Router } from 'express';
+import businessRoutes from './business.routes.js';
+import dashboardRoutes from './dashboard.routes.js';
+import financeRoutes from './finance.routes.js';
+import cashflowRoutes from './cashflow.routes.js';
+import inventoryRoutes from './inventory.routes.js';
+import hyperlocalRoutes from './hyperlocal.routes.js';
+import aiRoutes from './ai.routes.js';
+import financingRoutes from './financing.routes.js';
+import schemesRoutes from './schemes.routes.js';
+import reportsRoutes from './reports.routes.js';
+import digilockerRoutes from './digilocker.routes.js';
+import intelligenceRoutes from './intelligence.routes.js';
+
+const router = Router();
+
+router.use('/business', businessRoutes);
+router.use('/dashboard', dashboardRoutes);
+router.use('/finance', financeRoutes);
+router.use('/cashflow', cashflowRoutes);
+router.use('/inventory', inventoryRoutes);
+router.use('/hyperlocal', hyperlocalRoutes);
+router.use('/ai', aiRoutes);
+router.use('/financing', financingRoutes);
+router.use('/schemes', schemesRoutes);
+router.use('/reports', reportsRoutes);
+router.use('/digilocker', digilockerRoutes);
+router.use('/intelligence', intelligenceRoutes);
+
+export default router;

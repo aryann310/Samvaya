@@ -1,4 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useBusiness } from "../contexts/BusinessContext";
 import { 
   Send, 
   Bot, 
@@ -10,13 +13,16 @@ import {
   Sparkles,
   MapPin
 } from "lucide-react";
-import { chatWithAdvisor } from "../api";
+import { postAdvisorMessage } from "../services/api";
 
 export default function AIAdvisor() {
+  const navigate = useNavigate();
+  const { businessId } = useBusiness();
+  const { i18n } = useTranslation();
   const [messages, setMessages] = useState<any[]>([
     {
       role: 'system',
-      content: 'Hello! I am your ACRU Hyperlocal Advisory Assistant. Ask me anything about stock reorders, mandi market price predictions, loan readiness, or working capital optimizations.'
+      content: 'Hello! I am your AI Hyperlocal Advisory Assistant. Ask me anything about stock reorders, mandi market price predictions, loan readiness, or working capital optimizations.'
     }
   ]);
   const [input, setInput] = useState('');
@@ -46,18 +52,19 @@ export default function AIAdvisor() {
     setLoading(true);
 
     try {
-      const response = await chatWithAdvisor(query);
+      const currentLang = (i18n.language || 'en').slice(0, 2);
+      const response = await postAdvisorMessage(query, businessId || 'biz-001', currentLang);
       setMessages(prev => [...prev, { role: 'assistant', data: response }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
       setMessages(prev => [...prev, { 
         role: 'assistant', 
         data: {
-          recommendation: "Based on local mandi signals, increasing buffer stock by 20% is recommended before the upcoming festive period.",
-          why: "Historical transaction logs show 38% surges in demand during festival weeks, with supplier wholesale prices spiking 12% closer to Diwali.",
-          localEvidence: "Local district mandis are reporting tighter inbound supply of Grade-A stocks.",
-          financialImpact: "Estimated net margin increase of +₹14,500 by procuring before wholesale price hike.",
-          nextStep: "Place partial order of 250 units today to secure lower wholesale pricing."
+          recommendation: "Unable to reach the advisory intelligence server at this moment.",
+          why: error?.message || "Communication timeout.",
+          localEvidence: "Local network check required.",
+          financialImpact: "None recorded.",
+          nextStep: { label: "Check Dashboard", route: "/" }
         } 
       }]);
     } finally {
@@ -158,9 +165,21 @@ export default function AIAdvisor() {
                     <div className="bg-background p-3.5 border-t border-glass-border flex items-center justify-between">
                       <div>
                         <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Recommended Next Step</p>
-                        <p className="text-xs font-semibold text-foreground">{msg.data.nextStep}</p>
+                        <p className="text-xs font-semibold text-foreground">
+                          {typeof msg.data.nextStep === 'object' ? msg.data.nextStep?.label : (msg.data.nextStep || "Proceed with recommendation")}
+                        </p>
                       </div>
-                      <button className="flex items-center gap-1 px-3 py-1.5 bg-gray-900 hover:bg-black text-white rounded-xl text-[11px] font-semibold transition-colors shadow-xs ml-3 shrink-0">
+                      <button 
+                        onClick={() => {
+                          const route = typeof msg.data.nextStep === 'object' ? msg.data.nextStep?.route : null;
+                          if (route) {
+                            navigate(route);
+                          } else {
+                            navigate('/');
+                          }
+                        }} 
+                        className="flex items-center gap-1 px-3 py-1.5 bg-gray-900 hover:bg-black text-white rounded-xl text-[11px] font-semibold transition-colors shadow-xs ml-3 shrink-0"
+                      >
                         <span>Execute</span>
                         <ArrowRight className="w-3 h-3" />
                       </button>

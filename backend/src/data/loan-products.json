@@ -1,0 +1,28 @@
+[
+  {
+    "id": "l1",
+    "bankName": "SBI",
+    "productName": "Mudra Yojana - Shishu",
+    "type": "Working Capital",
+    "interestRate": 10,
+    "minAmount": 10000,
+    "maxAmount": 50000,
+    "tenure": { "min": 1, "max": 5 },
+    "processingFee": 0,
+    "eligibilityCriteria": ["No past default", "Micro enterprise"],
+    "features": ["No collateral", "Quick processing"]
+  },
+  {
+    "id": "l2",
+    "bankName": "SBI",
+    "productName": "Mudra Yojana - Kishor",
+    "type": "Expansion",
+    "interestRate": 11,
+    "minAmount": 50001,
+    "maxAmount": 500000,
+    "tenure": { "min": 1, "max": 5 },
+    "processingFee": 1000,
+    "eligibilityCriteria": ["Running business > 2 years", "Good credit score"],
+    "features": ["No collateral"]
+  }
+]

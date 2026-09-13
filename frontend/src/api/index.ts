@@ -1,9 +1,10 @@
-const API_BASE = 'http://localhost:5000/api';
+// Centralized API re-exports linking directly to real backend services
+export * from '../services/api';
+import { getDashboard, getFinances, getHyperlocal, getSchemes, postAdvisorMessage } from '../services/api';
 
-export const getDashboardData = () => fetch(`${API_BASE}/dashboard`).then(res => res.json());
-export const getFinancesData = () => fetch(`${API_BASE}/finances`).then(res => res.json());
-export const getHyperlocalData = () => fetch(`${API_BASE}/hyperlocal`).then(res => res.json());
-export const getSchemesData = () => fetch(`${API_BASE}/schemes`).then(res => res.json());
-export const chatWithAdvisor = (message: string) => fetch(`${API_BASE}/advisor`, {
-  method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message })
-}).then(res => res.json());
+export const getDashboardData = (businessId = 'biz-001') => getDashboard(businessId);
+export const getFinancesData = (businessId = 'biz-001') => getFinances(businessId);
+export const getHyperlocalData = (businessId = 'biz-001') => getHyperlocal(businessId);
+export const getSchemesData = () => getSchemes();
+export const chatWithAdvisor = (message: string, businessId = 'biz-001', lang = 'en') => 
+  postAdvisorMessage(message, businessId, lang);

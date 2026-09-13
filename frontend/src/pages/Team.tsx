@@ -59,7 +59,7 @@ export default function Team() {
   const [collaborators, setCollaborators] = useState<Collaborator[]>(DEFAULT_COLLABORATORS);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/team")
+    fetch("/api/team")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {

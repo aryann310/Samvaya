@@ -1,343 +1,260 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { 
   LayoutGrid, 
-  User, 
-  ArrowLeftRight, 
-  ChevronDown, 
+  Sparkles,
   Wallet, 
-  PiggyBank, 
+  ArrowLeftRight, 
   TrendingUp, 
-  BookOpen, 
-  Headphones, 
-  Zap, 
-  X, 
-  ChevronsLeft,
+  BarChart3,
+  Package,
   MapPin,
-  Users
+  Building2,
+  BookOpen, 
+  Settings,
+  ChevronsLeft,
+  ChevronsRight,
+  X,
+  LogOut
 } from "lucide-react";
 import { cn } from "../../lib/utils";
+import { useAuth } from "../../contexts/AuthContext";
 
-export default function Sidebar() {
-  const [showProCard, setShowProCard] = useState(true);
-  const [transactionsOpen, setTransactionsOpen] = useState(true);
-  const location = useLocation();
+interface SidebarProps {
+  isCollapsed?: boolean;
+  onToggleCollapse?: () => void;
+  onClose?: () => void;
+}
 
-  const isTransactionsActive = ["/finances", "/cashflow", "/reports"].includes(location.pathname);
+interface NavItem {
+  to: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: string;
+  hasIndicator?: boolean;
+  isFeatured?: boolean;
+}
 
+interface NavSection {
+  title?: string;
+  items: NavItem[];
+}
+
+const navSections: NavSection[] = [
+  {
+    items: [
+      { to: "/", label: "Dashboard", icon: LayoutGrid },
+      { 
+        to: "/advisor", 
+        label: "AI Copilot", 
+        icon: Sparkles, 
+        badge: "Active",
+        hasIndicator: true,
+        isFeatured: true 
+      }
+    ]
+  },
+  {
+    title: "Financials",
+    items: [
+      { to: "/finances", label: "Finances & Budget", icon: Wallet },
+      { to: "/cashflow", label: "Cash Flow", icon: ArrowLeftRight },
+      { to: "/financing", label: "Credit & Financing", icon: TrendingUp },
+      { to: "/reports", label: "Reports & Analytics", icon: BarChart3 },
+    ]
+  },
+  {
+    title: "Operations",
+    items: [
+      { to: "/inventory", label: "Inventory", icon: Package },
+      { to: "/hyperlocal", label: "Local Market", icon: MapPin },
+    ]
+  },
+  {
+    title: "Organization",
+    items: [
+      { to: "/business", label: "Business Profile", icon: Building2 },
+      { to: "/schemes", label: "Govt Schemes", icon: BookOpen },
+    ]
+  },
+  {
+    title: "Preferences",
+    items: [
+      { to: "/settings", label: "Settings", icon: Settings },
+    ]
+  }
+];
+
+export default function Sidebar({ isCollapsed = false, onToggleCollapse, onClose }: SidebarProps) {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login', { replace: true });
+  };
   return (
-    <aside className="h-full w-64 flex flex-col bg-card border-r border-glass-border shadow-glass-shadow select-none">
+    <aside className={cn(
+      "h-full flex flex-col bg-card border-r border-glass-border shadow-glass-shadow select-none transition-all duration-300",
+      isCollapsed ? "w-16 md:w-20" : "w-64"
+    )}>
       {/* Brand Header */}
-      <div className="px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-foreground flex items-center justify-center text-background font-black text-sm tracking-tighter">
+      <div className={cn("py-5 flex items-center transition-all", isCollapsed ? "px-3 justify-center" : "px-6 justify-between")}>
+        <div className="flex items-center gap-2.5">
+          <div 
+            onClick={onToggleCollapse}
+            title={isCollapsed ? "Expand sidebar" : "ACRU"}
+            className="w-8 h-8 rounded-xl bg-foreground flex items-center justify-center text-background font-black text-sm tracking-tighter shrink-0 cursor-pointer hover:opacity-90 transition-opacity shadow-sm"
+          >
             AC
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tight text-foreground">ACRU</span>
-            <span className="text-[10px] font-semibold tracking-wider text-lime-600 uppercase -mt-1">Samvaya</span>
-          </div>
+          {!isCollapsed && (
+            <div className="flex flex-col">
+              <span className="text-lg font-black tracking-tight text-foreground leading-none">ACRU</span>
+              <span className="text-[10px] font-semibold tracking-wider text-lime-600 uppercase mt-0.5">Samvaya</span>
+            </div>
+          )}
         </div>
+
+        {/* Mobile Close Button */}
+        {!isCollapsed && onClose && (
+          <button
+            onClick={onClose}
+            className="md:hidden p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground rounded-lg transition-colors"
+            title="Close sidebar"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
       </div>
 
       {/* Navigation List */}
-      <nav className="flex-1 px-3 space-y-1 overflow-y-auto text-sm">
-        {/* Dashboard */}
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <LayoutGrid className="w-5 h-5 text-gray-700" />
-              <span>Dashboard</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Accounts / Business */}
-        <NavLink
-          to="/business"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <User className="w-5 h-5 text-gray-500" />
-              <span>Accounts</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Transactions with Sub-menu */}
-        <div>
-          <button
-            onClick={() => setTransactionsOpen(!transactionsOpen)}
-            className={cn(
-              "w-full flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all text-muted-foreground hover:bg-muted/50 hover:text-foreground",
-              isTransactionsActive && "text-foreground font-semibold"
+      <nav className="flex-1 px-3 py-1 space-y-3 overflow-y-auto text-sm">
+        {navSections.map((section, idx) => (
+          <div key={idx} className="space-y-1">
+            {/* Section Title / Divider */}
+            {section.title && (
+              isCollapsed ? (
+                <div className="border-t border-border/40 my-2 mx-1" />
+              ) : (
+                <div className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70 px-3 pt-2 pb-0.5">
+                  {section.title}
+                </div>
+              )
             )}
-          >
-            <div className="flex items-center gap-3">
-              <ArrowLeftRight className="w-5 h-5 text-gray-500" />
-              <span>Transactions</span>
-            </div>
-            <ChevronDown className={cn("w-4 h-4 text-gray-400 transition-transform", transactionsOpen && "rotate-180")} />
-          </button>
 
-          {transactionsOpen && (
-            <div className="ml-6 pl-4 border-l border-border my-1 space-y-1">
-              <NavLink
-                to="/finances"
-                className={({ isActive }) =>
-                  cn(
-                    "flex items-center justify-between py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
-                  )
-                }
-              >
-                <span>History</span>
-                <span className="bg-foreground text-background text-[10px] font-bold px-1.5 py-0.5 rounded-full">19</span>
-              </NavLink>
-              <NavLink
-                to="/cashflow"
-                className={({ isActive }) =>
-                  cn(
-                    "block py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
-                  )
-                }
-              >
-                Integration
-              </NavLink>
-              <NavLink
-                to="/reports"
-                className={({ isActive }) =>
-                  cn(
-                    "block py-1.5 px-2 rounded-lg text-xs font-medium transition-colors",
-                    isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"
-                  )
-                }
-              >
-                Reports
-              </NavLink>
-            </div>
-          )}
-        </div>
+            {/* Section Nav Items */}
+            {section.items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  title={item.label}
+                  className={({ isActive }) => {
+                    if (item.isFeatured) {
+                      return cn(
+                        "flex items-center gap-3 py-2 rounded-xl font-medium transition-all relative group border",
+                        isCollapsed ? "justify-center px-2" : "justify-between px-3",
+                        isActive 
+                          ? "bg-gradient-to-r from-lime-500/25 via-emerald-500/15 to-lime-500/10 border-lime-500/50 text-foreground font-semibold shadow-xs" 
+                          : "bg-gradient-to-r from-lime-500/10 via-emerald-500/5 to-transparent border-lime-500/25 text-foreground hover:border-lime-500/45 hover:bg-lime-500/15"
+                      );
+                    }
 
-        {/* Cash flow */}
-        <NavLink
-          to="/cashflow"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <Wallet className="w-5 h-5 text-gray-500" />
-              <span>Cash flow</span>
-            </>
-          )}
-        </NavLink>
+                    return cn(
+                      "flex items-center gap-3 py-2 rounded-xl font-medium transition-all relative group",
+                      isCollapsed ? "justify-center px-2" : "justify-between px-3",
+                      isActive 
+                        ? "bg-muted text-foreground font-semibold" 
+                        : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                    );
+                  }}
+                >
+                  {({ isActive }) => (
+                    <>
+                      {isActive && !item.isFeatured && (
+                        <span className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-foreground rounded-r-full" />
+                      )}
+                      {isActive && item.isFeatured && (
+                        <span className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-lime-500 rounded-r-full shadow-[0_0_8px_rgba(132,204,22,0.8)]" />
+                      )}
+                      
+                      <div className={cn("flex items-center gap-2.5 min-w-0", isCollapsed && "justify-center")}>
+                        <Icon className={cn(
+                          "w-4 h-4 shrink-0 transition-all",
+                          item.isFeatured 
+                            ? "text-lime-500 dark:text-lime-400 group-hover:scale-110" 
+                            : isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
+                        )} />
+                        {!isCollapsed && (
+                          <span className={cn(
+                            "truncate text-xs",
+                            item.isFeatured ? "font-semibold text-foreground" : ""
+                          )}>
+                            {item.label}
+                          </span>
+                        )}
+                      </div>
 
-        {/* Budget */}
-        <NavLink
-          to="/finances"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <PiggyBank className="w-5 h-5 text-gray-500" />
-              <span>Budget</span>
-            </>
-          )}
-        </NavLink>
+                      {/* Featured Copilot Badge */}
+                      {!isCollapsed && item.isFeatured && (
+                        <span className="flex items-center gap-1.5 bg-lime-500/15 border border-lime-500/30 text-lime-700 dark:text-lime-300 text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0">
+                          <span className="w-1.5 h-1.5 rounded-full bg-lime-500 animate-pulse" />
+                          <span>AI</span>
+                        </span>
+                      )}
 
-        {/* Investments / Financing */}
-        <NavLink
-          to="/financing"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <TrendingUp className="w-5 h-5 text-gray-500" />
-              <span>Investments</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Learning Center / Schemes */}
-        <NavLink
-          to="/schemes"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <BookOpen className="w-5 h-5 text-gray-500" />
-              <span>Learning center</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Hyperlocal Market */}
-        <NavLink
-          to="/hyperlocal"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <MapPin className="w-5 h-5 text-gray-500" />
-              <span>Local Market</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Team */}
-        <NavLink
-          to="/team"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center gap-3 px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <Users className="w-5 h-5 text-gray-500" />
-              <span>Collaborators</span>
-            </>
-          )}
-        </NavLink>
-
-        {/* Support / AI Advisor */}
-        <NavLink
-          to="/advisor"
-          className={({ isActive }) =>
-            cn(
-              "flex items-center justify-between px-3 py-2.5 rounded-xl font-medium transition-all relative",
-              isActive 
-                ? "bg-muted text-foreground font-semibold" 
-                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              {isActive && (
-                <span className="absolute left-0 top-2 bottom-2 w-1.5 bg-foreground rounded-r-full" />
-              )}
-              <div className="flex items-center gap-3">
-                <Headphones className="w-5 h-5 text-gray-500" />
-                <span>Support & AI</span>
-              </div>
-              <span className="w-2 h-2 rounded-full bg-lime-500 animate-pulse" />
-            </>
-          )}
-        </NavLink>
+                      {/* Non-featured badge */}
+                      {!isCollapsed && !item.isFeatured && item.badge && (
+                        <span className="bg-foreground text-background text-[10px] font-bold px-1.5 py-0.5 rounded-full shrink-0">
+                          {item.badge}
+                        </span>
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              );
+            })}
+          </div>
+        ))}
       </nav>
 
-      {/* Upgrade to Pro / AI Advisory Banner */}
-      {showProCard && (
-        <div className="p-3 mx-3 mb-3 bg-card rounded-2xl border border-glass-border shadow-glass-shadow relative">
-          <button 
-            onClick={() => setShowProCard(false)}
-            className="absolute top-2.5 right-2.5 text-muted-foreground hover:text-foreground p-1"
-          >
-            <X className="w-3.5 h-3.5" />
-          </button>
-          <div className="w-7 h-7 rounded-full bg-foreground flex items-center justify-center text-background mb-2">
-            <Zap className="w-3.5 h-3.5 text-lime-400 fill-lime-400" />
-          </div>
-          <h4 className="text-sm font-bold text-foreground">Upgrade to Pro!</h4>
-          <p className="text-[11px] text-muted-foreground mt-0.5 leading-relaxed">
-            Full financial insights with analytics and graphs.
-          </p>
-          <NavLink
-            to="/advisor"
-            className="mt-3 block w-full text-center py-2 bg-foreground hover:opacity-90 text-background text-xs font-semibold rounded-xl transition-colors shadow-sm"
-          >
-            Upgrade now
-          </NavLink>
-        </div>
-      )}
-
-      {/* Collapse sidebar footer */}
-      <div className="px-4 py-3 border-t border-glass-border text-xs text-muted-foreground hover:text-foreground flex items-center gap-2 cursor-pointer transition-colors">
-        <ChevronsLeft className="w-4 h-4" />
-        <span>Collapse sidebar</span>
+      {/* Logout + Collapse Footer */}
+      <div className="border-t border-glass-border">
+        <button
+          onClick={handleLogout}
+          className={cn(
+            "w-full px-4 py-2.5 text-xs text-muted-foreground hover:text-red-500 hover:bg-red-500/5 flex items-center transition-colors focus:outline-none",
+            isCollapsed ? "justify-center" : "gap-2"
+          )}
+          title="Sign out"
+        >
+          <LogOut className="w-4 h-4 shrink-0" />
+          {!isCollapsed && <span>Sign out</span>}
+        </button>
+        <button
+          onClick={() => {
+            if (window.innerWidth < 768) {
+              onClose?.();
+            } else {
+              onToggleCollapse?.();
+            }
+          }}
+          className={cn(
+            "w-full px-4 py-2.5 border-t border-glass-border/50 text-xs text-muted-foreground hover:text-foreground flex items-center transition-colors focus:outline-none",
+            isCollapsed ? "justify-center" : "gap-2"
+          )}
+          title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          {isCollapsed ? (
+            <ChevronsRight className="w-4 h-4 shrink-0" />
+          ) : (
+            <>
+              <ChevronsLeft className="w-4 h-4 shrink-0" />
+              <span>Collapse sidebar</span>
+            </>
+          )}
+        </button>
       </div>
     </aside>
   );
