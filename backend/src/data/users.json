@@ -1,0 +1,24 @@
+[
+  {
+    "id": "usr-001",
+    "name": "Rameshbhai Patel",
+    "email": "patel@samvaya.in",
+    "phone": "enc:v1:ef75248fb4aa59884aa1cab0:6c27b4d4b690461d893229f135bc36b1:1f5442c267bda92c5a9ca4c1e67b9f",
+    "passwordHash": "$2b$12$GZw5ZTwJhhT7CmibjWvi7.n6Ag8wjMnIMn2Evazj8BXEO5SxePfaW",
+    "role": "entrepreneur",
+    "businessId": "biz-001",
+    "createdAt": "2026-01-15T10:30:00.000Z",
+    "updatedAt": "2026-01-15T10:30:00.000Z"
+  },
+  {
+    "id": "usr-02f35ed4",
+    "name": "New Trader",
+    "email": "user_0619@samvaya.in",
+    "phone": "enc:v1:458043053983e0ff08bb7764:85c504a86b5b921cb6a89d1921196970:673a83c9d0a5067c710f6f93e2daeb",
+    "passwordHash": "$2b$12$9anylSHxdpHXeDk8aMf8ke7h2iQ7doi2tAhQJxaBmPTjI1Wuacqp.",
+    "role": "entrepreneur",
+    "businessId": "biz-001",
+    "createdAt": "2026-09-13T03:26:40.869Z",
+    "updatedAt": "2026-09-13T03:26:40.869Z"
+  }
+]

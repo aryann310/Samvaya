@@ -26,15 +26,29 @@ const api = axios.create({
   },
 });
 
+// Request interceptor: Automatically inject JWT Bearer token into Authorization header
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('samvaya_auth_token');
+  if (token && config.headers) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 // Response interceptor for consistent error handling
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    const message = error.response?.data?.message || error.message || 'An unexpected error occurred';
+    const message =
+      error.response?.data?.error ||
+      error.response?.data?.message ||
+      error.message ||
+      'An unexpected error occurred';
     console.error('[API Error]', message);
     return Promise.reject(new Error(message));
   }
 );
+
 
 // ---- Business ----
 export const getBusiness = async (id: string): Promise<Business> => {
@@ -164,4 +178,23 @@ export const getReports = async (
   return data.data;
 };
 
+// ---- Authentication (JWT) ----
+import type { LoginCredentials, SignupCredentials, AuthResponse, User } from '../types/auth';
+
+export const loginApi = async (credentials: LoginCredentials): Promise<AuthResponse> => {
+  const { data } = await api.post<AuthResponse>('/auth/login', credentials);
+  return data;
+};
+
+export const registerApi = async (signupData: SignupCredentials): Promise<AuthResponse> => {
+  const { data } = await api.post<AuthResponse>('/auth/register', signupData);
+  return data;
+};
+
+export const getMeApi = async (): Promise<{ user: User; business?: any }> => {
+  const { data } = await api.get<{ user: User; business?: any }>('/auth/me');
+  return data;
+};
+
 export default api;
+

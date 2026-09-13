@@ -14,10 +14,20 @@ export declare class SecretsManagerProvider implements ISecretsManager {
      * Synchronously retrieves the 256-bit master key once resolved/injected in the runtime environment.
      */
     getFieldEncryptionKeySync(): Buffer;
+    private static cachedJwtSecret;
+    /**
+     * Retrieves the JWT signing secret from the Secrets Manager or environment vault.
+     */
+    getJwtSecret(): Promise<string>;
+    /**
+     * Synchronously retrieves the JWT signing secret.
+     */
+    getJwtSecretSync(): string;
     /**
      * Explicitly sets or overrides key for testing or rotation
      */
     static setExplicitKey(key: Buffer | null): void;
+    static setExplicitJwtSecret(secret: string | null): void;
     /**
      * Helper utility to generate a new cryptographically secure 256-bit key for provisioning in Secrets Manager
      */

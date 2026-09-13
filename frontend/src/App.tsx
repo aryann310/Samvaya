@@ -13,6 +13,7 @@ import Schemes from "./pages/Schemes";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import { ThemeProvider } from "./components/theme/ThemeProvider";
+import { AuthProvider } from "./contexts/AuthContext";
 import { BusinessProvider } from "./contexts/BusinessContext";
 
 // Active Module: Core Dashboard & Business Management
@@ -21,29 +22,32 @@ import { BusinessProvider } from "./contexts/BusinessContext";
 function App() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <BusinessProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="advisor" element={<AIAdvisor />} />
-              <Route path="business" element={<Business />} />
-              <Route path="hyperlocal" element={<Hyperlocal />} />
-              <Route path="finances" element={<Finances />} />
-              <Route path="cashflow" element={<CashFlow />} />
-              <Route path="inventory" element={<Inventory />} />
-              <Route path="financing" element={<Financing />} />
-              <Route path="schemes" element={<Schemes />} />
-              <Route path="reports" element={<Reports />} />
-              <Route path="settings" element={<Settings />} />
-              <Route path="team" element={<Team />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </BusinessProvider>
+      <AuthProvider>
+        <BusinessProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="advisor" element={<AIAdvisor />} />
+                <Route path="business" element={<Business />} />
+                <Route path="hyperlocal" element={<Hyperlocal />} />
+                <Route path="finances" element={<Finances />} />
+                <Route path="cashflow" element={<CashFlow />} />
+                <Route path="inventory" element={<Inventory />} />
+                <Route path="financing" element={<Financing />} />
+                <Route path="schemes" element={<Schemes />} />
+                <Route path="reports" element={<Reports />} />
+                <Route path="settings" element={<Settings />} />
+                <Route path="team" element={<Team />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </BusinessProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
+
 
 export default App;

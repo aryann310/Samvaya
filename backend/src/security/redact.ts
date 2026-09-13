@@ -107,8 +107,14 @@ const SENSITIVE_KEY_PATTERNS = [
   'secret',
   'password',
   'key',
-  'authorization'
+  'authorization',
+  'token',
+  'jwt',
+  'bearer',
+  'accesstoken',
+  'refreshtoken'
 ];
+
 
 function isSensitiveKey(key: string): boolean {
   const lower = key.toLowerCase();

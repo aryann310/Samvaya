@@ -9,10 +9,13 @@ import aiRoutes from './ai.routes.js';
 import financingRoutes from './financing.routes.js';
 import schemesRoutes from './schemes.routes.js';
 import reportsRoutes from './reports.routes.js';
+import authRoutes from './auth.routes.js';
 
 const router = Router();
 
+router.use('/auth', authRoutes);
 router.use('/business', businessRoutes);
+
 router.use('/dashboard', dashboardRoutes);
 router.use('/finance', financeRoutes);
 router.use('/cashflow', cashflowRoutes);

@@ -12,8 +12,10 @@ import {
   sanitizedLogger,
 } from './middleware/security.middleware.js';
 import snehRoutes from './routes/index.js';
+import authRoutes from './routes/auth.routes.js';
 
 dotenv.config();
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -145,8 +147,10 @@ app.post('/api/advisor', (req, res) => {
 
 app.get('/health', (req, res) => res.status(200).json({ status: 'ok', message: 'Backend is running' }));
 
-// Mount routes under /api/v2
+// Mount routes under /api/auth and /api/v2
+app.use('/api/auth', authRoutes);
 app.use('/api/v2', snehRoutes);
+
 
 // Redacted Error Handler: Sanitizes error payloads and stack traces to never leak sensitive PII
 app.use(redactedErrorHandler);

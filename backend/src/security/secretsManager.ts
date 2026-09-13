@@ -63,6 +63,44 @@ export class SecretsManagerProvider implements ISecretsManager {
     return SecretsManagerProvider.cachedKey;
   }
 
+  private static cachedJwtSecret: string | null = null;
+
+  /**
+   * Retrieves the JWT signing secret from the Secrets Manager or environment vault.
+   */
+  async getJwtSecret(): Promise<string> {
+    return this.getJwtSecretSync();
+  }
+
+  /**
+   * Synchronously retrieves the JWT signing secret.
+   */
+  getJwtSecretSync(): string {
+    if (SecretsManagerProvider.cachedJwtSecret) {
+      return SecretsManagerProvider.cachedJwtSecret;
+    }
+
+    const secret =
+      process.env.SECRETS_MANAGER_JWT_SECRET ||
+      process.env.JWT_SECRET ||
+      process.env.AUTH_SECRET;
+
+    if (!secret) {
+      if (process.env.NODE_ENV === 'production') {
+        throw new Error(
+          'CRITICAL SECURITY ERROR: JWT signing secret not found in Secrets Manager. Ensure SECRETS_MANAGER_JWT_SECRET is configured.'
+        );
+      } else {
+        const devSecret = 'samvaya-jwt-dev-secret-key-super-secure-32bytes-min';
+        SecretsManagerProvider.cachedJwtSecret = devSecret;
+        return devSecret;
+      }
+    }
+
+    SecretsManagerProvider.cachedJwtSecret = secret;
+    return SecretsManagerProvider.cachedJwtSecret;
+  }
+
   /**
    * Explicitly sets or overrides key for testing or rotation
    */
@@ -71,6 +109,10 @@ export class SecretsManagerProvider implements ISecretsManager {
       throw new Error('Key must be exactly 32 bytes');
     }
     SecretsManagerProvider.cachedKey = key;
+  }
+
+  static setExplicitJwtSecret(secret: string | null): void {
+    SecretsManagerProvider.cachedJwtSecret = secret;
   }
 
   /**
@@ -82,3 +124,4 @@ export class SecretsManagerProvider implements ISecretsManager {
 }
 
 export const secretsManager = new SecretsManagerProvider();
+
