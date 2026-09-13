@@ -1,0 +1,95 @@
+{
+  "marketPrices": [
+    {
+      "commodity": "Sharbati Wheat",
+      "market": "Kisan Ganj Mandi",
+      "district": "Mehsana",
+      "state": "Gujarat",
+      "minPrice": 2300,
+      "maxPrice": 2500,
+      "modalPrice": 2420,
+      "unit": "qtl",
+      "currency": "INR",
+      "date": "2026-09-13T00:00:00Z",
+      "source": "APMC Open Data",
+      "status": "CACHED"
+    },
+    {
+      "commodity": "Mustard Seed (Sarson)",
+      "market": "District Hub Mandi",
+      "district": "Mehsana",
+      "state": "Gujarat",
+      "minPrice": 5500,
+      "maxPrice": 5800,
+      "modalPrice": 5650,
+      "unit": "qtl",
+      "currency": "INR",
+      "date": "2026-09-13T00:00:00Z",
+      "source": "Mandi API V1",
+      "status": "CACHED"
+    },
+    {
+      "commodity": "Chana (Gram)",
+      "market": "APMC Sector 4",
+      "district": "Mehsana",
+      "state": "Gujarat",
+      "minPrice": 6000,
+      "maxPrice": 6200,
+      "modalPrice": 6100,
+      "unit": "qtl",
+      "currency": "INR",
+      "date": "2026-09-13T00:00:00Z",
+      "source": "APMC Open Data",
+      "status": "CACHED"
+    },
+    {
+      "commodity": "Organic Cow Milk",
+      "market": "Local Dairy Cooperative",
+      "district": "Mehsana",
+      "state": "Gujarat",
+      "minPrice": 50,
+      "maxPrice": 55,
+      "modalPrice": 52,
+      "unit": "Ltr",
+      "currency": "INR",
+      "date": "2026-09-13T00:00:00Z",
+      "source": "Dairy Cooperative",
+      "status": "CACHED"
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Ramesh Provision Store",
+      "category": "Kirana",
+      "locality": "Village Center",
+      "distance": 0.5,
+      "rating": 4.1,
+      "reviewCount": 12,
+      "services": ["delivery"],
+      "source": "Places Cache API",
+      "status": "CACHED"
+    },
+    {
+      "name": "Shreeji Supermarket",
+      "category": "Kirana",
+      "locality": "Highway Road",
+      "distance": 1.2,
+      "rating": 4.5,
+      "reviewCount": 45,
+      "services": ["digital payments", "delivery", "bulk order"],
+      "source": "Places Cache API",
+      "status": "CACHED"
+    },
+    {
+      "name": "Local Dairy Farm",
+      "category": "Dairy",
+      "locality": "East Village",
+      "distance": 2.0,
+      "rating": 3.8,
+      "reviewCount": 8,
+      "services": ["cold storage", "digital payments"],
+      "source": "Places Cache API",
+      "status": "CACHED"
+    }
+  ]
+}

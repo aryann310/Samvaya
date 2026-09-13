@@ -127,55 +127,55 @@ export default function Inventory() {
   ];
 
   return (
-    <div className="page-enter p-4 md:p-6 space-y-6 bg-[#0B0C0F] text-[#DFE6EF] min-h-screen">
+    <div className="page-enter p-4 md:p-6 space-y-6 min-h-screen">
       <PageHeader 
-        title={t('inventory.title')} 
+        title={t('inventory.title', 'Inventory & Stock Tracker')} 
         action={{
-          label: t('inventory.addItem'),
+          label: t('inventory.addItem', 'Add Item'),
           onClick: () => handleOpenModal(),
           icon: <Plus size={18} className="mr-2" />
         }}
       />
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-        <div className="bg-[#1B2028] border border-[#323A46] p-4 rounded-xl shadow-xl text-center">
-          <p className="text-xs uppercase tracking-wider font-semibold text-[#7E8A99] mb-1">{t('inventory.totalItems')}</p>
-          <p className="text-2xl font-heading font-black text-[#DFE6EF]">{inventoryData.length}</p>
+        <div className="bg-card/70 backdrop-blur-md border border-glass-border p-5 rounded-3xl shadow-glass-shadow text-center">
+          <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground mb-1">{t('inventory.totalItems', 'Total Items')}</p>
+          <p className="text-2xl font-black text-foreground">{inventoryData.length}</p>
         </div>
-        <div className="bg-[#F59E0B]/10 border border-[#F59E0B]/30 p-4 rounded-xl shadow-xl text-center">
-          <p className="text-xs uppercase tracking-wider font-semibold text-[#F59E0B] mb-1">{t('inventory.lowStock')}</p>
-          <p className="text-2xl font-heading font-black text-[#F59E0B]">
+        <div className="bg-amber-500/10 border border-amber-500/20 p-5 rounded-3xl shadow-glass-shadow text-center">
+          <p className="text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400 mb-1">{t('inventory.lowStock', 'Low Stock')}</p>
+          <p className="text-2xl font-black text-amber-600 dark:text-amber-400">
             {inventoryData.filter((i: any) => i.quantity > 0 && i.quantity <= i.reorderLevel).length}
           </p>
         </div>
-        <div className="bg-[#EF4444]/10 border border-[#EF4444]/30 p-4 rounded-xl shadow-xl text-center">
-          <p className="text-xs uppercase tracking-wider font-semibold text-[#EF4444] mb-1">{t('inventory.outOfStock')}</p>
-          <p className="text-2xl font-heading font-black text-[#EF4444]">
+        <div className="bg-red-500/10 border border-red-500/20 p-5 rounded-3xl shadow-glass-shadow text-center">
+          <p className="text-xs uppercase tracking-wider font-bold text-red-600 dark:text-red-400 mb-1">{t('inventory.outOfStock', 'Out of Stock')}</p>
+          <p className="text-2xl font-black text-red-600 dark:text-red-400">
             {inventoryData.filter((i: any) => i.quantity === 0).length}
           </p>
         </div>
-        <div className="bg-[#38BDF8]/10 border border-[#38BDF8]/30 p-4 rounded-xl shadow-xl text-center">
-          <p className="text-xs uppercase tracking-wider font-semibold text-[#38BDF8] mb-1">{t('inventory.totalValue')}</p>
-          <p className="text-2xl font-heading font-black text-[#38BDF8]">
+        <div className="bg-lime-500/10 border border-lime-500/20 p-5 rounded-3xl shadow-glass-shadow text-center">
+          <p className="text-xs uppercase tracking-wider font-bold text-lime-700 dark:text-lime-400 mb-1">{t('inventory.totalValue', 'Total Valuation')}</p>
+          <p className="text-2xl font-black text-lime-700 dark:text-lime-400">
             {formatINR(inventoryData.reduce((acc: number, item: any) => acc + (item.quantity * item.unitCost), 0))}
           </p>
         </div>
       </div>
 
-      <div className="bg-[#1B2028] border border-[#323A46] p-6 rounded-2xl shadow-xl flex flex-col">
+      <div className="bg-card/70 backdrop-blur-md border border-glass-border p-6 rounded-3xl shadow-glass-shadow flex flex-col">
         <div className="flex flex-col sm:flex-row justify-between mb-5 gap-3">
           <div className="relative w-full sm:w-72">
-            <Search className="absolute left-3.5 top-1/2 transform -translate-y-1/2 text-[#7E8A99]" size={18} />
+            <Search className="absolute left-3.5 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
             <input 
               type="text" 
-              placeholder={t('common.search')} 
+              placeholder={t('common.search', 'Search inventory...')} 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-[#11141A] border border-[#323A46] text-[#DFE6EF] placeholder-[#7E8A99] pl-10 pr-4 py-2 rounded-xl text-sm focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8] w-full transition-all"
+              className="bg-background border border-border text-foreground placeholder:text-muted-foreground pl-10 pr-4 py-2 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-full transition-all"
             />
           </div>
-          <button onClick={() => alert('Coming soon!')} className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#11141A] hover:bg-[#232A35] border border-[#323A46] text-[#DFE6EF] text-sm font-semibold transition-colors">
-            <Filter size={16} className="text-[#38BDF8]" /> {t('common.filter')}
+          <button onClick={() => alert('Coming soon!')} className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-muted hover:bg-muted/80 border border-border text-foreground text-sm font-semibold transition-colors">
+            <Filter size={16} className="text-primary" /> {t('common.filter', 'Filter')}
           </button>
         </div>
 
@@ -185,81 +185,81 @@ export default function Inventory() {
       <Modal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)}
-        title={editingItem ? t('inventory.editItem') : t('inventory.addItem')}
+        title={editingItem ? t('inventory.editItem', 'Edit Product') : t('inventory.addItem', 'Add New Product')}
         footer={
           <div className="flex justify-end space-x-3 w-full">
-            <button onClick={() => setIsModalOpen(false)} className="btn-outline">
-              {t('common.cancel')}
+            <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 rounded-xl bg-muted border border-border text-foreground text-sm font-semibold hover:bg-muted/80 transition-colors">
+              {t('common.cancel', 'Cancel')}
             </button>
-            <button onClick={handleSave} className="btn-primary">
-              {t('common.save')}
+            <button onClick={handleSave} className="px-5 py-2 rounded-xl bg-primary hover:bg-primary-hover text-primary-foreground text-sm font-bold shadow-xs transition-all">
+              {t('common.save', 'Save Product')}
             </button>
           </div>
         }
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
           <div className="md:col-span-2">
-            <label className="label">{t('inventory.name')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.name', 'Item Name')}</label>
             <input 
               type="text" 
               value={formData.name} 
               onChange={e => setFormData({...formData, name: e.target.value})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
             />
           </div>
           <div>
-            <label className="label">{t('inventory.category')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.category', 'Category')}</label>
             <input 
               type="text" 
               value={formData.category} 
               onChange={e => setFormData({...formData, category: e.target.value})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
             />
           </div>
           <div>
-            <label className="label">{t('inventory.unit')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.unit', 'Unit')}</label>
             <input 
               type="text" 
               value={formData.unit} 
               onChange={e => setFormData({...formData, unit: e.target.value})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
               placeholder="kg, pcs, liters"
             />
           </div>
           <div>
-            <label className="label">{t('inventory.quantity')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.quantity', 'Current Quantity')}</label>
             <input 
               type="number" 
               value={formData.quantity} 
               onChange={e => setFormData({...formData, quantity: Number(e.target.value)})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
             />
           </div>
           <div>
-            <label className="label">{t('inventory.reorderLevel')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.reorderLevel', 'Reorder Alert Threshold')}</label>
             <input 
               type="number" 
               value={formData.reorderLevel} 
               onChange={e => setFormData({...formData, reorderLevel: Number(e.target.value)})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
             />
           </div>
           <div>
-            <label className="label">{t('inventory.unitCost')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.unitCost', 'Cost per Unit (₹)')}</label>
             <input 
               type="number" 
               value={formData.unitCost} 
               onChange={e => setFormData({...formData, unitCost: Number(e.target.value)})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
             />
           </div>
           <div>
-            <label className="label">{t('inventory.salePrice')}</label>
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">{t('inventory.sellingPrice', 'Selling Price (₹)')}</label>
             <input 
               type="number" 
               value={formData.salePrice} 
               onChange={e => setFormData({...formData, salePrice: Number(e.target.value)})} 
-              className="input-field w-full" 
+              className="w-full bg-background border border-border rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" 
             />
           </div>
         </div>

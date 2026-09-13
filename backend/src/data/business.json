@@ -1,6 +1,6 @@
 {
   "id": "biz-001",
-  "name": "Patel General Store",
+  "name": "Shree Ganesh Kirana Store",
   "type": "Kirana Store",
   "category": "Retail",
   "location": {
@@ -13,9 +13,9 @@
     "lng": 72.1316
   },
   "owner": {
-    "name": "Rameshbhai Patel",
+    "name": "Arvindbhai Patel",
     "phone": "9876543210",
-    "email": "ramesh.patel@example.com",
+    "email": "arvind.patel@example.com",
     "aadhaar": "123456789012",
     "panCard": "ABCDE1234F"
   },
@@ -25,6 +25,25 @@
   "gstNumber": "24ABCDE1234F1Z5",
   "monthlyRevenue": 180000,
   "monthlyExpenses": 145000,
+  "receivables": {
+    "total": 35000,
+    "overdue": 12000,
+    "aging": {
+      "0-30": 23000,
+      "31-60": 8000,
+      "61-90": 4000,
+      "90+": 0
+    }
+  },
+  "payables": {
+    "total": 28000,
+    "overdue": 5000,
+    "upcoming": 23000
+  },
+  "debt": {
+    "totalOutstanding": 45000,
+    "monthlyEmi": 7000
+  },
   "employees": 2,
   "description": "General kirana store serving Modhera village for 8 years.",
   "documents": ["GST_Cert.pdf", "Aadhaar.pdf"],

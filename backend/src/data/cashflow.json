@@ -1,5 +1,40 @@
 [
   {
+    "month": "2024-01",
+    "inflows": { "total": 190000, "breakdown": [{ "source": "Store Sales", "amount": 182000 }, { "source": "Credit Recoveries", "amount": 8000 }] },
+    "outflows": { "total": 150000, "breakdown": [{ "category": "Stock Purchase", "amount": 97500 }, { "category": "Rent", "amount": 12000 }, { "category": "Utilities", "amount": 7500 }, { "category": "Salaries", "amount": 15000 }, { "category": "Transport", "amount": 10500 }, { "category": "Misc", "amount": 7500 }] },
+    "netFlow": 40000,
+    "closingBalance": 65000
+  },
+  {
+    "month": "2024-02",
+    "inflows": { "total": 175000, "breakdown": [{ "source": "Store Sales", "amount": 169000 }, { "source": "Credit Recoveries", "amount": 6000 }] },
+    "outflows": { "total": 142000, "breakdown": [{ "category": "Stock Purchase", "amount": 92000 }, { "category": "Rent", "amount": 11500 }, { "category": "Utilities", "amount": 7200 }, { "category": "Salaries", "amount": 14500 }, { "category": "Transport", "amount": 9800 }, { "category": "Misc", "amount": 7000 }] },
+    "netFlow": 33000,
+    "closingBalance": 68000
+  },
+  {
+    "month": "2024-03",
+    "inflows": { "total": 182000, "breakdown": [{ "source": "Store Sales", "amount": 175000 }, { "source": "Credit Recoveries", "amount": 7000 }] },
+    "outflows": { "total": 146000, "breakdown": [{ "category": "Stock Purchase", "amount": 95000 }, { "category": "Rent", "amount": 11600 }, { "category": "Utilities", "amount": 7300 }, { "category": "Salaries", "amount": 14600 }, { "category": "Transport", "amount": 10200 }, { "category": "Misc", "amount": 7300 }] },
+    "netFlow": 36000,
+    "closingBalance": 72000
+  },
+  {
+    "month": "2024-04",
+    "inflows": { "total": 188000, "breakdown": [{ "source": "Store Sales", "amount": 180000 }, { "source": "Credit Recoveries", "amount": 8000 }] },
+    "outflows": { "total": 148000, "breakdown": [{ "category": "Stock Purchase", "amount": 96000 }, { "category": "Rent", "amount": 11800 }, { "category": "Utilities", "amount": 7400 }, { "category": "Salaries", "amount": 14800 }, { "category": "Transport", "amount": 10400 }, { "category": "Misc", "amount": 7600 }] },
+    "netFlow": 40000,
+    "closingBalance": 76000
+  },
+  {
+    "month": "2024-05",
+    "inflows": { "total": 195000, "breakdown": [{ "source": "Store Sales", "amount": 187000 }, { "source": "Credit Recoveries", "amount": 8000 }] },
+    "outflows": { "total": 152000, "breakdown": [{ "category": "Stock Purchase", "amount": 99000 }, { "category": "Rent", "amount": 12000 }, { "category": "Utilities", "amount": 7500 }, { "category": "Salaries", "amount": 15000 }, { "category": "Transport", "amount": 10700 }, { "category": "Misc", "amount": 7800 }] },
+    "netFlow": 43000,
+    "closingBalance": 81000
+  },
+  {
     "month": "2024-06",
     "inflows": { "total": 185000, "breakdown": [{ "source": "Store Sales", "amount": 180000 }, { "source": "Credit Recoveries", "amount": 5000 }] },
     "outflows": { "total": 145000, "breakdown": [{ "category": "Stock Purchase", "amount": 94250 }, { "category": "Rent", "amount": 11600 }, { "category": "Utilities", "amount": 7250 }, { "category": "Salaries", "amount": 14500 }, { "category": "Transport", "amount": 10150 }, { "category": "Misc", "amount": 7250 }] },

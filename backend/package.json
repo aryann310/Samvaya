@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "samvaya-core-dashboard-and-business-backend",
   "version": "1.0.0",
   "description": "API for AI-Driven Hyperlocal Business Advisory",
   "type": "module",
@@ -7,12 +7,19 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "tsx --test test/finance.test.ts test/inventory.test.ts test/slm.test.ts test/digilocker.test.ts",
+    "test:db": "tsx --test --test-concurrency=1 test/db.test.ts test/advisor.integration.test.ts",
+    "db:seed": "tsx src/db/seed.ts",
+    "db:reset": "tsx src/db/reset.ts",
+    "db:health": "tsx -e \"import('./src/db/connection.js').then(m => m.connectDatabase().then(() => m.checkDatabaseHealth()).then(h => console.log(h)).then(() => m.disconnectDatabase()))\""
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "livekit-server-sdk": "^2.19.0",
+    "mongodb": "^7.6.0",
     "uuid": "^14.0.2"
   },
   "devDependencies": {

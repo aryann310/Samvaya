@@ -61,15 +61,15 @@ const DataTable: React.FC<DataTableProps> = ({
 
   return (
     <div className="w-full">
-      <div className="hidden md:block overflow-x-auto shadow-2xl rounded-2xl bg-[#1B2028] border border-[#323A46]">
-        <table className="w-full text-left text-sm font-body text-[#DFE6EF]">
-          <thead className="bg-[#11141A] border-b border-[#323A46] text-[#DFE6EF] font-heading">
+      <div className="hidden md:block overflow-x-auto shadow-glass-shadow rounded-2xl bg-card border border-glass-border">
+        <table className="w-full text-left text-sm text-foreground">
+          <thead className="bg-muted/60 border-b border-glass-border text-muted-foreground font-semibold">
             <tr>
               {columns.map((col) => (
                 <th
                   key={col.key}
                   scope="col"
-                  className={`p-4 text-xs font-bold uppercase tracking-wider text-[#7E8A99] ${col.sortable ? 'cursor-pointer hover:text-[#DFE6EF]' : ''}`}
+                  className={`p-4 text-xs font-bold uppercase tracking-wider text-muted-foreground ${col.sortable ? 'cursor-pointer hover:text-foreground' : ''}`}
                   onClick={() => col.sortable && handleSort(col.key)}
                 >
                   <div className="flex items-center gap-1.5">
@@ -80,16 +80,16 @@ const DataTable: React.FC<DataTableProps> = ({
                           size={12}
                           className={`${
                             sortKey === col.key && sortDirection === 'asc'
-                              ? 'text-[#38BDF8]'
-                              : 'text-[#7E8A99]/50'
+                              ? 'text-primary'
+                              : 'text-muted-foreground/40'
                           } -mb-1`}
                         />
                         <ChevronDown
                           size={12}
                           className={`${
                             sortKey === col.key && sortDirection === 'desc'
-                              ? 'text-[#38BDF8]'
-                              : 'text-[#7E8A99]/50'
+                              ? 'text-primary'
+                              : 'text-muted-foreground/40'
                           }`}
                         />
                       </span>
@@ -99,14 +99,14 @@ const DataTable: React.FC<DataTableProps> = ({
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#323A46]/60">
+          <tbody className="divide-y divide-border">
             {sortedData.map((row, i) => (
               <tr
                 key={i}
-                className="hover:bg-[#323A46]/20 transition-colors"
+                className="hover:bg-muted/50 transition-colors"
               >
                 {columns.map((col) => (
-                  <td key={col.key} className="p-4 text-sm text-[#DFE6EF]">
+                  <td key={col.key} className="p-4 text-sm text-foreground font-medium">
                     {col.render ? col.render(row[col.key], row) : row[col.key]}
                   </td>
                 ))}
@@ -118,13 +118,13 @@ const DataTable: React.FC<DataTableProps> = ({
 
       <div className="md:hidden space-y-4">
         {sortedData.map((row, i) => (
-          <div key={i} className="card p-4 space-y-2 bg-[#1B2028] border border-[#323A46] rounded-2xl shadow-md">
+          <div key={i} className="p-4 space-y-2 bg-card border border-glass-border rounded-2xl shadow-glass-shadow">
             {columns.map((col) => (
-              <div key={col.key} className="flex justify-between items-center py-1 border-b border-[#323A46]/40 last:border-0">
-                <span className="text-xs font-heading font-bold text-[#7E8A99]">
+              <div key={col.key} className="flex justify-between items-center py-1 border-b border-border/60 last:border-0">
+                <span className="text-xs font-bold text-muted-foreground">
                   {col.label}
                 </span>
-                <span className="text-sm font-body font-medium text-[#DFE6EF]">
+                <span className="text-sm font-medium text-foreground">
                   {col.render ? col.render(row[col.key], row) : row[col.key]}
                 </span>
               </div>

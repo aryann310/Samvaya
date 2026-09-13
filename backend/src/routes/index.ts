@@ -9,6 +9,8 @@ import aiRoutes from './ai.routes.js';
 import financingRoutes from './financing.routes.js';
 import schemesRoutes from './schemes.routes.js';
 import reportsRoutes from './reports.routes.js';
+import digilockerRoutes from './digilocker.routes.js';
+import intelligenceRoutes from './intelligence.routes.js';
 
 const router = Router();
 
@@ -22,5 +24,7 @@ router.use('/ai', aiRoutes);
 router.use('/financing', financingRoutes);
 router.use('/schemes', schemesRoutes);
 router.use('/reports', reportsRoutes);
+router.use('/digilocker', digilockerRoutes);
+router.use('/intelligence', intelligenceRoutes);
 
 export default router;

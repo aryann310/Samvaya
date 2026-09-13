@@ -50,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B0C0F]/80 backdrop-blur-md p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs p-4">
       <div className="fixed inset-0" onClick={onClose} aria-hidden="true" />
       <div
         ref={modalRef}
@@ -58,25 +58,25 @@ const Modal: React.FC<ModalProps> = ({
         aria-modal="true"
         aria-labelledby="modal-title"
         tabIndex={-1}
-        className={`w-full ${sizeClasses[size]} bg-[#1B2028] border border-[#323A46] rounded-2xl relative z-10 animate-scale-in flex flex-col max-h-[90vh] shadow-2xl text-[#DFE6EF]`}
+        className={`w-full ${sizeClasses[size]} bg-card border border-glass-border rounded-3xl relative z-10 animate-scale-in flex flex-col max-h-[90vh] shadow-2xl text-foreground`}
       >
-        <div className="flex items-center justify-between p-5 border-b border-[#323A46]">
-          <h2 id="modal-title" className="font-heading text-xl font-bold text-[#DFE6EF]">
+        <div className="flex items-center justify-between p-5 border-b border-glass-border">
+          <h2 id="modal-title" className="text-xl font-bold text-foreground">
             {title}
           </h2>
           <button
             onClick={onClose}
-            className="text-[#7E8A99] hover:text-[#DFE6EF] transition-colors p-1.5 rounded-lg hover:bg-[#11141A]"
+            className="text-muted-foreground hover:text-foreground transition-colors p-1.5 rounded-xl hover:bg-muted"
             aria-label={t('close')}
           >
             <X size={20} />
           </button>
         </div>
-        <div className="p-5 overflow-y-auto font-body text-[#A4B0BE] flex-1">
+        <div className="p-5 overflow-y-auto text-muted-foreground flex-1">
           {children}
         </div>
         {footer && (
-          <div className="p-5 border-t border-[#323A46] bg-[#11141A]/50 rounded-b-2xl">
+          <div className="p-5 border-t border-glass-border bg-muted/40 rounded-b-3xl">
             {footer}
           </div>
         )}

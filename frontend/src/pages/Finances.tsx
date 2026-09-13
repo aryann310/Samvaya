@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getFinancesData } from "../api";
+import { getFinances } from "../services/api";
+import { useBusiness } from "../contexts/BusinessContext";
 import { 
   ArrowUpRight, 
   ArrowDownRight, 
@@ -8,11 +9,12 @@ import {
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function Finances() {
+  const { businessId } = useBusiness();
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
-    getFinancesData().then(setData).catch(console.error);
-  }, []);
+    getFinances(businessId).then(setData).catch(console.error);
+  }, [businessId]);
 
   const formatCurrency = (amount: number) => `₹${amount.toLocaleString('en-IN')}`;
 

@@ -2,9 +2,13 @@ import type { Request, Response } from 'express';
 import { DashboardService } from '../services/dashboard.service.js';
 import { DataStore } from '../services/dataStore.js';
 
-export const getDashboard = (req: Request, res: Response) => {
-  const data = DashboardService.getDashboard(req.params.businessId as string);
-  res.json({ success: true, data });
+export const getDashboard = async (req: Request, res: Response) => {
+  try {
+    const data = await DashboardService.getDashboard(req.params.businessId as string);
+    res.json({ success: true, data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message });
+  }
 };
 
 export const completePriority = (req: Request, res: Response) => {

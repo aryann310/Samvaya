@@ -38,7 +38,7 @@ const GaugeChart: React.FC<GaugeChartProps> = ({
   return (
     <div className="flex flex-col items-center animate-fade-in relative" style={{ width: size }}>
       {/* Ambient glow behind score */}
-      <div className="absolute top-8 w-28 h-16 bg-[#38BDF8]/10 rounded-full blur-xl pointer-events-none" />
+      <div className="absolute top-8 w-28 h-16 bg-primary/15 rounded-full blur-xl pointer-events-none" />
 
       <div className="relative" style={{ width: size, height: size / 2 }}>
         <svg
@@ -49,16 +49,16 @@ const GaugeChart: React.FC<GaugeChartProps> = ({
         >
           <defs>
             <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#323A46" />
-              <stop offset="50%" stopColor="#7E8A99" />
-              <stop offset="100%" stopColor="#38BDF8" />
+              <stop offset="0%" stopColor="#facc15" />
+              <stop offset="60%" stopColor="#84cc16" />
+              <stop offset="100%" stopColor="#65a30d" />
             </linearGradient>
           </defs>
           <path
             d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
             fill="none"
             stroke="currentColor"
-            className="text-[#323A46]"
+            className="text-muted"
             strokeWidth={strokeWidth}
             strokeLinecap="round"
           />
@@ -66,7 +66,7 @@ const GaugeChart: React.FC<GaugeChartProps> = ({
             d={`M ${strokeWidth / 2} ${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2} ${size / 2}`}
             fill="none"
             stroke="url(#gaugeGradient)"
-            className="transition-all duration-1000 ease-out drop-shadow-[0_0_12px_rgba(56,189,248,0.3)]"
+            className="transition-all duration-1000 ease-out drop-shadow-[0_0_12px_rgba(132,204,22,0.4)]"
             strokeWidth={strokeWidth}
             strokeLinecap="round"
             strokeDasharray={arcLength}
@@ -74,10 +74,10 @@ const GaugeChart: React.FC<GaugeChartProps> = ({
           />
         </svg>
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-end pb-1">
-          <span className="font-heading text-4xl lg:text-5xl font-black tracking-tight text-[#DFE6EF]">
+          <span className="text-4xl lg:text-5xl font-black tracking-tight text-foreground">
             {Math.round(animatedScore)}
           </span>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-[#7E8A99]">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
             Out of 100
           </span>
         </div>
@@ -85,12 +85,12 @@ const GaugeChart: React.FC<GaugeChartProps> = ({
       {(label || explanation) && (
         <div className="text-center mt-5">
           {label && (
-            <div className="font-heading font-bold text-sm text-[#DFE6EF] uppercase tracking-wider mb-1">
+            <div className="font-bold text-xs uppercase tracking-wider text-foreground mb-1">
               {label}
             </div>
           )}
           {explanation && (
-            <div className="font-body text-xs text-[#7E8A99] max-w-[220px] leading-relaxed">
+            <div className="text-xs text-muted-foreground max-w-[220px] leading-relaxed">
               {explanation}
             </div>
           )}

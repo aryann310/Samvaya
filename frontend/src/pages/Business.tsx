@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSearchParams } from 'react-router-dom';
 import { useApi, formatINR } from '../hooks/useApi';
 import { useBusiness } from '../contexts/BusinessContext';
-import { updateBusiness, getBusiness } from '../services/api';
+import {
+  updateBusiness,
+  getBusiness,
+  initiateDigiLocker,
+  getDigiLockerDocuments,
+  getUserVerifications,
+} from '../services/api';
 import PageHeader from '../components/ui/PageHeader';
 import { SkeletonCard } from '../components/ui/SkeletonLoader';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
@@ -17,13 +24,28 @@ import {
   User, 
   FileCheck, 
   BarChart2,
-  ChevronRight
+  ChevronRight,
+  ShieldCheck,
+  Loader2,
+  AlertCircle
 } from 'lucide-react';
 
 type Tab = 'profile' | 'location' | 'owner' | 'registration' | 'benchmarks';
 
+// Helper for animated inputs
+const InputGroup = ({ label, children }: { label: string, children: React.ReactNode }) => (
+  <div className="space-y-1.5 group">
+    <label className="block text-[11px] font-bold uppercase tracking-widest text-muted-foreground group-focus-within:text-lime-500 transition-colors">
+      {label}
+    </label>
+    <div className="relative">
+      {children}
+    </div>
+  </div>
+);
 export default function Business() {
   const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { businessId, loading: ctxLoading } = useBusiness();
   const { data: businessData, loading: dataLoading, refetch } = useApi(
     () => getBusiness(businessId!),
@@ -34,12 +56,79 @@ export default function Business() {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [activeTab, setActiveTab] = useState<Tab>('profile');
+  const [kycDocType, setKycDocType] = useState<'PAN' | 'AADHAAR'>('PAN');
+  const [kycLoading, setKycLoading] = useState(false);
+  const [kycError, setKycError] = useState<string | null>(null);
+  const [kycSuccess, setKycSuccess] = useState<string | null>(null);
+  const [verifiedDocs, setVerifiedDocs] = useState<any[]>([]);
+  const kycHandledRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (businessData) {
       setFormData(businessData);
     }
   }, [businessData]);
+
+  useEffect(() => {
+    if (!businessId) return;
+    getUserVerifications(businessId)
+      .then((docs) => setVerifiedDocs(Array.isArray(docs) ? docs : []))
+      .catch(() => setVerifiedDocs([]));
+  }, [businessId]);
+
+  // Complete DigiLocker return from callback redirect
+  useEffect(() => {
+    const kyc = searchParams.get('kyc');
+    const requestId = searchParams.get('requestId');
+    const error = searchParams.get('error');
+
+    if (!kyc) return;
+
+    setActiveTab('registration');
+
+    if (kyc === 'failed' || kyc === 'denied') {
+      setKycError(error || 'DigiLocker consent was declined or failed.');
+      setSearchParams({}, { replace: true });
+      return;
+    }
+
+    if (kyc === 'success' && requestId && kycHandledRef.current !== requestId) {
+      kycHandledRef.current = requestId;
+      setKycLoading(true);
+      setKycError(null);
+      getDigiLockerDocuments(requestId)
+        .then(async (doc) => {
+          setKycSuccess(
+            `Verified ${doc.documentType}: ${doc.verifiedName}${doc.panNumberMasked ? ` · PAN ${doc.panNumberMasked}` : ''}`
+          );
+          if (businessId) {
+            const docs = await getUserVerifications(businessId);
+            setVerifiedDocs(Array.isArray(docs) ? docs : []);
+          }
+        })
+        .catch((err: any) => {
+          setKycError(err?.response?.data?.error || err?.message || 'Failed to fetch DigiLocker documents');
+        })
+        .finally(() => {
+          setKycLoading(false);
+          setSearchParams({}, { replace: true });
+        });
+    }
+  }, [searchParams, businessId, setSearchParams]);
+
+  const handleDigiLockerVerify = async () => {
+    if (!businessId) return;
+    setKycLoading(true);
+    setKycError(null);
+    setKycSuccess(null);
+    try {
+      const result = await initiateDigiLocker(businessId, kycDocType, 'web');
+      window.location.href = result.consentUrl;
+    } catch (err: any) {
+      setKycError(err?.response?.data?.error || err?.message || 'Failed to start DigiLocker');
+      setKycLoading(false);
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -119,18 +208,7 @@ export default function Business() {
     { id: 'benchmarks', label: 'Industry Benchmarks', icon: <BarChart2 className="w-5 h-5" /> },
   ];
 
-  // Helper for animated inputs
-  const InputGroup = ({ label, children }: { label: string, children: React.ReactNode }) => (
-    <div className="space-y-1.5 group">
-      <label className="block text-[11px] font-bold uppercase tracking-widest text-muted-foreground group-focus-within:text-lime-500 transition-colors">
-        {label}
-      </label>
-      <div className="relative">
-        {children}
-      </div>
-    </div>
-  );
-
+// Moved outside to prevent recreating on every render
   return (
     <div className="page-enter p-4 md:p-6 min-h-screen bg-background">
       <div className="max-w-6xl mx-auto space-y-8">
@@ -313,6 +391,74 @@ export default function Business() {
                         <InputGroup label={t('business.gstNumber')}>
                           <input name="registration.gstNumber" value={formData.registration?.gstNumber || ''} onChange={handleChange} className="w-full md:w-1/2 bg-background border border-border text-foreground focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-xl px-4 py-3 text-sm transition-all shadow-sm uppercase placeholder-normal-case" placeholder="22AAAAA0000A1Z5" />
                         </InputGroup>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6 bg-muted/30 border border-border rounded-2xl mb-6">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <ShieldCheck className="w-5 h-5 text-primary" />
+                          <h3 className="text-lg font-bold text-foreground">Verify with DigiLocker</h3>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Fetch government-verified identity (PAN / Aadhaar) via consent. Sandbox uses a local simulator so KYC works immediately.
+                        </p>
+                      </div>
+                      <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+                        <select
+                          value={kycDocType}
+                          onChange={(e) => setKycDocType(e.target.value as 'PAN' | 'AADHAAR')}
+                          className="bg-background border border-border text-foreground rounded-xl px-3 py-2.5 text-sm"
+                          disabled={kycLoading}
+                        >
+                          <option value="PAN">PAN</option>
+                          <option value="AADHAAR">Aadhaar</option>
+                        </select>
+                        <button
+                          type="button"
+                          onClick={handleDigiLockerVerify}
+                          disabled={kycLoading}
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-bold text-sm disabled:opacity-50"
+                        >
+                          {kycLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <ShieldCheck className="w-4 h-4" />}
+                          {kycLoading ? 'Verifying…' : 'Verify with DigiLocker'}
+                        </button>
+                      </div>
+                    </div>
+
+                    {kycError && (
+                      <div className="flex items-start gap-2 p-3 rounded-xl bg-red-500/10 text-red-600 text-sm mb-3">
+                        <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                        <span>{kycError}</span>
+                      </div>
+                    )}
+                    {kycSuccess && (
+                      <div className="flex items-start gap-2 p-3 rounded-xl bg-primary/10 text-foreground text-sm mb-3">
+                        <CheckCircle className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
+                        <span>{kycSuccess}</span>
+                      </div>
+                    )}
+
+                    {verifiedDocs.filter((d) => d.verificationStatus === 'authenticated' && d.verifiedName).length > 0 && (
+                      <div className="mt-2 space-y-2">
+                        <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">Verified DigiLocker records</span>
+                        {verifiedDocs
+                          .filter((d) => d.verificationStatus === 'authenticated' && d.verifiedName)
+                          .map((doc) => (
+                            <div key={doc.requestId} className="flex items-center justify-between p-3 bg-card rounded-xl border border-border">
+                              <div>
+                                <p className="font-semibold text-sm text-foreground">{doc.verifiedName}</p>
+                                <p className="text-xs text-muted-foreground">
+                                  {doc.documentType}
+                                  {doc.panNumberMasked ? ` · ${doc.panNumberMasked}` : ''}
+                                  {doc.digitalSignatureValid ? ' · Signature valid' : ''}
+                                </p>
+                              </div>
+                              <CheckCircle className="w-4 h-4 text-primary" />
+                            </div>
+                          ))}
                       </div>
                     )}
                   </div>

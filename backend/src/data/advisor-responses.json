@@ -1,27 +1,131 @@
 [
   {
-    "keywords": ["loan", "borrow"],
+    "keywords": ["fertilizer", "diwali", "stock", "buffer", "inventory", "festive"],
     "response": {
       "en": {
-        "recommendation": "Consider Mudra Yojana - Kishor loan.",
-        "why": "Based on your 8 years of operation and GST registration, you easily qualify.",
-        "localEvidence": "SBI Modhera branch has processed 15 such loans recently.",
-        "financialImpact": "Access to ₹2,000,000 working capital.",
+        "recommendation": "Increase buffer inventory of high-demand fertilizers and festive goods by 25% before Diwali.",
+        "why": "Historical transaction logs show 38% surges in demand during festival weeks, with supplier wholesale prices spiking 12% closer to Diwali.",
+        "localEvidence": "APMC Mehsana & Modhera traders report tightening wholesale supply on urea & DAP.",
+        "financialImpact": "Estimated net savings of +₹18,200 by advancing supplier procurement.",
+        "nextStep": { "label": "Review Inventory", "route": "/inventory" }
+      },
+      "hi": {
+        "recommendation": "दीवाली से पहले उच्च मांग वाले उर्वरकों और त्योहारी सामानों के बफर स्टॉक में 25% की वृद्धि करें।",
+        "why": "त्योहारी सप्ताहों के दौरान मांग में 38% की वृद्धि होती है और थोक मूल्यों में 12% की बढ़ोतरी होती है।",
+        "localEvidence": "एपीएमसी मेहसाणा और मोढेरा व्यापारियों ने यूरिया और डीएपी की तंग आपूर्ति की सूचना दी है।",
+        "financialImpact": "पहले खरीद करने पर अनुमानित +₹18,200 की शुद्ध बचत।",
+        "nextStep": { "label": "इन्वेंट्री की समीक्षा करें", "route": "/inventory" }
+      },
+      "gu": {
+        "recommendation": "દિવાળી પહેલાં વધુ માંગવાળા ખાતર અને તહેવારોની ચીજવસ્તુઓનો બફર સ્ટોક 25% વધારો.",
+        "why": "તહેવારો દરમિયાન માંગમાં 38% વધારો થાય છે અને હોલસેલ ભાવમાં 12% વધારો નોંધાય છે.",
+        "localEvidence": "મહેસાણા અને મોઢેરા માર્કેટ યાર્ડમાં યુરિયા અને ડીએપીનો પુરવઠો ઘટવાની શક્યતા છે.",
+        "financialImpact": "અગાઉથી ખરીદી કરવાથી આશરે +₹18,200 ની ચોખ્ખી બચત.",
+        "nextStep": { "label": "ઇન્વેન્ટરી તપાસો", "route": "/inventory" }
+      }
+    }
+  },
+  {
+    "keywords": ["readiness", "score", "cibil", "credit", "improve"],
+    "response": {
+      "en": {
+        "recommendation": "Complete DigiLocker document verification and reconcile 6-month GST returns to surpass 85+ readiness.",
+        "why": "Lenders evaluate formal government-verified records and consistent cash inflow ratios to offer lowest interest brackets.",
+        "localEvidence": "Rural regional banks in Gujarat prioritize businesses with verified DigiLocker PAN and GST records.",
+        "financialImpact": "Unlocks lower loan interest rates (from 12.5% down to 9.5% p.a.).",
+        "nextStep": { "label": "Explore Financing", "route": "/financing" }
+      },
+      "hi": {
+        "recommendation": "85+ स्कोर प्राप्त करने के लिए डिजिलॉकर सत्यापन पूरा करें और जीएसटी रिटर्न का मिलान करें।",
+        "why": "बैंक न्यूनतम ब्याज दरों की पेशकश के लिए आधिकारिक रिकॉर्ड और लगातार नकदी प्रवाह का मूल्यांकन करते हैं।",
+        "localEvidence": "गुजरात के ग्रामीण बैंक डिजिलॉकर पैन और जीएसटी सत्यापित व्यवसायों को प्राथमिकता देते हैं।",
+        "financialImpact": "कम ब्याज दर (12.5% से घटकर 9.5% प्रति वर्ष) अनलॉक करता है।",
+        "nextStep": { "label": "ऋण विकल्प देखें", "route": "/financing" }
+      },
+      "gu": {
+        "recommendation": "85+ સ્કોર મેળવવા માટે ડિજીલોકર ચકાસણી પૂર્ણ કરો અને જીએસટી રિટર્ન મેળવો.",
+        "why": "બેંકો ઓછો વ્યાજ દર આપવા માટે સત્તાવાર સરકારી રેકોર્ડ અને નિયમિત કેશફ્લો તપાસે છે.",
+        "localEvidence": "ગુજરાતની ગ્રામીણ બેંકો ડિજીલોકર પાન અને જીએસટી ધરાવતા વેપારીઓને અગ્રતા આપે છે.",
+        "financialImpact": "ઓછા વ્યાજ દર (12.5% થી ઘટીને 9.5%) નો લાભ મેળવો.",
+        "nextStep": { "label": "ધિરાણ વિકલ્પો જુઓ", "route": "/financing" }
+      }
+    }
+  },
+  {
+    "keywords": ["mandi", "price", "wheat", "apmc", "commodity", "rates", "sarson", "mustard"],
+    "response": {
+      "en": {
+        "recommendation": "Procure Sharbati Wheat from Kisan Ganj Mandi where spot price is currently ₹2,420/qtl.",
+        "why": "District hub mandi prices are ₹2,550/qtl (+5.3% higher), giving you direct arbitrage advantage.",
+        "localEvidence": "Daily mandi arrivals rose 18% yesterday, providing optimal wholesale buying power.",
+        "financialImpact": "Direct procurement savings of ₹130 per quintal.",
+        "nextStep": { "label": "View Market Intelligence", "route": "/hyperlocal" }
+      },
+      "hi": {
+        "recommendation": "किसान गंज मंडी से शरबती गेहूं खरीदें जहां वर्तमान हाजिर भाव ₹2,420/क्विंटल है।",
+        "why": "जिला हब मंडी का भाव ₹2,550/क्विंटल (+5.3% अधिक) है, जो आपको बेहतर बचत देता है।",
+        "localEvidence": "कल दैनिक आवक में 18% की वृद्धि हुई, जिससे अनुकूल थोक दरें बनी हुई हैं।",
+        "financialImpact": "प्रति क्विंटल ₹130 की सीधी खरीद बचत।",
+        "nextStep": { "label": "बाज़ार स्थिति देखें", "route": "/hyperlocal" }
+      },
+      "gu": {
+        "recommendation": "કિસાન ગંજ મંડીમાંથી શરબતી ઘઉં ખરીદો જ્યાં વર્તમાન ભાવ ₹2,420/ક્વિન્ટલ છે.",
+        "why": "જિલ્લા હબ માર્કેટમાં ભાવ ₹2,550/ક્વિન્ટલ (+5.3% વધુ) છે, જેથી તમને સારો ફાયદો મળશે.",
+        "localEvidence": "ગઈકાલે દૈનિક આવકમાં 18% નો વધારો થયો હતો, જે શ્રેષ્ઠ ખરીદી શક્તિ આપે છે.",
+        "financialImpact": "ક્વિન્ટલ દીઠ ₹130 ની સીધી બચત.",
+        "nextStep": { "label": "બજાર માહિતી જુઓ", "route": "/hyperlocal" }
+      }
+    }
+  },
+  {
+    "keywords": ["logistics", "cost", "transport", "delivery", "cut"],
+    "response": {
+      "en": {
+        "recommendation": "Consolidate supplier pickups on bi-weekly pooled transport routes with neighboring merchants.",
+        "why": "Independent daily carrier trips incur 32% empty-mileage surcharges from Ahmedabad/Mehsana distribution centers.",
+        "localEvidence": "3 cooperative merchant routes operate Tuesdays and Fridays through Modhera crossroad.",
+        "financialImpact": "Projected 15% reduction in recurring monthly logistics overhead (₹6,800/month saved).",
+        "nextStep": { "label": "Inspect Cash Flow", "route": "/cashflow" }
+      },
+      "hi": {
+        "recommendation": "पड़ोसी व्यापारियों के साथ सप्ताह में दो बार साझा परिवहन मार्गों पर आपूर्ति उठाव को समेकित करें।",
+        "why": "दैनिक अलग-अलग फेरे लगाने से अतिरिक्त 32% भाड़ा खर्च होता है।",
+        "localEvidence": "मोढेरा चौराहे से मंगलवार और शुक्रवार को 3 सहकारी व्यापारी वाहन चलते हैं।",
+        "financialImpact": "मासिक रसद लागत में 15% की कमी (₹6,800/माह की बचत)।",
+        "nextStep": { "label": "कैश फ्लो देखें", "route": "/cashflow" }
+      },
+      "gu": {
+        "recommendation": "આજુબાજુના વેપારીઓ સાથે અઠવાડિયામાં બે વાર સંયુક્ત વાહન વ્યવસ્થા દ્વારા માલ મંગાવો.",
+        "why": "રોજેરોજ અલગ વાહન કરવાથી 32% વધારાનો ખર્ચ થાય છે.",
+        "localEvidence": "મોઢેરા ચોકડી પરથી મંગળવાર અને શુક્રવારે 3 સહકારી વેપારી વાહનો દોડે છે.",
+        "financialImpact": "માસિક વાહનવ્યવહાર ખર્ચમાં 15% ઘટાડો (દર મહિને ₹6,800 ની બચત).",
+        "nextStep": { "label": "કેશ ફ્લો તપાસો", "route": "/cashflow" }
+      }
+    }
+  },
+  {
+    "keywords": ["loan", "borrow", "mudra", "credit"],
+    "response": {
+      "en": {
+        "recommendation": "Apply for Pradhan Mantri Mudra Yojana - Kishor loan tier.",
+        "why": "Based on your 8 years of registered operation and clean GST track record, your profile meets eligibility criteria.",
+        "localEvidence": "SBI Modhera and Bank of Baroda branches have approved 15 similar MSME loans this quarter.",
+        "financialImpact": "Unlocks up to ₹20,00,000 in low-interest institutional working capital.",
         "nextStep": { "label": "View Loan Products", "route": "/financing" }
       },
       "hi": {
-        "recommendation": "मुद्रा योजना - किशोर ऋण पर विचार करें।",
-        "why": "आपके 8 साल के संचालन और जीएसटी पंजीकरण के आधार पर, आप आसानी से योग्य हैं।",
-        "localEvidence": "एसबीआई मोढेरा शाखा ने हाल ही में ऐसे 15 ऋणों को संसाधित किया है।",
-        "financialImpact": "₹2,000,000 कार्यशील पूंजी तक पहुंच।",
+        "recommendation": "प्रधानमंत्री मुद्रा योजना - किशोर ऋण श्रेणी के लिए आवेदन करें।",
+        "why": "आपके 8 साल के व्यवसाय और जीएसटी ट्रैक रिकॉर्ड के आधार पर आप पूरी तरह पात्र हैं।",
+        "localEvidence": "एसबीआई मोढेरा और बैंक ऑफ बड़ौदा ने इस तिमाही में 15 समान ऋण स्वीकृत किए हैं।",
+        "financialImpact": "कम ब्याज दर पर ₹20,00,000 तक की कार्यशील पूंजी प्राप्त करें।",
         "nextStep": { "label": "ऋण उत्पाद देखें", "route": "/financing" }
       },
       "gu": {
-        "recommendation": "મુદ્રા યોજના - કિશોર લોનનો વિચાર કરો.",
-        "why": "તમારા 8 વર્ષના સંચાલન અને જીએસટી નોંધણીના આધારે, તમે સરળતાથી લાયક છો.",
-        "localEvidence": "એસબીઆઈ મોઢેરા શાખાએ તાજેતરમાં આવી 15 લોનની પ્રક્રિયા કરી છે.",
-        "financialImpact": "₹2,000,000 કાર્યકારી મૂડીની ઍક્સેસ.",
-        "nextStep": { "label": "લોન ઉત્પાદનો જુઓ", "route": "/financing" }
+        "recommendation": "પ્રધાનમંત્રી મુદ્રા યોજના - કિશોર લોન માટે અરજી કરો.",
+        "why": "તમારા 8 વર્ષના વ્યવસાય અને સારા જીએસટી રેકોર્ડના આધારે તમે પાત્રતા ધરાવો છો.",
+        "localEvidence": "એસબીઆઈ મોઢેરા અને બેંક ઓફ બરોડાએ આ ક્વાર્ટરમાં 15 સમાન લોન મંજૂર કરી છે.",
+        "financialImpact": "ઓછા વ્યાજે ₹20,00,000 સુધીની કાર્યકારી મૂડી મેળવો.",
+        "nextStep": { "label": "લોન પ્રોડક્ટ્સ જુઓ", "route": "/financing" }
       }
     }
   },
@@ -29,24 +133,24 @@
     "keywords": ["default"],
     "response": {
       "en": {
-        "recommendation": "I can help you with inventory, financing, pricing, and business growth.",
-        "why": "I analyze your local market data to give personalized advice.",
-        "localEvidence": "Serving businesses in Modhera.",
-        "financialImpact": "General business optimization.",
+        "recommendation": "Maintain optimal 45-day inventory turn and keep working capital balance above ₹1,50,000.",
+        "why": "Consistent liquidity protects against local supply shocks and qualifies you for maximum subsidy benefits.",
+        "localEvidence": "Serving rural microenterprises in Modhera & Mehsana district trade clusters.",
+        "financialImpact": "Sustainable 18.5% net profit margin target.",
         "nextStep": { "label": "View Dashboard", "route": "/" }
       },
       "hi": {
-        "recommendation": "मैं इन्वेंट्री, वित्तपोषण, मूल्य निर्धारण और व्यवसाय वृद्धि में आपकी सहायता कर सकता हूं।",
-        "why": "मैं आपको व्यक्तिगत सलाह देने के लिए आपके स्थानीय बाज़ार डेटा का विश्लेषण करता हूँ।",
-        "localEvidence": "मोढेरा में व्यवसायों की सेवा करना।",
-        "financialImpact": "सामान्य व्यवसाय अनुकूलन।",
+        "recommendation": "45-दिवसीय इन्वेंट्री टर्नओवर बनाए रखें और कार्यशील पूंजी ₹1,50,000 से ऊपर रखें।",
+        "why": "निरंतर तरलता स्थानीय आपूर्ति की कमी से बचाती है और सरकारी सब्सिडी के लिए पात्र बनाती है।",
+        "localEvidence": "मोढेरा और मेहसाणा जिले के व्यापार समूहों में सेवारत।",
+        "financialImpact": "18.5% शुद्ध लाभ मार्जिन का सतत लक्ष्य।",
         "nextStep": { "label": "डैशबोर्ड देखें", "route": "/" }
       },
       "gu": {
-        "recommendation": "હું તમને ઇન્વેન્ટરી, ધિરાણ, કિંમતો અને વ્યવસાયના વિકાસમાં મદદ કરી શકું છું.",
-        "why": "હું તમને વ્યક્તિગત સલાહ આપવા માટે તમારા સ્થાનિક બજારના ડેટાનું વિશ્લેષણ કરું છું.",
-        "localEvidence": "મોઢેરામાં વ્યવસાયોની સેવા કરવી.",
-        "financialImpact": "સામાન્ય વ્યવસાય ઑપ્ટિમાઇઝેશન.",
+        "recommendation": "45-દિવસનું ઇન્વેન્ટરી ટર્નઓવર જાળવો અને કાર્યકારી મૂડી ₹1,50,000 થી વધુ રાખો.",
+        "why": "સતત લિક્વિડિટી અણધારી અછત સામે રક્ષણ આપે છે અને સરકારી સબસિડી માટે યોગ્ય બનાવે છે.",
+        "localEvidence": "મોઢેરા અને મહેસાણા જિલ્લાના વેપારી કેન્દ્રોમાં કાર્યરત.",
+        "financialImpact": "18.5% ચોખ્ખા નફા માર્જિનનું ટકાઉ લક્ષ્ય.",
         "nextStep": { "label": "ડેશબોર્ડ જુઓ", "route": "/" }
       }
     }

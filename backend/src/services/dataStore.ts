@@ -5,7 +5,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const dataPath = path.join(__dirname, '../data');
+const dataPath = fs.existsSync(path.join(__dirname, '../data'))
+  ? path.join(__dirname, '../data')
+  : path.resolve(__dirname, '../../src/data');
 
 function loadJSON(filename: string) {
   return JSON.parse(fs.readFileSync(path.join(dataPath, filename), 'utf-8'));
@@ -23,6 +25,7 @@ export const DataStore = {
   insights: loadJSON('insights.json'),
   priorities: loadJSON('priorities.json'),
   advisorResponses: loadJSON('advisor-responses.json'),
+  kycVerifications: loadJSON('kyc-verifications.json'),
   
   saveInventory() {
     fs.writeFileSync(path.join(dataPath, 'inventory.json'), JSON.stringify(this.inventory, null, 2));
@@ -32,5 +35,8 @@ export const DataStore = {
   },
   saveBusiness() {
     fs.writeFileSync(path.join(dataPath, 'business.json'), JSON.stringify(this.business, null, 2));
+  },
+  saveKycVerifications() {
+    fs.writeFileSync(path.join(dataPath, 'kyc-verifications.json'), JSON.stringify(this.kycVerifications, null, 2));
   }
 };

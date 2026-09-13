@@ -17,6 +17,11 @@ import type {
   ApiResponse,
 } from '../types';
 
+export const getIntelligenceSummary = async (): Promise<any> => {
+  const { data } = await api.get('/intelligence/summary');
+  return data;
+};
+
 // Centralized Axios client connecting directly to real backend API
 const api = axios.create({
   baseURL: '/api/v2',
@@ -161,6 +166,40 @@ export const getReports = async (
   const { data } = await api.get<ApiResponse<ReportData>>(`/reports/${businessId}`, {
     params: { range },
   });
+  return data.data;
+};
+
+// ---- DigiLocker Verification ----
+export const initiateDigiLocker = async (
+  userId: string,
+  documentType: 'PAN' | 'AADHAAR' = 'PAN',
+  platform: 'web' | 'mobile' = 'web'
+): Promise<{
+  requestId: string;
+  consentUrl: string;
+  stateToken: string;
+  expiresAt: string;
+  mode?: 'mock' | 'live';
+}> => {
+  const { data } = await api.post<
+    ApiResponse<{
+      requestId: string;
+      consentUrl: string;
+      stateToken: string;
+      expiresAt: string;
+      mode?: 'mock' | 'live';
+    }>
+  >('/digilocker/initiate', { userId, documentType, platform });
+  return data.data;
+};
+
+export const getDigiLockerDocuments = async (requestId: string): Promise<any> => {
+  const { data } = await api.get<ApiResponse<any>>(`/digilocker/documents/${requestId}`);
+  return data.data;
+};
+
+export const getUserVerifications = async (userId: string): Promise<any[]> => {
+  const { data } = await api.get<ApiResponse<any[]>>(`/digilocker/user/${userId}`);
   return data.data;
 };
 

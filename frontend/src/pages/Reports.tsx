@@ -101,9 +101,10 @@ export default function Reports() {
   }
 
   return (
-    <div className="page-enter p-4 md:p-6 space-y-6 bg-[#0B0C0F] text-[#DFE6EF] min-h-screen">
+    <div className="page-enter p-4 md:p-6 space-y-6 min-h-screen">
       <PageHeader 
-        title={t('reports.title')} 
+        title={t('reports.title', 'Financial Reports & Executive Audit')} 
+        subtitle={t('reports.subtitle', 'Export professional P&L sheets and performance audits for bank submissions.')}
         action={{
           label: 'Export PDF',
           onClick: handleExportPDF,
@@ -115,78 +116,78 @@ export default function Reports() {
         <select 
           value={range} 
           onChange={(e) => setRange(e.target.value)}
-          className="bg-[#1B2028] border border-[#323A46] text-[#DFE6EF] text-sm px-3 py-2 rounded-xl focus:outline-none focus:border-[#38BDF8] hidden sm:block"
+          className="bg-card border border-glass-border text-foreground text-sm px-3 py-2 rounded-xl focus:outline-none focus:border-primary shadow-xs hidden sm:block"
         >
-          <option value="1m" className="bg-[#1B2028]">{t('reports.lastMonth')}</option>
-          <option value="3m" className="bg-[#1B2028]">{t('reports.last3Months')}</option>
-          <option value="6m" className="bg-[#1B2028]">{t('reports.last6Months')}</option>
-          <option value="1y" className="bg-[#1B2028]">{t('reports.lastYear')}</option>
+          <option value="1m">{t('reports.lastMonth', 'Last Month')}</option>
+          <option value="3m">{t('reports.last3Months', 'Last 3 Months')}</option>
+          <option value="6m">{t('reports.last6Months', 'Last 6 Months')}</option>
+          <option value="1y">{t('reports.lastYear', 'Last 1 Year')}</option>
         </select>
-        <button onClick={handleExportCSV} className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#1B2028] hover:bg-[#232A35] border border-[#323A46] text-[#DFE6EF] text-sm font-semibold transition-colors" title="Export CSV">
-          <FileSpreadsheet size={16} className="text-[#38BDF8] hidden sm:block" /> CSV
+        <button onClick={handleExportCSV} className="flex items-center gap-2 px-3 py-2 rounded-xl bg-card hover:bg-muted border border-glass-border text-foreground text-sm font-semibold shadow-xs transition-colors" title="Export CSV">
+          <FileSpreadsheet size={16} className="text-primary hidden sm:block" /> CSV
         </button>
       </div>
 
-      <div className="bg-[#1B2028] border border-[#323A46] p-6 sm:p-10 max-w-4xl mx-auto rounded-3xl shadow-2xl printable-document">
-        <div className="flex flex-col sm:flex-row items-center justify-between border-b border-[#323A46] pb-6 mb-8 gap-4">
+      <div className="bg-card/70 backdrop-blur-md border border-glass-border p-6 sm:p-10 max-w-4xl mx-auto rounded-3xl shadow-glass-shadow printable-document">
+        <div className="flex flex-col sm:flex-row items-center justify-between border-b border-glass-border pb-6 mb-8 gap-4">
           <div className="flex items-center gap-4">
-            <div className="h-12 w-12 rounded-2xl bg-[#11141A] border border-[#323A46] flex items-center justify-center text-[#38BDF8] font-black text-xl shadow-inner">
+            <div className="h-12 w-12 rounded-2xl bg-muted border border-border flex items-center justify-center text-primary font-black text-xl shadow-2xs">
               S
             </div>
             <div>
-              <h1 className="text-2xl sm:text-3xl font-heading font-black tracking-tight text-[#DFE6EF]">{business?.name || 'Patel General Store'}</h1>
-              <p className="text-xs sm:text-sm text-[#7E8A99]">{business?.location?.village || 'Modhera'}, {business?.location?.district || 'Mehsana'} &bull; GST: {business?.gstNumber || '24ABCDE1234F1Z5'}</p>
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">{business?.name || 'Shree Ganesh Kirana Store'}</h1>
+              <p className="text-xs sm:text-sm text-muted-foreground">{business?.location?.village || 'Modhera'}, {business?.location?.district || 'Mehsana'} &bull; GST: {business?.gstNumber || '24ABCDE1234F1Z5'}</p>
             </div>
           </div>
           <div className="text-center sm:text-right">
-            <span className="inline-block px-3 py-1 bg-[#38BDF8]/10 text-[#38BDF8] border border-[#38BDF8]/20 font-bold text-xs rounded-full uppercase tracking-wider mb-1">
-              {t('reports.businessReport') || 'Executive Business Audit'}
+            <span className="inline-block px-3 py-1 bg-lime-500/10 text-lime-700 dark:text-lime-400 border border-lime-500/20 font-bold text-xs rounded-full uppercase tracking-wider mb-1">
+              {t('reports.businessReport', 'Executive Business Audit')}
             </span>
-            <p className="text-xs text-[#7E8A99] font-mono">{new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+            <p className="text-xs text-muted-foreground font-mono">{new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
           </div>
         </div>
 
         <div className="mb-10">
-          <div className="flex items-center justify-between border-b border-[#323A46] pb-2 mb-4">
-            <h2 className="text-lg font-heading font-bold text-[#DFE6EF]">{t('reports.financialSummary')}</h2>
-            <span className="text-xs text-[#7E8A99] uppercase tracking-wider">INR Currency</span>
+          <div className="flex items-center justify-between border-b border-glass-border pb-2 mb-4">
+            <h2 className="text-lg font-bold text-foreground">{t('reports.financialSummary', 'Financial Summary')}</h2>
+            <span className="text-xs text-muted-foreground uppercase tracking-wider">INR (₹)</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-[#11141A] border border-[#323A46] p-4 rounded-2xl text-center">
-              <p className="text-xs text-[#7E8A99] uppercase tracking-wider font-semibold">{t('dashboard.revenue')}</p>
-              <p className="text-2xl font-heading font-black text-[#DFE6EF] mt-1">{formatINR(reportData.financialSummary.revenue)}</p>
+            <div className="bg-muted/40 border border-border p-4 rounded-2xl text-center">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">{t('dashboard.revenue', 'Revenue')}</p>
+              <p className="text-2xl font-black text-foreground mt-1">{formatINR(reportData.financialSummary.revenue)}</p>
             </div>
-            <div className="bg-[#11141A] border border-[#323A46] p-4 rounded-2xl text-center">
-              <p className="text-xs text-[#7E8A99] uppercase tracking-wider font-semibold">{t('dashboard.expenses')}</p>
-              <p className="text-2xl font-heading font-black text-[#EF4444] mt-1">{formatINR(reportData.financialSummary.expenses)}</p>
+            <div className="bg-muted/40 border border-border p-4 rounded-2xl text-center">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">{t('dashboard.expenses', 'Expenses')}</p>
+              <p className="text-2xl font-black text-rose-600 font-mono mt-1">{formatINR(reportData.financialSummary.expenses)}</p>
             </div>
-            <div className="bg-[#11141A] border border-[#323A46] p-4 rounded-2xl text-center">
-              <p className="text-xs text-[#7E8A99] uppercase tracking-wider font-semibold">{t('dashboard.profit')}</p>
-              <p className="text-2xl font-heading font-black text-[#10B981] mt-1">{formatINR(reportData.financialSummary.profit)}</p>
+            <div className="bg-muted/40 border border-border p-4 rounded-2xl text-center">
+              <p className="text-xs text-muted-foreground uppercase tracking-wider font-bold">{t('dashboard.profit', 'Net Profit')}</p>
+              <p className="text-2xl font-black text-emerald-600 font-mono mt-1">{formatINR(reportData.financialSummary.profit)}</p>
             </div>
           </div>
         </div>
 
         <div className="mb-10">
-          <div className="flex items-center justify-between border-b border-[#323A46] pb-2 mb-4">
-            <h2 className="text-lg font-heading font-bold text-[#DFE6EF]">{t('reports.monthlyTrends')}</h2>
-            <span className="text-xs text-[#7E8A99]">Monthly Trajectory</span>
+          <div className="flex items-center justify-between border-b border-glass-border pb-2 mb-4">
+            <h2 className="text-lg font-bold text-foreground">{t('reports.monthlyTrends', 'Monthly Revenue Trajectory')}</h2>
+            <span className="text-xs text-muted-foreground">Historical Performance</span>
           </div>
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={reportData.monthlyTrend} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#323A46" />
-                <XAxis dataKey="month" stroke="#7E8A99" tick={{ fill: '#7E8A99' }} />
-                <YAxis tickFormatter={(val) => `₹${val/1000}k`} stroke="#7E8A99" tick={{ fill: '#7E8A99' }} />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(150, 150, 150, 0.2)" />
+                <XAxis dataKey="month" stroke="currentColor" className="text-muted-foreground" tick={{ fill: 'currentColor' }} />
+                <YAxis tickFormatter={(val) => `₹${val/1000}k`} stroke="currentColor" className="text-muted-foreground" tick={{ fill: 'currentColor' }} />
                 <RechartsTooltip 
-                  contentStyle={{ backgroundColor: '#11141A', borderColor: '#323A46', borderRadius: '0.75rem', color: '#DFE6EF' }}
-                  itemStyle={{ color: '#DFE6EF' }}
+                  contentStyle={{ backgroundColor: 'var(--card)', borderColor: 'var(--border)', borderRadius: '0.75rem', color: 'var(--foreground)' }}
+                  itemStyle={{ color: 'var(--foreground)' }}
                   formatter={(val: any) => formatINR(val)} 
                 />
-                <Legend wrapperStyle={{ color: '#DFE6EF' }} />
-                <Line type="monotone" dataKey="revenue" name={t('dashboard.revenue')} stroke="#38BDF8" strokeWidth={2.5} dot={{ fill: '#38BDF8', r: 3 }} />
-                <Line type="monotone" dataKey="expenses" name={t('dashboard.expenses')} stroke="#EF4444" strokeWidth={2.5} dot={{ fill: '#EF4444', r: 3 }} />
-                <Line type="monotone" dataKey="profit" name={t('dashboard.profit')} stroke="#10B981" strokeWidth={2.5} dot={{ fill: '#10B981', r: 3 }} />
+                <Legend wrapperStyle={{ color: 'var(--foreground)' }} />
+                <Line type="monotone" dataKey="revenue" name={t('dashboard.revenue', 'Revenue')} stroke="#84cc16" strokeWidth={2.5} dot={{ fill: '#84cc16', r: 3 }} />
+                <Line type="monotone" dataKey="expenses" name={t('dashboard.expenses', 'Expenses')} stroke="#fb923c" strokeWidth={2.5} dot={{ fill: '#fb923c', r: 3 }} />
+                <Line type="monotone" dataKey="profit" name={t('dashboard.profit', 'Profit')} stroke="#0284c7" strokeWidth={2.5} dot={{ fill: '#0284c7', r: 3 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -194,48 +195,48 @@ export default function Reports() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
           <div>
-            <h2 className="text-lg font-heading font-bold text-[#DFE6EF] mb-4 border-b border-[#323A46] pb-2">{t('reports.inventorySummary')}</h2>
+            <h2 className="text-lg font-bold text-foreground mb-4 border-b border-glass-border pb-2">{t('reports.inventorySummary', 'Inventory Health')}</h2>
             <ul className="space-y-3">
-              <li className="flex justify-between border-b border-[#323A46]/60 pb-2 text-sm">
-                <span className="text-[#7E8A99]">Total Items</span>
-                <span className="font-bold text-[#DFE6EF]">{reportData.inventorySummary.totalItems}</span>
+              <li className="flex justify-between border-b border-border pb-2 text-sm">
+                <span className="text-muted-foreground">Total Items</span>
+                <span className="font-bold text-foreground">{reportData.inventorySummary.totalItems}</span>
               </li>
-              <li className="flex justify-between border-b border-[#323A46]/60 pb-2 text-sm">
-                <span className="text-[#7E8A99]">Low Stock Alert</span>
-                <span className="font-bold text-[#EF4444]">{reportData.inventorySummary.lowStockItems}</span>
+              <li className="flex justify-between border-b border-border pb-2 text-sm">
+                <span className="text-muted-foreground">Low Stock Alert</span>
+                <span className="font-bold text-amber-600">{reportData.inventorySummary.lowStockItems}</span>
               </li>
               <li className="flex justify-between pb-2 text-sm">
-                <span className="text-[#7E8A99]">Inventory Value</span>
-                <span className="font-bold text-[#38BDF8]">{formatINR(reportData.inventorySummary.totalValue)}</span>
+                <span className="text-muted-foreground">Inventory Value</span>
+                <span className="font-bold text-foreground">{formatINR(reportData.inventorySummary.totalValue)}</span>
               </li>
             </ul>
           </div>
           <div>
-            <h2 className="text-lg font-heading font-bold text-[#DFE6EF] mb-4 border-b border-[#323A46] pb-2">{t('reports.marketPosition')}</h2>
+            <h2 className="text-lg font-bold text-foreground mb-4 border-b border-glass-border pb-2">{t('reports.marketPosition', 'Market Standing')}</h2>
             <ul className="space-y-3">
-              <li className="flex justify-between border-b border-[#323A46]/60 pb-2 text-sm">
-                <span className="text-[#7E8A99]">Local Competitors</span>
-                <span className="font-bold text-[#DFE6EF]">{reportData.hyperlocalSummary.competitorCount}</span>
+              <li className="flex justify-between border-b border-border pb-2 text-sm">
+                <span className="text-muted-foreground">Local Competitors</span>
+                <span className="font-bold text-foreground">{reportData.hyperlocalSummary.competitorCount}</span>
               </li>
-              <li className="flex justify-between border-b border-[#323A46]/60 pb-2 text-sm">
-                <span className="text-[#7E8A99]">Market Position</span>
-                <span className="font-bold text-[#38BDF8]">{reportData.hyperlocalSummary.marketPosition}</span>
+              <li className="flex justify-between border-b border-border pb-2 text-sm">
+                <span className="text-muted-foreground">Market Position</span>
+                <span className="font-bold text-foreground">{reportData.hyperlocalSummary.marketPosition}</span>
               </li>
               <li className="flex justify-between pb-2 text-sm">
-                <span className="text-[#7E8A99]">Top Opportunity</span>
-                <span className="font-bold text-[#10B981]">{reportData.hyperlocalSummary.topOpportunity}</span>
+                <span className="text-muted-foreground">Top Opportunity</span>
+                <span className="font-bold text-emerald-600">{reportData.hyperlocalSummary.topOpportunity}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div>
-          <h2 className="text-lg font-heading font-bold text-[#DFE6EF] mb-4 border-b border-[#323A46] pb-2">{t('reports.topInsights')}</h2>
+          <h2 className="text-lg font-bold text-foreground mb-4 border-b border-glass-border pb-2">{t('reports.topInsights', 'AI Key Observations')}</h2>
           <div className="grid grid-cols-1 gap-3">
             {reportData.topInsights.map((insight: any, idx: number) => (
-              <div key={idx} className="bg-[#11141A] p-4 rounded-xl border border-[#323A46]">
-                <h4 className="font-bold text-sm text-[#38BDF8] mb-1">{insight.title}</h4>
-                <p className="text-xs text-[#A4B0BE] leading-relaxed">{insight.description}</p>
+              <div key={idx} className="bg-muted/40 p-4 rounded-2xl border border-border">
+                <h4 className="font-bold text-sm text-foreground mb-1">{insight.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">{insight.description}</p>
               </div>
             ))}
           </div>

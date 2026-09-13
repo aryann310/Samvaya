@@ -1,37 +1,54 @@
 import { DataStore } from './dataStore.js';
+import { isMongoMode } from '../db/config.js';
+import { CashflowRepository } from '../db/repositories/index.js';
 
-export class CashFlowService {
-  static getCashFlow(businessId: string) {
-    const entries = DataStore.cashflow || [];
-    const last = entries.length > 0 ? entries[entries.length - 1] : { closingBalance: 85000, inflows: { total: 185000 }, outflows: { total: 145000 } };
-    
-    const baseInflow = last.inflows?.total || 185000;
-    const baseOutflow = last.outflows?.total || 145000;
-    let runningBalance = last.closingBalance || 85000;
+export class CashflowService {
+  static async getCashflow(businessId: string): Promise<any[]> {
+    if (isMongoMode()) {
+      return CashflowRepository.findByBusinessId(businessId || 'biz-001', 6);
+    }
+    return DataStore.cashflow || [];
+  }
 
-    const forecast = [
-      { month: "2024-07", projectedInflow: Math.round(baseInflow * 1.04), projectedOutflow: Math.round(baseOutflow * 1.02), projectedNetFlow: Math.round(baseInflow * 1.04 - baseOutflow * 1.02), projectedBalance: 0 },
-      { month: "2024-08", projectedInflow: Math.round(baseInflow * 1.08), projectedOutflow: Math.round(baseOutflow * 1.03), projectedNetFlow: Math.round(baseInflow * 1.08 - baseOutflow * 1.03), projectedBalance: 0 },
-      { month: "2024-09", projectedInflow: Math.round(baseInflow * 1.15), projectedOutflow: Math.round(baseOutflow * 1.06), projectedNetFlow: Math.round(baseInflow * 1.15 - baseOutflow * 1.06), projectedBalance: 0 }
-    ].map(f => {
-      runningBalance += f.projectedNetFlow;
-      return { ...f, projectedBalance: runningBalance };
+  static async getCashflowSummary(businessId: string): Promise<any> {
+    const entries = await this.getCashflow(businessId);
+    if (!entries.length) return { entries: [], forecast: [], alerts: [] };
+
+    const latest = entries[entries.length - 1];
+    const avgInflow = entries.reduce((s: number, e: any) => s + (e.inflows?.total || 0), 0) / entries.length;
+    const avgOutflow = entries.reduce((s: number, e: any) => s + (e.outflows?.total || 0), 0) / entries.length;
+    const avgNet = avgInflow - avgOutflow;
+
+    // Simple 3-month forecast
+    const forecast = [1, 2, 3].map(offset => {
+      const d = new Date(latest.month + '-01');
+      d.setMonth(d.getMonth() + offset);
+      const forecastMonth = d.toISOString().slice(0, 7);
+      return {
+        month: forecastMonth,
+        inflow: Math.round(avgInflow),
+        outflow: Math.round(avgOutflow),
+        netFlow: Math.round(avgNet),
+        closingBalance: Math.round(latest.closingBalance + avgNet * offset),
+        isForecast: true
+      };
     });
 
-    const alerts = [
-      {
-        id: 'alert-festive-prep',
-        type: 'info' as const,
-        month: '2024-09',
-        message: 'Advance cash needed for Diwali wholesale procurement (~₹40,000 extra inventory).'
-      }
-    ];
+    const alerts: string[] = [];
+    if (latest.closingBalance < avgOutflow * 0.5) {
+      alerts.push('Cash balance is below 50% of average monthly outflow. Consider collecting outstanding receivables.');
+    }
 
-    return { 
-      entries, 
-      forecast, 
-      alerts,
-      currentBalance: last.closingBalance || 85000
+    return {
+      entries: entries.map((e: any) => ({
+        month: e.month,
+        inflow: e.inflows?.total || 0,
+        outflow: e.outflows?.total || 0,
+        netFlow: e.netFlow,
+        closingBalance: e.closingBalance
+      })),
+      forecast,
+      alerts
     };
   }
 }

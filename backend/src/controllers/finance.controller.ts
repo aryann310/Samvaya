@@ -1,9 +1,13 @@
 import type { Request, Response } from 'express';
 import { FinanceService } from '../services/finance.service.js';
 
-export const getFinancialSummary = (req: Request, res: Response) => {
-  const data = FinanceService.getFinancialSummary(req.params.businessId as string);
-  res.json({ success: true, data });
+export const getFinancialSummary = async (req: Request, res: Response) => {
+  try {
+    const data = await FinanceService.getFinancialSummary(req.params.businessId as string);
+    res.json({ success: true, data });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message });
+  }
 };
 
 export const calculateLoanAffordability = (req: Request, res: Response) => {
@@ -11,7 +15,6 @@ export const calculateLoanAffordability = (req: Request, res: Response) => {
   const rate = Number(req.body.rate || req.body.interestRate || 10.5);
   const years = Number(req.body.years || (req.body.tenureMonths ? req.body.tenureMonths / 12 : 3));
   const data = FinanceService.calculateLoanAffordability({ principal, rate, years });
-  // Add camelCase aliases for frontend compatibility
   const responseData = {
     ...data,
     totalPayment: data.totalAmount,
